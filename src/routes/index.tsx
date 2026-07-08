@@ -86,13 +86,13 @@ function Home() {
           <div className="absolute inset-0 premium-grid opacity-50" />
           <div className="absolute inset-0 grain" />
           <div className="hero-viewport__content relative">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/50 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-primary mb-10 shadow-[var(--shadow-soft)]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/50 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-primary mb-10 shadow-(--shadow-soft)">
               <span className="rounded-full bg-primary text-primary-foreground px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold">
                 IT Agency
               </span>
               Texas · Hong Kong
             </div>
-            <h1 className="font-serif text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] tracking-[-0.03em] text-[color:var(--ink)] max-w-4xl mx-auto">
+            <h1 className="font-serif text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] tracking-[-0.03em] text-(--ink) max-w-4xl mx-auto">
               <span className="block">We build digital products</span>
               <span className="block">
                 that <span className="text-gradient">move businesses forward.</span>
@@ -123,10 +123,10 @@ function Home() {
           </div>
         </section>
 
-        <SectionShell className="!pt-0">
+        <SectionShell className="pt-0!">
           <div className="text-center mb-10" data-reveal>
             <Eyebrow className="justify-center">What we do</Eyebrow>
-            <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em]">
+            <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em]">
               Four disciplines. One accountable team.
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm">
@@ -191,7 +191,7 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div data-reveal>
               <Eyebrow>How we build</Eyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em] leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] leading-tight">
                 Modern stack. Battle-tested process.
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
@@ -233,33 +233,33 @@ function Home() {
             {caseStudies.map((c, i) => (
               <div key={c.company} className="h-full min-h-0">
                 <div
-                  className={`card-premium !p-8 h-full flex flex-col ${i === 1 ? "!border-primary/25 !ring-1 !ring-primary/10" : ""}`}
+                  className={`card-premium p-8! h-full flex flex-col ${i === 1 ? "border-primary/25! ring-1! ring-primary/10!" : ""}`}
                 >
-                <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
-                  {c.industry}
-                </div>
-                <div className="font-serif text-2xl text-[color:var(--ink)] mt-2">{c.company}</div>
-                <div className="mt-5 font-serif text-4xl text-gradient tracking-tight">
-                  {c.metric}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
-                  {c.metricLabel}
-                </div>
-                <blockquote className="mt-5 text-sm text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-4 flex-1">
-                  &ldquo;{c.quote}&rdquo;
-                </blockquote>
-                <div className="mt-auto pt-5 border-t border-border flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-primary/10 text-primary grid place-items-center font-serif text-sm">
-                    {c.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
+                    {c.industry}
                   </div>
-                  <div>
-                    <div className="font-semibold text-sm">{c.author}</div>
-                    <div className="text-xs text-muted-foreground">{c.role}</div>
+                  <div className="font-serif text-2xl text-(--ink)! mt-2">{c.company}</div>
+                  <div className="mt-5 font-serif text-4xl text-gradient tracking-tight">
+                    {c.metric}
                   </div>
-                </div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
+                    {c.metricLabel}
+                  </div>
+                  <blockquote className="mt-5 text-sm text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-4 flex-1">
+                    &ldquo;{c.quote}&rdquo;
+                  </blockquote>
+                  <div className="mt-auto pt-5 border-t border-border flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-primary/10 text-primary grid place-items-center font-serif text-sm">
+                      {c.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{c.author}</div>
+                      <div className="text-xs text-muted-foreground">{c.role}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

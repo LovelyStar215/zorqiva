@@ -40,8 +40,8 @@ export const Route = createFileRoute("/terms")({
       </p>
       <h2>Governing law</h2>
       <p>
-        These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law
-        principles, except where your services agreement specifies otherwise.
+        These Terms are governed by the laws of the State of Texas, without regard to
+        conflict-of-law principles, except where your services agreement specifies otherwise.
       </p>
       <h2>Related policies</h2>
       <p>

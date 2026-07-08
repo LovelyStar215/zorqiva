@@ -10,7 +10,6 @@ const inquiryTypes = [
   "Staff augmentation",
   "Support & maintenance",
   "Partnerships",
-  "Careers",
 ] as const;
 
 const schema = z.object({

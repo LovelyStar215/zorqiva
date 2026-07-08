@@ -3,6 +3,7 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { FaqList } from "@/components/site/FaqList";
+import { SectionHeader } from "@/components/site/SectionHeader";
 import { faqSections } from "@/lib/faq-data";
 
 export const Route = createFileRoute("/faq")({
@@ -11,14 +12,24 @@ export const Route = createFileRoute("/faq")({
       { title: "FAQ — Verdian IT Agency" },
       {
         name: "description",
-        content: "Frequently asked questions about working with Verdian — projects, pricing, privacy, and more.",
+        content:
+          "Frequently asked questions about working with Verdian — projects, pricing, teams, and policies.",
       },
       { property: "og:title", content: "FAQ — Verdian" },
-      { property: "og:description", content: "Answers to common questions about our agency services." },
+      {
+        property: "og:description",
+        content:
+          "Answers about our agency services, engagement models, and Texas & Hong Kong offices.",
+      },
     ],
   }),
   component: FaqPage,
 });
+
+const sectionAnchors = faqSections.map((s) => ({
+  title: s.title,
+  id: s.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+}));
 
 function FaqPage() {
   const scope = useGsapReveal();
@@ -29,27 +40,57 @@ function FaqPage() {
         <PageHero
           eyebrow="FAQ"
           title="Answers before you reach out."
-          lede="Everything you need to know about starting a project, engagement models, and how we work."
+          lede="Projects, pricing, how we work across Texas and Hong Kong — and what to expect when you partner with Verdian."
         />
 
+        <SectionShell className="pt-0!">
+          <nav
+            className="flex flex-wrap justify-center gap-2"
+            aria-label="FAQ sections"
+            data-reveal
+          >
+            {sectionAnchors.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground/70 hover:border-primary/40 hover:text-primary transition"
+              >
+                {s.title}
+              </a>
+            ))}
+          </nav>
+        </SectionShell>
+
         {faqSections.map((section, i) => (
-          <SectionShell key={section.title} tone={i % 2 === 1 ? "muted" : "default"}>
-            <h2
-              className="font-serif text-3xl text-[color:var(--ink)] tracking-[-0.02em] mb-8"
-              data-reveal
-            >
-              {section.title}
-            </h2>
-            <div className="max-w-3xl" data-reveal-stagger>
+          <SectionShell
+            key={section.title}
+            id={sectionAnchors[i].id}
+            tone={i % 2 === 1 ? "muted" : "default"}
+            className={i === 0 ? "pt-0!" : ""}
+          >
+            <SectionHeader
+              eyebrow={section.title}
+              title={
+                {
+                  "Getting started": "Start a project with confidence.",
+                  "Engagement & pricing": "Models that fit your roadmap.",
+                  "Working with us": "Teams, tools, and time zones.",
+                  "Privacy & legal": "Your data and our policies.",
+                }[section.title] ?? section.title
+              }
+              lede={section.lede}
+            />
+            <div data-reveal-stagger>
               <FaqList items={section.items} />
             </div>
           </SectionShell>
         ))}
 
         <SectionShell tone="warm">
-          <div className="max-w-3xl mx-auto text-center" data-reveal>
-            <p className="text-muted-foreground leading-relaxed">
-              Still have questions? Read our{" "}
+          <div className="text-center" data-reveal>
+            <h2 className="font-serif text-2xl md:text-3xl text-(--ink) mb-4">Policies & legal</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Read our{" "}
               <Link to="/privacy" className="text-primary font-semibold hover:underline">
                 Privacy Policy
               </Link>
@@ -57,9 +98,13 @@ function FaqPage() {
               <Link to="/terms" className="text-primary font-semibold hover:underline">
                 Terms of Service
               </Link>
-              , or{" "}
+              , and{" "}
               <Link to="/cookies" className="text-primary font-semibold hover:underline">
                 Cookie Policy
+              </Link>
+              . For security practices, see our{" "}
+              <Link to="/security" className="text-primary font-semibold hover:underline">
+                Security page
               </Link>
               .
             </p>
@@ -71,6 +116,8 @@ function FaqPage() {
           lede="Send us a message — we respond within one business day."
           primaryLabel="Contact us"
           primaryTo="/contact"
+          secondaryLabel="View engagement models"
+          secondaryTo="/pricing"
         />
       </div>
     </Layout>

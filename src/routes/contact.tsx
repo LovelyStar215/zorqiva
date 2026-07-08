@@ -16,8 +16,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — Verdian IT Agency" },
       {
         name: "description",
-        content:
-          "Contact Verdian. Start a project, partnerships, careers, or general inquiries.",
+        content: "Contact Verdian. Start a project, partnerships, careers, or general inquiries.",
       },
       { property: "og:title", content: "Contact Verdian" },
       { property: "og:description", content: "Start a project with our global studio." },
@@ -66,8 +65,8 @@ const channels = [
     icon: "solar:case-round-bold",
     title: "Careers",
     desc: "Join our team in Texas, Hong Kong, or remotely.",
-    action: "View open roles",
-    href: "/careers",
+    action: "Apply on careers page",
+    href: "/careers#apply",
   },
 ];
 
@@ -94,8 +93,11 @@ function ContactPage() {
         </PageHero>
 
         {/* Contact channels */}
-        <SectionShell className="!pt-0">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid" data-reveal-stagger>
+        <SectionShell className="pt-0!">
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid"
+            data-reveal-stagger
+          >
             {channels.map((c) => (
               <div key={c.title} className="h-full min-h-0">
                 <ChannelCard
@@ -115,7 +117,7 @@ function ContactPage() {
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 xl:gap-16 items-start">
             <div data-reveal>
               <Eyebrow>Headquarters</Eyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] leading-tight tracking-[-0.02em]">
+              <h2 className="font-serif text-3xl md:text-4xl text-(--ink) leading-tight tracking-[-0.02em]">
                 Global headquarters
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
@@ -123,7 +125,7 @@ function ContactPage() {
                 available worldwide.
               </p>
 
-              <div className="mt-8 rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-soft)]">
+              <div className="mt-8 rounded-2xl overflow-hidden border border-border shadow-(--shadow-soft)">
                 <StudioVisual />
               </div>
 
@@ -137,9 +139,7 @@ function ContactPage() {
                     <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
                       {item.l}
                     </div>
-                    <div className="text-sm font-medium text-[color:var(--ink)] mt-0.5">
-                      {item.v}
-                    </div>
+                    <div className="text-sm font-medium text-(--ink) mt-0.5">{item.v}</div>
                   </div>
                 ))}
               </div>
@@ -148,7 +148,7 @@ function ContactPage() {
             <div
               id="contact-form"
               data-reveal
-              className="scroll-mt-28 rounded-[1.25rem] border border-border bg-card p-8 md:p-10 shadow-[var(--shadow-lift)] ring-1 ring-primary/5"
+              className="scroll-mt-28 rounded-4xl border border-border bg-card p-8 md:p-10 shadow-(--shadow-lift) ring-1 ring-primary/5"
             >
               <ContactForm />
             </div>
@@ -159,19 +159,24 @@ function ContactPage() {
         <SectionShell>
           <Eyebrow>Our offices</Eyebrow>
           <h2
-            className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em] mb-10"
+            className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] mb-10"
             data-reveal
           >
             Where we work.
           </h2>
-          <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl" data-reveal-stagger>
+          <div
+            className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl"
+            data-reveal-stagger
+          >
             {offices.map((o) => (
-              <PremiumCard key={o.city} className="!p-6">
-                <div className="font-serif text-2xl text-[color:var(--ink)]">{o.city}</div>
+              <PremiumCard key={o.city} className="p-6!">
+                <div className="font-serif text-2xl text-(--ink)">{o.city}</div>
                 <div className="text-xs text-accent font-semibold mt-1 uppercase tracking-wider">
                   {o.role}
                 </div>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-1">{o.address}</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-1">
+                  {o.address}
+                </p>
                 <p className="text-xs text-muted-foreground/70 mt-1">{o.country}</p>
               </PremiumCard>
             ))}
@@ -182,7 +187,7 @@ function ContactPage() {
         <SectionShell tone="muted">
           <div className="max-w-3xl mx-auto">
             <Eyebrow>Common questions</Eyebrow>
-            <h2 className="font-serif text-3xl text-[color:var(--ink)] mb-8" data-reveal>
+            <h2 className="font-serif text-3xl text-(--ink) mb-8" data-reveal>
               Before you reach out.
             </h2>
             <div className="space-y-3" data-reveal-stagger>

@@ -26,6 +26,7 @@ export function useGsapReveal() {
           y: 40,
           duration: 0.9,
           ease: "power3.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: el,
             start: "top 85%",
@@ -41,6 +42,7 @@ export function useGsapReveal() {
           duration: 0.7,
           stagger: 0.08,
           ease: "power3.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: parent,
             start: "top 80%",
@@ -48,8 +50,18 @@ export function useGsapReveal() {
           },
         });
       });
+
+      ScrollTrigger.refresh();
     }, scope);
-    return () => ctx.revert();
+
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("load", refresh);
+    requestAnimationFrame(refresh);
+
+    return () => {
+      window.removeEventListener("load", refresh);
+      ctx.revert();
+    };
   }, []);
   return scope;
 }

@@ -36,7 +36,7 @@ export function PageHero({
       <div className="absolute inset-0 premium-grid opacity-60" />
       <div className="absolute inset-0 grain" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-mesh)" }} />
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <div className="eyebrow justify-center mb-10">{eyebrow}</div>
         <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.02em] text-[color:var(--ink)]">
           {title}

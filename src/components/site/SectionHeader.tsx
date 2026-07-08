@@ -16,7 +16,7 @@ export function SectionHeader({
   const alignClass = align === "center" ? "text-center mx-auto items-center" : "";
   const titleClass = dark ? "text-background" : "text-[color:var(--ink)]";
   return (
-    <div className={`max-w-3xl mb-10 flex flex-col ${alignClass} ${className}`} data-reveal>
+    <div className={`w-full mb-10 flex flex-col ${alignClass} ${className}`} data-reveal>
       <div className={`eyebrow mb-7 ${align === "center" ? "justify-center" : ""}`}>{eyebrow}</div>
       <h2
         className={`font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] ${titleClass}`}
@@ -25,7 +25,7 @@ export function SectionHeader({
       </h2>
       {lede && (
         <p
-          className={`mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl ${align === "center" ? "mx-auto" : ""}`}
+          className={`mt-5 text-lg text-muted-foreground leading-relaxed max-w-3xl ${align === "center" ? "mx-auto" : ""}`}
         >
           {lede}
         </p>

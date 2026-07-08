@@ -1,13 +1,7 @@
 import { Icon } from "@iconify/react";
 import type { FaqItem } from "@/lib/faq-data";
 
-export function FaqList({
-  items,
-  className = "",
-}: {
-  items: FaqItem[];
-  className?: string;
-}) {
+export function FaqList({ items, className = "" }: { items: FaqItem[]; className?: string }) {
   return (
     <div className={`space-y-3 ${className}`}>
       {items.map((item) => (

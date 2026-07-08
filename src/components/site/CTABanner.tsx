@@ -6,6 +6,7 @@ export function CTABanner({
   lede,
   primaryLabel = "Start a project",
   primaryTo = "/contact",
+  primaryHash,
   secondaryLabel,
   secondaryTo = "/pricing",
 }: {
@@ -13,6 +14,7 @@ export function CTABanner({
   lede: string;
   primaryLabel?: string;
   primaryTo?: string;
+  primaryHash?: string;
   secondaryLabel?: string;
   secondaryTo?: string;
 }) {
@@ -38,6 +40,7 @@ export function CTABanner({
           <div className="flex flex-wrap gap-3 md:justify-end" data-reveal>
             <Link
               to={primaryTo}
+              hash={primaryHash}
               className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-7 py-4 text-sm font-semibold hover:opacity-90 transition shadow-[0_8px_32px_-8px_oklch(0.70_0.145_52/0.5)]"
             >
               {primaryLabel} <Icon icon="solar:arrow-right-linear" />

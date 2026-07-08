@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { useMemo, useState } from "react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
+import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { TeamVisual } from "@/components/site/Visuals";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
@@ -37,10 +38,16 @@ const departments: Array<JobDepartment | "All"> = [
 function CareersPage() {
   const scope = useGsapReveal();
   const [dept, setDept] = useState<JobDepartment | "All">("All");
+  const [selectedRoleId, setSelectedRoleId] = useState<string | undefined>();
   const filtered = useMemo(
     () => (dept === "All" ? openRoles : openRoles.filter((j) => j.department === dept)),
     [dept],
   );
+
+  const scrollToApply = (roleId?: string) => {
+    if (roleId) setSelectedRoleId(roleId);
+    document.getElementById("apply")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <Layout>
@@ -51,7 +58,7 @@ function CareersPage() {
           lede="We're engineers, designers, and delivery leads shipping software that matters for companies around the world."
         />
 
-        <SectionShell className="!pt-0">
+        <SectionShell className="pt-0!">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div data-reveal>
               <SectionHeader
@@ -77,7 +84,7 @@ function CareersPage() {
             </div>
             <div
               data-reveal
-              className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-soft)]"
+              className="rounded-3xl overflow-hidden border border-border shadow-(--shadow-soft)"
             >
               <TeamVisual />
             </div>
@@ -89,12 +96,17 @@ function CareersPage() {
             eyebrow="Benefits"
             title="Compensation and support that match the mission."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid" data-reveal-stagger>
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid"
+            data-reveal-stagger
+          >
             {benefits.map((b) => (
               <PremiumCard key={b.title}>
                 <IconBadge icon={b.icon} className="mb-4" />
-                <div className="font-serif text-xl text-[color:var(--ink)]">{b.title}</div>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{b.desc}</p>
+                <div className="font-serif text-xl text-(--ink)">{b.title}</div>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">
+                  {b.desc}
+                </p>
               </PremiumCard>
             ))}
           </div>
@@ -102,23 +114,24 @@ function CareersPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="Our values" title="How we work together." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid" data-reveal-stagger>
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid"
+            data-reveal-stagger
+          >
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
-                <IconBadge icon={v.icon} className="mb-4 !bg-accent/15 !text-accent" />
-                <div className="font-serif text-xl text-[color:var(--ink)]">{v.title}</div>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{v.desc}</p>
+                <IconBadge icon={v.icon} className="mb-4 bg-accent/15! text-accent!" />
+                <div className="font-serif text-xl text-(--ink)">{v.title}</div>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">
+                  {v.desc}
+                </p>
               </PremiumCard>
             ))}
           </div>
         </SectionShell>
 
         <SectionShell dark className="section-dark">
-          <SectionHeader
-            eyebrow="Where we work"
-            title="Two headquarters. One team."
-            dark
-          />
+          <SectionHeader eyebrow="Where we work" title="Two headquarters. One team." dark />
           <div className="grid sm:grid-cols-2 gap-5 card-grid max-w-3xl" data-reveal-stagger>
             {offices.map((o) => (
               <div
@@ -135,13 +148,10 @@ function CareersPage() {
         </SectionShell>
 
         <SectionShell id="open-roles">
-          <div
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"
-            data-reveal
-          >
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
             <div>
               <div className="eyebrow mb-7">Open roles</div>
-              <h2 className="font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-[color:var(--ink)]">
+              <h2 className="font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-(--ink)">
                 {filtered.length} positions open
               </h2>
             </div>
@@ -162,11 +172,11 @@ function CareersPage() {
               ))}
             </div>
           </div>
-          <div className="space-y-4" data-reveal-stagger>
+          <div className="space-y-4">
             {filtered.map((job) => (
               <article
                 key={job.id}
-                className="group card-premium !p-6 md:!p-8 hover:!border-primary/40 hover:shadow-[var(--shadow-soft)] transition"
+                className="group card-premium p-6! md:p-8! hover:border-primary/40! hover:shadow-(--shadow-soft) transition"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
@@ -177,7 +187,7 @@ function CareersPage() {
                       <span className="text-xs text-muted-foreground">·</span>
                       <span className="text-xs text-muted-foreground">{job.level}</span>
                     </div>
-                    <h3 className="font-serif text-2xl text-[color:var(--ink)] group-hover:text-primary transition">
+                    <h3 className="font-serif text-2xl text-(--ink) group-hover:text-primary transition">
                       {job.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mt-2 max-w-2xl leading-relaxed">
@@ -192,12 +202,13 @@ function CareersPage() {
                       </span>
                     </div>
                   </div>
-                  <Link
-                    to="/contact"
+                  <button
+                    type="button"
+                    onClick={() => scrollToApply(job.id)}
                     className="shrink-0 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
                   >
                     Apply <Icon icon="solar:arrow-right-linear" />
-                  </Link>
+                  </button>
                 </div>
               </article>
             ))}
@@ -213,10 +224,59 @@ function CareersPage() {
           </p>
         </SectionShell>
 
+        <SectionShell id="apply" tone="muted" className="scroll-mt-28">
+          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 xl:gap-16 items-start">
+            <div>
+              <SectionHeader
+                eyebrow="Apply"
+                title="Tell us about yourself."
+                lede="Whether you're applying for a specific role or exploring opportunities, we'd love to hear from you. Share your background, links, and what kind of work excites you."
+              />
+              <div className="mt-8 space-y-4">
+                {[
+                  {
+                    icon: "solar:clock-circle-bold",
+                    title: "Response time",
+                    desc: "Our talent team replies within five business days.",
+                  },
+                  {
+                    icon: "solar:users-group-rounded-bold",
+                    title: "Interview process",
+                    desc: "Intro call, skills conversation, and team meet — typically two weeks.",
+                  },
+                  {
+                    icon: "solar:global-bold",
+                    title: "Locations",
+                    desc: "Texas, Hong Kong, and remote roles across the US.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-4 rounded-xl border border-border bg-card p-4"
+                  >
+                    <Icon icon={item.icon} className="text-primary text-xl shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-sm font-semibold text-(--ink)">{item.title}</div>
+                      <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-4xl border border-border bg-card p-8 md:p-10 shadow-(--shadow-lift) ring-1 ring-primary/5">
+              <JobApplicationForm selectedRoleId={selectedRoleId} />
+            </div>
+          </div>
+        </SectionShell>
+
         <CTABanner
           title="Ready to join the studio?"
           lede="Tell us about your experience and what kind of work excites you."
-          primaryLabel="Get in touch"
+          primaryLabel="Submit application"
+          primaryTo="/careers"
+          primaryHash="apply"
           secondaryLabel="About Verdian"
           secondaryTo="/about"
         />
