@@ -17,6 +17,7 @@ export function useGsapReveal() {
   useEffect(() => {
     ensure();
     if (!scope.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = gsap.context(() => {
       const els = gsap.utils.toArray<HTMLElement>("[data-reveal]");
       els.forEach((el) => {
