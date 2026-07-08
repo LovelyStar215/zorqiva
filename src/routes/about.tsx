@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { StudioVisual, TeamVisual } from "@/components/site/Visuals";
@@ -71,10 +70,9 @@ const timeline = [
 ];
 
 function AboutPage() {
-  const scope = useGsapReveal();
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="About"
           title="Built for craft. Trusted worldwide."
@@ -83,13 +81,10 @@ function AboutPage() {
 
         <SectionShell className="!pt-0">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div
-              className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-lift)]"
-              data-reveal
-            >
+            <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-lift)]">
               <StudioVisual />
             </div>
-            <div data-reveal>
+            <div>
               <SectionHeader
                 eyebrow="Our studio"
                 title="A global team, one standard."
@@ -115,7 +110,7 @@ function AboutPage() {
 
         <SectionShell tone="warm">
           <SectionHeader eyebrow="Our story" title="From boutique shop to global agency." />
-          <div className="relative max-w-3xl" data-reveal-stagger>
+          <div className="relative max-w-3xl">
             <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" aria-hidden />
             <div className="space-y-8">
               {timeline.map((t) => (
@@ -136,7 +131,7 @@ function AboutPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="What we believe" title="Principles behind every project." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid">
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
                 <IconBadge icon={v.icon} className="mb-4" />
@@ -149,7 +144,7 @@ function AboutPage() {
 
         <SectionShell tone="muted">
           <SectionHeader eyebrow="Leadership" title="The team behind the work." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid">
             {leadership.map((l) => (
               <PremiumCard key={l.name} className="!p-6">
                 <div className="w-14 h-14 rounded-full bg-primary/15 text-primary grid place-items-center font-serif text-xl mb-4">
@@ -168,7 +163,7 @@ function AboutPage() {
 
         <SectionShell>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div data-reveal>
+            <div>
               <SectionHeader
                 eyebrow="The team"
                 title="Builders who care about craft."
@@ -181,10 +176,7 @@ function AboutPage() {
                 View open roles <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div
-              className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-soft)]"
-              data-reveal
-            >
+            <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-soft)]">
               <TeamVisual />
             </div>
           </div>

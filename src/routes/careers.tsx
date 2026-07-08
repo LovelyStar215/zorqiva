@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { useMemo, useState } from "react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { SectionHeader } from "@/components/site/SectionHeader";
@@ -36,7 +35,6 @@ const departments: Array<JobDepartment | "All"> = [
 ];
 
 function CareersPage() {
-  const scope = useGsapReveal();
   const [dept, setDept] = useState<JobDepartment | "All">("All");
   const [selectedRoleId, setSelectedRoleId] = useState<string | undefined>();
   const filtered = useMemo(
@@ -51,7 +49,7 @@ function CareersPage() {
 
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="Careers"
           title="Build remarkable things for remarkable clients."
@@ -60,7 +58,7 @@ function CareersPage() {
 
         <SectionShell className="pt-0!">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div data-reveal>
+            <div>
               <SectionHeader
                 eyebrow="Life at Verdian"
                 title="Small studio. Big impact."
@@ -82,10 +80,7 @@ function CareersPage() {
                 ))}
               </div>
             </div>
-            <div
-              data-reveal
-              className="rounded-3xl overflow-hidden border border-border shadow-(--shadow-soft)"
-            >
+            <div className="rounded-3xl overflow-hidden border border-border shadow-(--shadow-soft)">
               <TeamVisual />
             </div>
           </div>
@@ -96,10 +91,7 @@ function CareersPage() {
             eyebrow="Benefits"
             title="Compensation and support that match the mission."
           />
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid"
-            data-reveal-stagger
-          >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid">
             {benefits.map((b) => (
               <PremiumCard key={b.title}>
                 <IconBadge icon={b.icon} className="mb-4" />
@@ -114,10 +106,7 @@ function CareersPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="Our values" title="How we work together." />
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid"
-            data-reveal-stagger
-          >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid">
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
                 <IconBadge icon={v.icon} className="mb-4 bg-accent/15! text-accent!" />
@@ -132,7 +121,7 @@ function CareersPage() {
 
         <SectionShell dark className="section-dark">
           <SectionHeader eyebrow="Where we work" title="Two headquarters. One team." dark />
-          <div className="grid sm:grid-cols-2 gap-5 card-grid max-w-3xl" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 gap-5 card-grid max-w-3xl">
             {offices.map((o) => (
               <div
                 key={o.city}
@@ -213,7 +202,7 @@ function CareersPage() {
               </article>
             ))}
           </div>
-          <p className="mt-10 text-center text-muted-foreground" data-reveal>
+          <p className="mt-10 text-center text-muted-foreground">
             Don't see a fit?{" "}
             <a
               href="mailto:careers@verdian.io"

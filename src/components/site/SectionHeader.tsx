@@ -16,7 +16,7 @@ export function SectionHeader({
   const alignClass = align === "center" ? "text-center mx-auto items-center" : "";
   const titleClass = dark ? "text-background" : "text-[color:var(--ink)]";
   return (
-    <div className={`w-full mb-10 flex flex-col ${alignClass} ${className}`} data-reveal>
+    <div className={`w-full mb-10 flex flex-col ${alignClass} ${className}`}>
       <div className={`eyebrow mb-7 ${align === "center" ? "justify-center" : ""}`}>{eyebrow}</div>
       <h2
         className={`font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] ${titleClass}`}

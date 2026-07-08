@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { FaqList } from "@/components/site/FaqList";
 import { SectionHeader } from "@/components/site/SectionHeader";
@@ -32,11 +31,9 @@ const sectionAnchors = faqSections.map((s) => ({
 }));
 
 function FaqPage() {
-  const scope = useGsapReveal();
-
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="FAQ"
           title="Answers before you reach out."
@@ -44,11 +41,7 @@ function FaqPage() {
         />
 
         <SectionShell className="pt-0!">
-          <nav
-            className="flex flex-wrap justify-center gap-2"
-            aria-label="FAQ sections"
-            data-reveal
-          >
+          <nav className="flex flex-wrap justify-center gap-2" aria-label="FAQ sections">
             {sectionAnchors.map((s) => (
               <a
                 key={s.id}
@@ -80,14 +73,14 @@ function FaqPage() {
               }
               lede={section.lede}
             />
-            <div data-reveal-stagger>
+            <div>
               <FaqList items={section.items} />
             </div>
           </SectionShell>
         ))}
 
         <SectionShell tone="warm">
-          <div className="text-center" data-reveal>
+          <div className="text-center">
             <h2 className="font-serif text-2xl md:text-3xl text-(--ink) mb-4">Policies & legal</h2>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Read our{" "}

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import {
@@ -32,10 +31,9 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
-  const scope = useGsapReveal();
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="Our Services"
           title="Everything you need to build, ship, and scale."
@@ -43,7 +41,7 @@ function ServicesPage() {
         />
 
         <SectionShell className="!pt-0">
-          <div data-reveal>
+          <div>
             <PlatformExplorer />
           </div>
         </SectionShell>
@@ -54,7 +52,7 @@ function ServicesPage() {
             title="Senior talent across every discipline."
             lede="Cross-functional squads with engineers, designers, and delivery leads — no handoff gaps."
           />
-          <div data-reveal-stagger>
+          <div>
             <AdvancedCapabilities />
           </div>
         </SectionShell>
@@ -65,14 +63,14 @@ function ServicesPage() {
             title="Agency quality. Partner accountability."
             lede="The difference between patching freelancers together and working with a dedicated studio."
           />
-          <div data-reveal>
+          <div>
             <EnterpriseMatrix />
           </div>
         </SectionShell>
 
         <SectionShell id="process" className="scroll-mt-28" tone="muted">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div data-reveal>
+            <div>
               <Eyebrow>How we build</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em]">
                 Modern stack. Production standards.
@@ -88,7 +86,7 @@ function ServicesPage() {
                 Discuss your project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div data-reveal>
+            <div>
               <CodePreview />
             </div>
           </div>

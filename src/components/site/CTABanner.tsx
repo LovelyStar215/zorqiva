@@ -29,7 +29,7 @@ export function CTABanner({
         <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-accent/25 blur-3xl" />
         <div className="absolute -bottom-32 -left-16 w-64 h-64 rounded-full bg-primary-foreground/5 blur-3xl" />
         <div className="relative z-10 grid md:grid-cols-[1.35fr_1fr] gap-10 items-center">
-          <div data-reveal>
+          <div>
             <h3 className="font-serif text-4xl md:text-5xl leading-[1.05] tracking-[-0.02em] text-primary-foreground">
               {title}
             </h3>
@@ -37,7 +37,7 @@ export function CTABanner({
               {lede}
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 md:justify-end" data-reveal>
+          <div className="flex flex-wrap gap-3 md:justify-end">
             <Link
               to={primaryTo}
               hash={primaryHash}

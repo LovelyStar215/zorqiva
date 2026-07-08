@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { ChannelCard } from "@/components/site/ChannelCard";
 import { Eyebrow, PremiumCard } from "@/components/site/primitives";
@@ -71,11 +70,9 @@ const channels = [
 ];
 
 function ContactPage() {
-  const scope = useGsapReveal();
-
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="Contact"
           title="Let's talk about your project."
@@ -94,10 +91,7 @@ function ContactPage() {
 
         {/* Contact channels */}
         <SectionShell className="pt-0!">
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid"
-            data-reveal-stagger
-          >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid">
             {channels.map((c) => (
               <div key={c.title} className="h-full min-h-0">
                 <ChannelCard
@@ -115,7 +109,7 @@ function ContactPage() {
         {/* Form + HQ */}
         <SectionShell tone="muted">
           <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 xl:gap-16 items-start">
-            <div data-reveal>
+            <div>
               <Eyebrow>Headquarters</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-(--ink) leading-tight tracking-[-0.02em]">
                 Global headquarters
@@ -147,7 +141,6 @@ function ContactPage() {
 
             <div
               id="contact-form"
-              data-reveal
               className="scroll-mt-28 rounded-4xl border border-border bg-card p-8 md:p-10 shadow-(--shadow-lift) ring-1 ring-primary/5"
             >
               <ContactForm />
@@ -158,16 +151,10 @@ function ContactPage() {
         {/* Global offices */}
         <SectionShell>
           <Eyebrow>Our offices</Eyebrow>
-          <h2
-            className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] mb-10"
-            data-reveal
-          >
+          <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] mb-10">
             Where we work.
           </h2>
-          <div
-            className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl"
-            data-reveal-stagger
-          >
+          <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl">
             {offices.map((o) => (
               <PremiumCard key={o.city} className="p-6!">
                 <div className="font-serif text-2xl text-(--ink)">{o.city}</div>
@@ -187,13 +174,11 @@ function ContactPage() {
         <SectionShell tone="muted">
           <div className="max-w-3xl mx-auto">
             <Eyebrow>Common questions</Eyebrow>
-            <h2 className="font-serif text-3xl text-(--ink) mb-8" data-reveal>
-              Before you reach out.
-            </h2>
-            <div className="space-y-3" data-reveal-stagger>
+            <h2 className="font-serif text-3xl text-(--ink) mb-8">Before you reach out.</h2>
+            <div className="space-y-3">
               <FaqList items={contactFaqs} />
             </div>
-            <p className="mt-8 text-center text-sm text-muted-foreground" data-reveal>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
               More answers on our{" "}
               <Link to="/faq" className="text-primary font-semibold hover:underline">
                 FAQ page

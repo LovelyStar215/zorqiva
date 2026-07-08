@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { PricingMatrix } from "@/components/site/IndustryExplorer";
 import { FaqList } from "@/components/site/FaqList";
@@ -79,22 +78,21 @@ const plans = [
 ];
 
 function PricingPage() {
-  const scope = useGsapReveal();
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="Engagement"
           title="Flexible models. Clear expectations."
           lede="Whether you need a focused MVP build, ongoing development, or a dedicated squad — we structure engagements around outcomes, not hours billed."
         />
 
-        <SectionShell className="!pt-0">
-          <div className="grid md:grid-cols-3 gap-5 items-stretch" data-reveal>
+        <SectionShell className="pt-0!">
+          <div className="grid md:grid-cols-3 gap-5 items-stretch">
             {plans.map((p) => (
               <div
                 key={p.name}
-                className={`h-full rounded-[1.25rem] p-8 flex flex-col ${
+                className={`h-full rounded-4xl p-8 flex flex-col ${
                   p.highlight
                     ? "pricing-card pricing-card--featured ring-1 ring-accent/25"
                     : "pricing-card"
@@ -143,14 +141,14 @@ function PricingPage() {
 
         <SectionShell tone="muted">
           <SectionHeader eyebrow="Compare models" title="What's included." align="center" />
-          <div data-reveal>
+          <div>
             <PricingMatrix />
           </div>
         </SectionShell>
 
         <SectionShell>
           <SectionHeader eyebrow="FAQ" title="Common questions." />
-          <div className="max-w-3xl" data-reveal-stagger>
+          <div className="max-w-3xl">
             <FaqList items={pricingFaqs} />
           </div>
         </SectionShell>

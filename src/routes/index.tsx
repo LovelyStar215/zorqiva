@@ -1,10 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Layout, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
@@ -42,44 +38,10 @@ const metrics = [
 ];
 
 function Home() {
-  const scope = useGsapReveal();
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".metric-num").forEach((el) => {
-        const raw = el.dataset.value || "0";
-        const numeric = parseFloat(raw.replace(/[^0-9.]/g, ""));
-        if (!isFinite(numeric) || /[<>]/.test(raw)) return;
-        const suffix = raw.replace(/[0-9.,]/g, "");
-        const prefix = raw.match(/^\D+/)?.[0] ?? "";
-        const obj = { n: 0 };
-        gsap.to(obj, {
-          n: numeric,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 85%" },
-          onUpdate: () => {
-            const val = numeric >= 100 ? Math.round(obj.n).toLocaleString() : obj.n.toFixed(2);
-            el.textContent = `${prefix}${val}${suffix.replace(/^[^%KMBk+<>]/, "")}`;
-          },
-          onComplete: () => {
-            el.textContent = raw;
-          },
-        });
-      });
-    }, scope);
-    return () => ctx.revert();
-  }, [scope]);
-
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <section
-          ref={heroRef}
           className="relative overflow-hidden page-hero page-hero--clean hero-viewport"
           style={{ background: "var(--gradient-hero)" }}
         >
@@ -124,7 +86,7 @@ function Home() {
         </section>
 
         <SectionShell className="pt-0!">
-          <div className="text-center mb-10" data-reveal>
+          <div className="text-center mb-10">
             <Eyebrow className="justify-center">What we do</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em]">
               Four disciplines. One accountable team.
@@ -133,7 +95,7 @@ function Home() {
               Development, cloud, design, and AI — explore our service areas and see how we deliver.
             </p>
           </div>
-          <div data-reveal>
+          <div>
             <PlatformExplorer />
           </div>
         </SectionShell>
@@ -142,16 +104,10 @@ function Home() {
 
         <section className="relative overflow-hidden section-dark-flat section-shell">
           <div className="absolute inset-0 premium-grid opacity-[0.06] pointer-events-none" />
-          <div
-            className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center card-grid"
-            data-reveal-stagger
-          >
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center card-grid">
             {metrics.map((m) => (
               <div key={m.l} className="text-center h-full">
-                <div
-                  className="metric-num font-serif text-4xl lg:text-5xl text-gradient-gold tracking-tight"
-                  data-value={m.v}
-                >
+                <div className="font-serif text-4xl lg:text-5xl text-gradient-gold tracking-tight">
                   {m.v}
                 </div>
                 <div className="text-[10px] mt-2 text-background/40 uppercase tracking-[0.2em] font-medium">
@@ -169,10 +125,10 @@ function Home() {
             lede="Side-by-side comparison of in-house hiring and DIY vs. working with a dedicated agency squad."
           />
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-6 items-stretch">
-            <div data-reveal className="h-full min-h-0">
+            <div className="h-full min-h-0">
               <EnterpriseMatrix />
             </div>
-            <div data-reveal className="h-full min-h-0">
+            <div className="h-full min-h-0">
               <LiveActivityFeed />
             </div>
           </div>
@@ -189,7 +145,7 @@ function Home() {
 
         <SectionShell>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div data-reveal>
+            <div>
               <Eyebrow>How we build</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] leading-tight">
                 Modern stack. Battle-tested process.
@@ -217,7 +173,7 @@ function Home() {
                 Explore our services <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div data-reveal>
+            <div>
               <CodePreview />
             </div>
           </div>
@@ -229,7 +185,7 @@ function Home() {
             title="Results that speak for themselves."
             align="center"
           />
-          <div className="grid md:grid-cols-3 gap-5 items-stretch card-grid" data-reveal-stagger>
+          <div className="grid md:grid-cols-3 gap-5 items-stretch card-grid">
             {caseStudies.map((c, i) => (
               <div key={c.company} className="h-full min-h-0">
                 <div

@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
-import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { IndustryExplorer } from "@/components/site/IndustryExplorer";
@@ -66,10 +65,9 @@ const roles = [
 ];
 
 function SolutionsPage() {
-  const scope = useGsapReveal();
   return (
     <Layout>
-      <div ref={scope}>
+      <div>
         <PageHero
           eyebrow="Industries"
           title="Deep expertise across sectors."
@@ -82,14 +80,14 @@ function SolutionsPage() {
             title="Select your sector. See what we deliver."
             lede="Every industry has unique requirements — we bring domain experience and technical depth to each engagement."
           />
-          <div data-reveal>
+          <div>
             <IndustryExplorer />
           </div>
         </SectionShell>
 
         <SectionShell tone="subtle">
           <SectionHeader eyebrow="By stakeholder" title="Built for every decision-maker." />
-          <div className="grid sm:grid-cols-2 gap-4 card-grid" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 gap-4 card-grid">
             {roles.map((r) => (
               <PremiumCard key={r.t}>
                 <IconBadge icon={r.i} className="mb-4" />
