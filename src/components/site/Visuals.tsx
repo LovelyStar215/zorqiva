@@ -48,13 +48,13 @@ export function HeroVisual({ className = "" }: VisualProps) {
     >
       <div className="absolute inset-0 premium-grid opacity-40" />
       <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-[radial-gradient(circle,oklch(0.70_0.145_52/0.15),transparent_65%)]" />
-      <AppChrome title="Executive Overview">
+      <AppChrome title="Project Dashboard">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 mb-3">
           {[
-            { l: "Net Revenue", v: "$18.4M", d: "+24.8%" },
-            { l: "Pipeline", v: "$42.1M", d: "+12.3%" },
-            { l: "Cash", v: "$8.2M", d: "94d runway" },
-            { l: "Close", v: "4 days", d: "vs 19 prior" },
+            { l: "Sprint velocity", v: "42 pts", d: "+18% vs last" },
+            { l: "Deploy frequency", v: "Daily", d: "12 min builds" },
+            { l: "Test coverage", v: "94%", d: "+6% this month" },
+            { l: "Uptime", v: "99.9%", d: "30-day avg" },
           ].map((m) => (
             <div key={m.l} className="rounded-xl border border-white/8 bg-white/4 p-3">
               <div className="text-[9px] uppercase tracking-wider text-white/35">{m.l}</div>
@@ -66,7 +66,7 @@ export function HeroVisual({ className = "" }: VisualProps) {
         <div className="grid grid-cols-5 gap-2.5 h-[140px]">
           <div className="col-span-3 rounded-xl border border-white/8 bg-white/4 p-3 flex flex-col">
             <div className="text-[9px] uppercase tracking-wider text-white/35 mb-2">
-              Revenue vs Plan
+              Sprint burndown
             </div>
             <div className="flex-1 flex items-end gap-1">
               {[35, 48, 42, 58, 52, 72, 65, 78, 70, 88, 82, 95].map((h, i) => (
@@ -80,10 +80,10 @@ export function HeroVisual({ className = "" }: VisualProps) {
           </div>
           <div className="col-span-2 rounded-xl border border-accent/20 bg-accent/5 p-3">
             <div className="flex items-center gap-1.5 text-accent text-[9px] uppercase tracking-wider font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> Verdian AI
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> CI/CD
             </div>
             <p className="text-[10px] leading-relaxed text-white/70 mt-2">
-              3 renewals at risk. Draft outreach and revised forecasts ready for review.
+              Build #847 passed. Staging deploy ready — 3 features awaiting client review.
             </p>
             <div className="mt-3 flex gap-1.5">
               <span className="rounded-md bg-accent/20 text-accent px-2 py-1 text-[9px]">
@@ -101,13 +101,13 @@ export function HeroVisual({ className = "" }: VisualProps) {
 export function DashboardVisual({ className = "" }: VisualProps) {
   return (
     <div className={`relative overflow-hidden bg-[oklch(0.12_0.03_160)] ${className}`}>
-      <AppChrome title="Finance & Operations">
+      <AppChrome title="Client Project — Halcyon">
         <div className="grid grid-cols-3 gap-2.5 mb-3">
-          {["GL Balance", "Open AR", "Inventory"].map((l, i) => (
+          {["Tasks done", "In review", "Deployed"].map((l, i) => (
             <div key={l} className="rounded-xl border border-white/8 bg-white/4 p-3">
               <div className="text-[9px] uppercase tracking-wider text-white/35">{l}</div>
               <div className="font-serif text-base text-white/90 mt-1">
-                {["$124.8M", "$6.2M", "98.2%"][i]}
+                {["24/28", "3", "v2.4"][i]}
               </div>
             </div>
           ))}
@@ -115,15 +115,15 @@ export function DashboardVisual({ className = "" }: VisualProps) {
         <div className="rounded-xl border border-white/8 bg-white/4 p-3">
           <div className="flex justify-between items-center mb-3">
             <span className="text-[9px] uppercase tracking-wider text-white/35">
-              Multi-entity consolidation
+              Active environments
             </span>
             <span className="text-[9px] text-accent">Live</span>
           </div>
           <div className="space-y-2">
             {[
-              { e: "Verdian US Inc.", v: "$89.2M", s: "Closed" },
-              { e: "Verdian UK Ltd.", v: "£12.4M", s: "Closed" },
-              { e: "Verdian SG Pte.", v: "S$8.1M", s: "In review" },
+              { e: "Production", v: "v2.4.1", s: "Live" },
+              { e: "Staging", v: "v2.5-rc", s: "Testing" },
+              { e: "Development", v: "feature/auth", s: "Active" },
             ].map((row) => (
               <div
                 key={row.e}
@@ -133,7 +133,7 @@ export function DashboardVisual({ className = "" }: VisualProps) {
                 <div className="flex items-center gap-3">
                   <span className="text-white/90 font-medium">{row.v}</span>
                   <span
-                    className={`text-[9px] px-1.5 py-0.5 rounded ${row.s === "Closed" ? "bg-emerald-500/15 text-emerald-400" : "bg-amber-500/15 text-amber-400"}`}
+                    className={`text-[9px] px-1.5 py-0.5 rounded ${row.s === "Live" ? "bg-emerald-500/15 text-emerald-400" : "bg-amber-500/15 text-amber-400"}`}
                   >
                     {row.s}
                   </span>
@@ -173,13 +173,13 @@ export function TeamVisual({ className = "" }: VisualProps) {
         ))}
       </div>
       <div className="absolute top-6 left-6 glass rounded-full px-4 py-2 text-xs font-semibold text-[color:var(--ink)]">
-        Austin HQ · 180+ builders
+        Global team · 85+ builders
       </div>
     </div>
   );
 }
 
-export function AustinVisual({ className = "" }: VisualProps) {
+export function StudioVisual({ className = "" }: VisualProps) {
   return (
     <div
       className={`relative aspect-[16/9] overflow-hidden ${className}`}
@@ -200,9 +200,12 @@ export function AustinVisual({ className = "" }: VisualProps) {
         ))}
       </div>
       <div className="absolute bottom-6 left-6">
-        <div className="font-serif text-2xl text-white">Austin, Texas</div>
-        <div className="text-sm text-white/50 mt-1">500 W 2nd Street · Global HQ</div>
+        <div className="font-serif text-2xl text-white">Global headquarters</div>
+        <div className="text-sm text-white/50 mt-1">Texas · Hong Kong</div>
       </div>
     </div>
   );
 }
+
+/** @deprecated Use StudioVisual */
+export const AustinVisual = StudioVisual;

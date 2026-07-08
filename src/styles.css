@@ -96,7 +96,7 @@
   --font-serif: "Fraunces", "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --header-stack: 5.75rem;
-  --hero-breathe: clamp(5.5rem, 10vw, 9rem);
+  --hero-breathe: clamp(8rem, 12vw, 11rem);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -268,31 +268,36 @@
   }
 
   .pricing-cta {
-    display: flex;
+    display: inline-flex;
     width: 100%;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     border-radius: 9999px;
-    padding: 0.875rem 1.5rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    flex-shrink: 0;
     transition:
       opacity 0.2s,
       border-color 0.2s,
       background 0.2s,
-      color 0.2s;
+      color 0.2s,
+      box-shadow 0.2s;
   }
 
   .pricing-cta--outline {
-    border: 1px solid var(--border);
+    border: 1.5px solid oklch(0.3 0.095 155 / 0.28);
     background: var(--background);
-    color: var(--ink);
+    color: var(--primary);
   }
 
   .pricing-cta--outline:hover {
-    border-color: oklch(0.3 0.095 155 / 0.4);
-    color: var(--primary);
+    border-color: oklch(0.3 0.095 155 / 0.5);
+    background: oklch(0.3 0.095 155 / 0.05);
   }
 
   .pricing-cta--solid {
@@ -304,17 +309,19 @@
 
   .pricing-cta--solid:hover {
     opacity: 0.92;
+    box-shadow: var(--shadow-lift);
   }
 
   .pricing-cta--accent {
     border: 1px solid transparent;
     background: var(--accent);
-    color: var(--accent-foreground);
+    color: oklch(0.13 0.025 160);
     box-shadow: var(--shadow-soft);
   }
 
   .pricing-cta--accent:hover {
-    opacity: 0.92;
+    opacity: 0.94;
+    box-shadow: var(--shadow-lift);
   }
 
   .glow-frame {
@@ -405,7 +412,48 @@
   }
 
   .section-shell {
-    padding-block: clamp(4rem, 8vw, 8rem);
+    padding-block: clamp(3rem, 5vw, 5.5rem);
+  }
+
+  .page-hero.section-shell {
+    padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .page-hero--clean::after {
+    display: none;
+  }
+
+  /* Flat section backgrounds — no gradient seams */
+  .section-dark {
+    background: var(--ink);
+    color: oklch(0.98 0.01 85);
+  }
+
+  .section-dark .eyebrow {
+    color: var(--accent);
+  }
+
+  .section-dark h2,
+  .section-dark h3 {
+    color: oklch(0.98 0.01 85);
+  }
+
+  .logo-marquee-band {
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .card-grid {
+    align-items: stretch;
+  }
+
+  .card-grid > * {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .card-grid .card-premium:hover {
+    transform: none;
   }
 
   /* Fade hero gradients into page background — prevents 1px seams between sections */
@@ -414,7 +462,7 @@
     position: absolute;
     inset-inline: 0;
     bottom: -1px;
-    height: 6rem;
+    height: 3rem;
     background: linear-gradient(to bottom, transparent, var(--background));
     pointer-events: none;
     z-index: 2;
@@ -423,6 +471,34 @@
   /* Clearance for fixed nav on pages without a full-bleed hero */
   .nav-clearance {
     padding-top: var(--header-stack);
+  }
+
+  /* Full-viewport homepage hero */
+  .hero-viewport {
+    margin-top: calc(-1 * var(--header-stack));
+    min-height: calc(100vh + var(--header-stack));
+    min-height: calc(100dvh + var(--header-stack));
+    height: calc(100vh + var(--header-stack));
+    height: calc(100dvh + var(--header-stack));
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--header-stack);
+  }
+
+  .hero-viewport__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+    text-align: center;
+    min-height: 0;
   }
 
   /* Extend hero behind nav; add breathing room before hero content */
@@ -462,70 +538,20 @@
   }
 
   .section-tone-subtle {
-    background: linear-gradient(
-      180deg,
-      var(--background) 0%,
-      oklch(0.972 0.014 85) 14%,
-      oklch(0.972 0.014 85) 86%,
-      var(--background) 100%
-    );
+    background: oklch(0.972 0.014 85);
   }
 
   .section-tone-muted {
-    background: linear-gradient(
-      180deg,
-      var(--background) 0%,
-      oklch(0.978 0.011 85) 12%,
-      oklch(0.978 0.011 85) 88%,
-      var(--background) 100%
-    );
+    background: oklch(0.978 0.011 85);
   }
 
   .section-tone-warm {
-    background: linear-gradient(
-      180deg,
-      var(--background) 0%,
-      oklch(0.968 0.016 85) 14%,
-      oklch(0.968 0.016 85) 86%,
-      var(--background) 100%
-    );
+    background: oklch(0.968 0.016 85);
   }
 
-  .section-band-dark {
-    background: linear-gradient(
-      180deg,
-      var(--background) 0%,
-      var(--ink) 10%,
-      var(--ink) 90%,
-      var(--background) 100%
-    );
-    color: oklch(0.98 0.01 85);
-  }
-
-  .section-band-dark-flat {
-    background: linear-gradient(180deg, var(--ink) 0%, var(--ink) 82%, var(--background) 100%);
-    color: oklch(0.98 0.01 85);
-  }
-
-  .logo-marquee-band {
-    position: relative;
+  .section-dark-flat {
     background: var(--ink);
-    overflow: hidden;
-  }
-
-  .logo-marquee-band::before {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    top: -1px;
-    height: 3rem;
-    background: linear-gradient(to bottom, var(--background), transparent);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .footer-fade {
-    background: linear-gradient(180deg, var(--background) 0%, oklch(0.975 0.01 85) 100%);
+    color: oklch(0.98 0.01 85);
   }
 
   .marquee-track {

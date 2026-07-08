@@ -4,18 +4,21 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { PricingMatrix } from "@/components/site/IndustryExplorer";
+import { FaqList } from "@/components/site/FaqList";
+import { pricingFaqs } from "@/lib/faq-data";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Verdian" },
+      { title: "Engagement Models — Verdian" },
       {
         name: "description",
-        content: "Simple, transparent pricing for teams from seed to enterprise.",
+        content:
+          "Flexible engagement models — project-based, monthly retainer, or dedicated squad.",
       },
-      { property: "og:title", content: "Pricing — Verdian" },
-      { property: "og:description", content: "Three plans. Transparent economics." },
+      { property: "og:title", content: "Engagement — Verdian" },
+      { property: "og:description", content: "Three ways to work with our agency." },
     ],
   }),
   component: PricingPage,
@@ -23,75 +26,56 @@ export const Route = createFileRoute("/pricing")({
 
 const plans = [
   {
-    name: "Starter",
-    price: "$59",
-    unit: "per seat / month",
-    tag: "Teams up to 25",
+    name: "Project",
+    price: "From $25K",
+    unit: "fixed scope",
+    tag: "MVP & one-off builds",
     features: [
-      "Revenue CRM & GL",
-      "AR, AP, Billing",
-      "50 workflows",
-      "Standard support",
-      "Community access",
-      "Basic AI assistants",
+      "Discovery & scoping",
+      "UI/UX design",
+      "Full-stack development",
+      "QA & launch support",
+      "30-day post-launch warranty",
+      "Documentation handoff",
     ],
-    cta: "Start free trial",
+    cta: "Get a quote",
     highlight: false,
     ctaVariant: "solid" as const,
   },
   {
-    name: "Growth",
-    price: "$149",
-    unit: "per seat / month",
+    name: "Retainer",
+    price: "From $12K",
+    unit: "per month",
     tag: "Most popular",
     features: [
-      "Everything in Starter",
-      "Inventory & Projects",
-      "Verdian AI Copilots",
-      "Unlimited workflows",
+      "Everything in Project",
+      "Ongoing feature development",
+      "Cloud & DevOps included",
+      "Monthly strategy sessions",
       "Priority support",
-      "SOC 2 pack",
+      "Flexible scope each sprint",
     ],
-    cta: "Book a demo",
+    cta: "Talk to us",
     highlight: true,
     ctaVariant: "accent" as const,
   },
   {
-    name: "Enterprise",
+    name: "Dedicated Squad",
     price: "Custom",
-    unit: "annual commitment",
-    tag: "Multi-entity & regulated",
+    unit: "annual engagement",
+    tag: "Enterprise & scale",
     features: [
-      "Everything in Growth",
-      "Multi-entity consolidation",
-      "Dedicated environment",
-      "HIPAA & SOX pack",
-      "Named CSM & SLAs",
-      "Custom AI agents",
+      "Everything in Retainer",
+      "Dedicated cross-functional team",
+      "Technical account manager",
+      "SLA-backed response times",
+      "AI & data engineering",
+      "On-site workshops available",
     ],
-    cta: "Contact sales",
+    cta: "Contact us",
     highlight: false,
     ctaVariant: "outline" as const,
   },
-];
-
-const faqs: Array<[string, string]> = [
-  [
-    "Is Verdian AI included?",
-    "Yes — Growth and Enterprise include the full AI suite. Starter includes summarization and draft assistants.",
-  ],
-  [
-    "Can we migrate from an existing system?",
-    "Yes. Our migration team handles chart-of-accounts, historical ledger, and pipeline data end-to-end.",
-  ],
-  [
-    "Do you support multi-entity?",
-    "Enterprise includes native consolidation across unlimited entities, currencies, and jurisdictions.",
-  ],
-  [
-    "Where is our data stored?",
-    "US, EU, and APAC regions with encryption at rest and in transit. SOC 2 Type II, HIPAA, and ISO 27001 certified.",
-  ],
 ];
 
 function PricingPage() {
@@ -100,9 +84,9 @@ function PricingPage() {
     <Layout>
       <div ref={scope}>
         <PageHero
-          eyebrow="Pricing"
-          title="Simple economics. Enterprise power."
-          lede="Pay for seats, not modules. Every plan includes CRM, ERP, and Verdian AI — the platform only works when it's whole."
+          eyebrow="Engagement"
+          title="Flexible models. Clear expectations."
+          lede="Whether you need a focused MVP build, ongoing development, or a dedicated squad — we structure engagements around outcomes, not hours billed."
         />
 
         <SectionShell className="!pt-0">
@@ -146,20 +130,19 @@ function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
-                  className={`pricing-cta mt-auto pt-10 pricing-cta--${p.ctaVariant}`}
-                >
-                  {p.cta}
-                  <Icon icon="solar:arrow-right-linear" className="text-base" />
-                </Link>
+                <div className="mt-auto pt-8">
+                  <Link to="/contact" className={`pricing-cta pricing-cta--${p.ctaVariant}`}>
+                    {p.cta}
+                    <Icon icon="solar:arrow-right-linear" className="text-[1.05rem]" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </SectionShell>
 
         <SectionShell tone="muted">
-          <SectionHeader eyebrow="Compare plans" title="Full feature breakdown." align="center" />
+          <SectionHeader eyebrow="Compare models" title="What's included." align="center" />
           <div data-reveal>
             <PricingMatrix />
           </div>
@@ -167,29 +150,15 @@ function PricingPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="FAQ" title="Common questions." />
-          <div className="max-w-3xl space-y-3" data-reveal-stagger>
-            {faqs.map(([q, a]) => (
-              <details
-                key={q}
-                className="group rounded-2xl border border-border bg-card px-6 py-5 open:shadow-[var(--shadow-soft)]"
-              >
-                <summary className="flex items-center justify-between cursor-pointer font-semibold text-[color:var(--ink)] text-[15px]">
-                  {q}
-                  <Icon
-                    icon="solar:alt-arrow-down-linear"
-                    className="text-muted-foreground group-open:rotate-180 transition-transform"
-                  />
-                </summary>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{a}</p>
-              </details>
-            ))}
+          <div className="max-w-3xl" data-reveal-stagger>
+            <FaqList items={pricingFaqs} />
           </div>
         </SectionShell>
 
         <CTABanner
-          title="Need a custom enterprise quote?"
-          lede="Talk to sales about multi-entity rollouts, dedicated environments, and volume pricing."
-          primaryLabel="Contact sales"
+          title="Not sure which model fits?"
+          lede="Book a free 30-minute discovery call — we'll recommend the right engagement for your goals and budget."
+          primaryLabel="Start a project"
         />
       </div>
     </Layout>

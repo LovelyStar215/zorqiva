@@ -82,16 +82,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Verdian — The Native CRM & ERP Platform for Modern Operators" },
+      { title: "Verdian — Premium IT Agency" },
       {
         name: "description",
         content:
-          "Verdian unifies CRM, ERP, finance, and operations in one intelligent workspace. Built in Austin, Texas for teams that refuse to compromise.",
+          "Verdian is a premium IT agency. Custom software, cloud, design, and AI for ambitious companies.",
       },
-      { property: "og:title", content: "Verdian — Native CRM & ERP" },
+      { property: "og:title", content: "Verdian — IT Agency" },
       {
         property: "og:description",
-        content: "One workspace. Every operation. Built in Austin, Texas.",
+        content: "Build. Ship. Scale. With a partner you can trust.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

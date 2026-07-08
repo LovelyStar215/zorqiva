@@ -15,7 +15,8 @@ export function ChannelCard({
   action: string;
   href: string;
 }) {
-  const className = "card-premium !p-6 group block h-full hover:!border-primary/35 transition-all";
+  const className =
+    "card-premium !p-6 group flex flex-col h-full hover:!border-primary/35 transition-all";
 
   const content = (
     <>
@@ -24,8 +25,8 @@ export function ChannelCard({
         className="mb-4 group-hover:!bg-primary group-hover:!text-primary-foreground transition-colors"
       />
       <div className="font-serif text-xl text-[color:var(--ink)]">{title}</div>
-      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{desc}</p>
-      <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
+      <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{desc}</p>
+      <div className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
         {action} <Icon icon="solar:arrow-right-linear" />
       </div>
     </>

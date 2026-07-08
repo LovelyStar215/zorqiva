@@ -1,157 +1,187 @@
 export const platformModules = [
   {
-    id: "crm",
-    label: "Revenue CRM",
-    icon: "solar:users-group-two-rounded-bold",
-    headline: "Pipeline that reconciles to the ledger.",
-    desc: "Every deal, account, and forecast writes directly to finance — no sync jobs, no drift.",
+    id: "dev",
+    label: "Custom Development",
+    icon: "solar:code-bold",
+    headline: "Web & mobile apps built for scale.",
+    desc: "Full-stack engineering from MVP to enterprise — React, Node, mobile, and APIs tailored to your roadmap.",
     metrics: [
-      { label: "Forecast accuracy", value: "94.2%" },
-      { label: "Pipeline velocity", value: "+18%" },
-      { label: "Accounts synced", value: "12,400" },
+      { label: "Projects shipped", value: "180+" },
+      { label: "Avg. sprint velocity", value: "+32%" },
+      { label: "Client NPS", value: "72" },
     ],
     rows: [
       {
-        name: "Halcyon Bio — Enterprise",
-        stage: "Negotiation",
-        value: "$840K",
-        signal: "High intent",
+        name: "Halcyon — Patient Portal",
+        stage: "In progress",
+        value: "Sprint 6",
+        signal: "On track",
       },
-      {
-        name: "Northstar — Expansion",
-        stage: "Proposal",
-        value: "$320K",
-        signal: "Champion active",
-      },
-      { name: "Meridian SaaS — New", stage: "Discovery", value: "$180K", signal: "Multi-thread" },
+      { name: "Northstar — Storefront", stage: "Shipped", value: "v2.4", signal: "Live" },
+      { name: "Meridian — Admin Dashboard", stage: "Review", value: "UAT", signal: "Sign-off" },
     ],
   },
   {
-    id: "finance",
-    label: "Finance & ERP",
-    icon: "solar:chart-square-bold",
-    headline: "Continuous close. Multi-entity native.",
-    desc: "GL, AP, AR, and consolidation on one ledger — close in days, not weeks.",
+    id: "cloud",
+    label: "Cloud & DevOps",
+    icon: "solar:cloud-bold",
+    headline: "Infrastructure that ships reliably.",
+    desc: "AWS, Azure, and GCP — CI/CD, Kubernetes, monitoring, and cost optimization from day one.",
     metrics: [
-      { label: "Close cycle", value: "4 days" },
-      { label: "Entities", value: "24" },
-      { label: "Currencies", value: "18" },
+      { label: "Deploy frequency", value: "Daily" },
+      { label: "Incidents reduced", value: "−68%" },
+      { label: "Cloud savings", value: "−24%" },
     ],
     rows: [
-      { name: "Verdian US Inc.", stage: "Closed", value: "$89.2M", signal: "SOX-ready" },
-      { name: "Verdian UK Ltd.", stage: "Closed", value: "£12.4M", signal: "Audited" },
-      { name: "Verdian SG Pte.", stage: "Review", value: "S$8.1M", signal: "Pending sign-off" },
+      {
+        name: "Meridian — K8s migration",
+        stage: "Complete",
+        value: "3 clusters",
+        signal: "Stable",
+      },
+      { name: "Northstar — CI/CD pipeline", stage: "Live", value: "12 min", signal: "Build time" },
+      { name: "Halcyon — HIPAA env", stage: "Active", value: "SOC 2", signal: "Compliant" },
+    ],
+  },
+  {
+    id: "design",
+    label: "UI/UX Design",
+    icon: "solar:palette-bold",
+    headline: "Interfaces users actually love.",
+    desc: "Research, wireframes, design systems, and pixel-perfect handoff — product design as a discipline.",
+    metrics: [
+      { label: "Design systems", value: "45+" },
+      { label: "Usability uplift", value: "+41%" },
+      { label: "Handoff time", value: "−60%" },
+    ],
+    rows: [
+      {
+        name: "Northstar — Design system",
+        stage: "Shipped",
+        value: "48 components",
+        signal: "Adopted",
+      },
+      {
+        name: "Halcyon — Mobile UX audit",
+        stage: "Complete",
+        value: "28 fixes",
+        signal: "Resolved",
+      },
+      { name: "Meridian — Prototype v3", stage: "Review", value: "Figma", signal: "Approved" },
     ],
   },
   {
     id: "ai",
-    label: "Verdian AI",
+    label: "AI & Data",
     icon: "solar:brain-bold",
-    headline: "Agents that act — not just answer.",
-    desc: "Copilots draft outreach, revise forecasts, and execute workflows with human approval.",
+    headline: "Intelligent products, responsibly built.",
+    desc: "LLM integrations, data pipelines, analytics dashboards, and ML features with guardrails built in.",
     metrics: [
-      { label: "Actions / week", value: "2,840" },
-      { label: "Time saved", value: "680 hrs" },
-      { label: "Accuracy", value: "97.1%" },
+      { label: "AI features shipped", value: "60+" },
+      { label: "Data pipelines", value: "120+" },
+      { label: "Query latency", value: "<200ms" },
     ],
     rows: [
-      { name: "Renewal risk — 3 accounts", stage: "Draft ready", value: "—", signal: "Approve" },
-      { name: "Q4 forecast revision", stage: "Complete", value: "+4.2%", signal: "View" },
-      { name: "Board narrative v3", stage: "Generated", value: "12 slides", signal: "Edit" },
-    ],
-  },
-  {
-    id: "ops",
-    label: "Inventory & Ops",
-    icon: "solar:box-bold",
-    headline: "Ops and finance in real time.",
-    desc: "Stock levels, POs, and fulfillment update the moment a transaction lands.",
-    metrics: [
-      { label: "SKU accuracy", value: "99.7%" },
-      { label: "Fill rate", value: "98.2%" },
-      { label: "Warehouses", value: "14" },
-    ],
-    rows: [
-      { name: "SKU-8842 — Widget Pro", stage: "Low stock", value: "142 units", signal: "Reorder" },
-      { name: "PO-2024-1847", stage: "In transit", value: "$48K", signal: "ETA 2d" },
-      { name: "WH-Austin — Zone B", stage: "Optimal", value: "94%", signal: "Healthy" },
+      { name: "Meridian — Doc classifier", stage: "Live", value: "97.2%", signal: "Accuracy" },
+      { name: "Halcyon — Chat assistant", stage: "Beta", value: "4.8★", signal: "User rating" },
+      {
+        name: "Northstar — Sales forecast",
+        stage: "Training",
+        value: "v1.2",
+        signal: "In progress",
+      },
     ],
   },
 ] as const;
 
 export const liveEvents = [
-  { time: "Just now", event: "Invoice #8847 reconciled to GL", module: "Finance" },
-  { time: "2m ago", event: "Deal moved to Closed Won — $840K", module: "CRM" },
-  { time: "5m ago", event: "AI agent drafted renewal outreach (3 accounts)", module: "AI" },
-  { time: "8m ago", event: "PO-2024-1847 received at WH-Austin", module: "Ops" },
-  { time: "12m ago", event: "Entity UK Ltd. close signed off", module: "Finance" },
-  { time: "18m ago", event: "Workflow: Quote-to-cash completed", module: "Workflow" },
+  { time: "Just now", event: "Halcyon portal deployed to staging", module: "Development" },
+  { time: "3m ago", event: "Northstar CI pipeline — build passed", module: "DevOps" },
+  { time: "7m ago", event: "Meridian design system — 3 new components", module: "Design" },
+  { time: "12m ago", event: "Halcyon AI assistant — 240 queries today", module: "AI & Data" },
+  { time: "18m ago", event: "Northstar infra — auto-scaled to 8 nodes", module: "DevOps" },
+  { time: "25m ago", event: "Sprint review with Meridian team", module: "Delivery" },
 ] as const;
 
 export const enterpriseMatrix = [
-  { capability: "Unified data model", legacy: "12+ sync jobs", verdian: "Native graph" },
-  { capability: "Month-end close", legacy: "15–19 days", verdian: "3–5 days" },
-  { capability: "AI copilots", legacy: "Separate add-on", verdian: "Built-in" },
-  { capability: "Multi-entity", legacy: "Manual consolidation", verdian: "Real-time" },
-  { capability: "Audit trail", legacy: "Partial logs", verdian: "Immutable" },
-  { capability: "Workflow automation", legacy: "3rd-party iPaaS", verdian: "Native studio" },
   {
-    capability: "API & extensibility",
-    legacy: "Limited REST",
-    verdian: "GraphQL + 300+ connectors",
+    capability: "Team composition",
+    legacy: "Freelancer patchwork",
+    verdian: "Senior cross-functional squad",
   },
+  { capability: "Time to start", legacy: "2–3 months hiring", verdian: "2 weeks to kickoff" },
+  {
+    capability: "Code quality",
+    legacy: "Inconsistent standards",
+    verdian: "Reviewed, tested, documented",
+  },
+  {
+    capability: "Design & dev alignment",
+    legacy: "Separate handoffs",
+    verdian: "Unified workflow",
+  },
+  {
+    capability: "Post-launch support",
+    legacy: "None or ad-hoc",
+    verdian: "Retainer & SLA options",
+  },
+  {
+    capability: "Security practices",
+    legacy: "Varies by contractor",
+    verdian: "SOC 2-aligned SDLC",
+  },
+  { capability: "Scalability", legacy: "Short-term fixes", verdian: "Architecture for growth" },
 ] as const;
 
-export const apiExample = `// Query the unified graph — one API for CRM, finance, and ops
-const { data } = await verdian.query({
-  entity: "Account",
-  include: ["deals", "invoices", "inventory"],
-  filter: { revenue: { gt: 1_000_000 } },
+export const apiExample = `// Modern stack we ship for clients every day
+import { createServerFn } from "@tanstack/react-start";
+
+export const getProjects = createServerFn().handler(async () => {
+  const projects = await db.project.findMany({
+    where: { status: "active" },
+    include: { team: true, milestones: true },
+  });
+  return projects;
 });
 
-// AI agent — approve and execute
-await verdian.ai.execute({
-  agent: "renewal-copilot",
-  action: "draft_outreach",
-  accounts: data.accounts.atRisk,
-  requireApproval: true,
-});`;
+// Deployed on AWS with CI/CD, monitoring, and auto-scaling
+// Designed, built, and maintained by Verdian`;
 
 export const advancedCapabilities = [
   {
-    icon: "solar:graph-bold",
-    title: "Unified Graph Engine",
-    desc: "Every object — Account, Invoice, SKU, Employee — lives in one relational graph with shared permissions and lineage.",
-    spec: "Sub-50ms query latency · 10B+ objects",
-  },
-  {
-    icon: "solar:bolt-bold",
-    title: "Event-Driven Core",
-    desc: "Changes propagate in milliseconds across CRM, finance, and ops. No batch jobs. No reconciliation drift.",
-    spec: "99.99% uptime · Multi-region",
-  },
-  {
     icon: "solar:code-bold",
-    title: "GraphQL & Webhooks",
-    desc: "Full programmatic access with typed SDKs, webhooks, and 300+ pre-built connectors to your existing stack.",
-    spec: "REST · GraphQL · gRPC",
+    title: "Full-Stack Engineering",
+    desc: "React, Next.js, Node, Python, and mobile — from greenfield builds to legacy modernization.",
+    spec: "TypeScript · React · Node · PostgreSQL",
   },
   {
-    icon: "solar:lock-password-bold",
-    title: "Zero-Trust Governance",
-    desc: "Field-level RBAC, SSO/SAML, SCIM, and immutable audit trails — SOC 2, HIPAA, and SOX-ready out of the box.",
-    spec: "SOC 2 Type II · ISO 27001",
+    icon: "solar:cloud-bold",
+    title: "Cloud Infrastructure",
+    desc: "AWS, Azure, and GCP with Terraform, Kubernetes, and production-grade observability.",
+    spec: "AWS Partner · Terraform · K8s",
   },
   {
-    icon: "solar:cpu-bold",
-    title: "Verdian AI Runtime",
-    desc: "Composable agents with tool access across every module. Human-in-the-loop approval on every action.",
-    spec: "40+ pre-built agents",
+    icon: "solar:palette-bold",
+    title: "Product Design",
+    desc: "User research, UX strategy, design systems, and prototyping — design that developers can ship.",
+    spec: "Figma · Design systems · A11y",
   },
   {
-    icon: "solar:server-bold",
-    title: "Dedicated Environments",
-    desc: "Single-tenant deployments for Enterprise with custom SLAs, data residency, and customer-managed keys.",
-    spec: "US · EU · APAC regions",
+    icon: "solar:brain-bold",
+    title: "AI Integration",
+    desc: "LLM-powered features, chatbots, document processing, and custom ML pipelines with responsible guardrails.",
+    spec: "OpenAI · LangChain · Vector DBs",
+  },
+  {
+    icon: "solar:shield-check-bold",
+    title: "Security & Compliance",
+    desc: "Secure SDLC, penetration testing coordination, HIPAA/SOC 2-aligned practices for regulated industries.",
+    spec: "SOC 2 · HIPAA · OWASP",
+  },
+  {
+    icon: "solar:settings-bold",
+    title: "Managed Services",
+    desc: "Ongoing maintenance, monitoring, incident response, and feature development on retainer.",
+    spec: "24/7 monitoring · SLAs",
   },
 ] as const;

@@ -3,17 +3,24 @@ export function SectionHeader({
   title,
   lede,
   align = "left",
+  dark = false,
+  className = "",
 }: {
   eyebrow: string;
   title: string;
   lede?: string;
   align?: "left" | "center";
+  dark?: boolean;
+  className?: string;
 }) {
   const alignClass = align === "center" ? "text-center mx-auto items-center" : "";
+  const titleClass = dark ? "text-background" : "text-[color:var(--ink)]";
   return (
-    <div className={`max-w-3xl mb-14 flex flex-col ${alignClass}`} data-reveal>
-      <div className={`eyebrow mb-5 ${align === "center" ? "justify-center" : ""}`}>{eyebrow}</div>
-      <h2 className="font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-[color:var(--ink)]">
+    <div className={`max-w-3xl mb-10 flex flex-col ${alignClass} ${className}`} data-reveal>
+      <div className={`eyebrow mb-7 ${align === "center" ? "justify-center" : ""}`}>{eyebrow}</div>
+      <h2
+        className={`font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] ${titleClass}`}
+      >
         {title}
       </h2>
       {lede && (

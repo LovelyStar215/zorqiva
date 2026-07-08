@@ -4,21 +4,21 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { AustinVisual, TeamVisual } from "@/components/site/Visuals";
+import { StudioVisual, TeamVisual } from "@/components/site/Visuals";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { companyValues } from "@/lib/site-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Verdian" },
+      { title: "About — Verdian IT Agency" },
       {
         name: "description",
         content:
-          "Verdian is headquartered in Austin, Texas. We build the native CRM & ERP for modern operators.",
+          "Verdian is a premium IT agency. We build custom software for ambitious companies worldwide.",
       },
       { property: "og:title", content: "About Verdian" },
-      { property: "og:description", content: "Built in Austin, Texas." },
+      { property: "og:description", content: "Global IT agency since 2012." },
     ],
   }),
   component: AboutPage,
@@ -27,46 +27,46 @@ export const Route = createFileRoute("/about")({
 const leadership = [
   {
     name: "Sarah Chen",
-    role: "CEO & Co-founder",
-    bio: "Former VP Finance at two public SaaS companies. Built Verdian after living the reconciliation nightmare.",
+    role: "CEO & Founder",
+    bio: "Former engineering director at two Fortune 500 companies. Founded Verdian to deliver agency work at product-company quality.",
   },
   {
     name: "Marcus Webb",
     role: "CTO & Co-founder",
-    bio: "Staff engineer alum from Stripe and Snowflake. Architect of Verdian's unified ledger.",
+    bio: "Staff engineer alum from Stripe and Snowflake. Leads architecture and engineering standards across all client engagements.",
   },
   {
     name: "Priya Nair",
-    role: "Chief Product Officer",
-    bio: "Led product at NetSuite and Workday. Obsessed with operator-grade UX.",
+    role: "Head of Design",
+    bio: "Led design at agencies and product companies. Obsessed with interfaces that are beautiful and ship on time.",
   },
   {
     name: "David Okonkwo",
-    role: "Chief Revenue Officer",
-    bio: "Scaled enterprise sales from $10M to $200M ARR across three category leaders.",
+    role: "Head of Delivery",
+    bio: "Scaled delivery operations across 180+ client projects. Ensures every engagement ships on scope, on time, on budget.",
   },
 ];
 
 const timeline = [
   {
-    year: "2022",
-    title: "Founded in Austin",
-    desc: "Sarah and Marcus leave their roles to build the unified CRM & ERP they wished existed.",
+    year: "2012",
+    title: "Verdian founded",
+    desc: "Sarah launches Verdian as a boutique dev shop — three engineers, one mission: build software that lasts.",
   },
   {
-    year: "2023",
-    title: "Series A & first 50 customers",
-    desc: "Launch Growth plan, ship Verdian AI, and expand to New York and London hubs.",
+    year: "2016",
+    title: "Design & cloud practices",
+    desc: "Expand into UI/UX and DevOps. Strengthen delivery from our Texas headquarters.",
+  },
+  {
+    year: "2020",
+    title: "Enterprise & regulated industries",
+    desc: "SOC 2 certification, HIPAA experience, and first Fortune 500 retainer clients.",
   },
   {
     year: "2024",
-    title: "Enterprise & multi-entity",
-    desc: "SOC 2 Type II, HIPAA pack, and native consolidation for regulated industries.",
-  },
-  {
-    year: "2025",
-    title: "1,200+ companies",
-    desc: "Singapore hub opens. Platform processes $48B in annual transaction volume.",
+    title: "180+ projects delivered",
+    desc: "Hong Kong headquarters opens. AI & data practice launches. Team grows to 85 across two global offices.",
   },
 ];
 
@@ -77,8 +77,8 @@ function AboutPage() {
       <div ref={scope}>
         <PageHero
           eyebrow="About"
-          title="Built in Austin. Made for operators."
-          lede="We're a team of engineers, designers, and former CFOs building the operating system we always wished we had."
+          title="Built for craft. Trusted worldwide."
+          lede="We're a premium IT agency — engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
         />
 
         <SectionShell className="!pt-0">
@@ -87,20 +87,19 @@ function AboutPage() {
               className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-lift)]"
               data-reveal
             >
-              <AustinVisual />
+              <StudioVisual />
             </div>
             <div data-reveal>
-              <SectionHeader eyebrow="Our home" title="500 W 2nd Street, Austin, Texas" />
-              <p className="text-lg text-muted-foreground leading-relaxed -mt-4">
-                Our headquarters sits five blocks from the Colorado River in downtown Austin. It's
-                where our founding team writes code, meets customers, and prototypes what comes
-                next. We also operate hubs in New York, London, and Singapore.
-              </p>
+              <SectionHeader
+                eyebrow="Our studio"
+                title="A global team, one standard."
+                lede="We operate from two headquarters — Texas and Hong Kong — with the same engineering standards, design systems, and client rituals in every office."
+              />
               <div className="mt-8 grid grid-cols-3 gap-6">
                 {[
-                  { v: "2022", l: "Founded" },
-                  { v: "180+", l: "Team" },
-                  { v: "4", l: "Offices" },
+                  { v: "2012", l: "Founded" },
+                  { v: "85+", l: "Team" },
+                  { v: "2", l: "Headquarters" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="font-serif text-3xl text-primary">{s.v}</div>
@@ -115,7 +114,7 @@ function AboutPage() {
         </SectionShell>
 
         <SectionShell tone="warm">
-          <SectionHeader eyebrow="Our story" title="From frustration to platform." />
+          <SectionHeader eyebrow="Our story" title="From boutique shop to global agency." />
           <div className="relative max-w-3xl" data-reveal-stagger>
             <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" aria-hidden />
             <div className="space-y-8">
@@ -136,8 +135,8 @@ function AboutPage() {
         </SectionShell>
 
         <SectionShell>
-          <SectionHeader eyebrow="What we believe" title="Principles that guide every ship." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-reveal-stagger>
+          <SectionHeader eyebrow="What we believe" title="Principles behind every project." />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid" data-reveal-stagger>
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
                 <IconBadge icon={v.icon} className="mb-4" />
@@ -149,8 +148,8 @@ function AboutPage() {
         </SectionShell>
 
         <SectionShell tone="muted">
-          <SectionHeader eyebrow="Leadership" title="Operators who've been in the room." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-reveal-stagger>
+          <SectionHeader eyebrow="Leadership" title="The team behind the work." />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid" data-reveal-stagger>
             {leadership.map((l) => (
               <PremiumCard key={l.name} className="!p-6">
                 <div className="w-14 h-14 rounded-full bg-primary/15 text-primary grid place-items-center font-serif text-xl mb-4">
@@ -170,16 +169,16 @@ function AboutPage() {
         <SectionShell>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div data-reveal>
-              <SectionHeader eyebrow="The team" title="Operators building for operators." />
-              <p className="text-lg text-muted-foreground leading-relaxed -mt-4">
-                Our leadership has scaled companies from seed through IPO across SaaS, life
-                sciences, and commerce. That perspective is in every screen we ship.
-              </p>
+              <SectionHeader
+                eyebrow="The team"
+                title="Builders who care about craft."
+                lede="Our team has shipped products at category-defining companies and agencies. That experience shows in every line of code and every pixel we deliver."
+              />
               <Link
                 to="/careers"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold hover:opacity-90 transition"
               >
-                Join us in Austin <Icon icon="solar:arrow-right-linear" />
+                View open roles <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
             <div
@@ -192,9 +191,9 @@ function AboutPage() {
         </SectionShell>
 
         <CTABanner
-          title="See the platform in action."
-          lede="Book a 30-minute walkthrough with our Austin team."
-          primaryLabel="Book a demo"
+          title="Ready to work together?"
+          lede="Tell us about your project — we'll respond within one business day."
+          primaryLabel="Start a project"
         />
       </div>
     </Layout>

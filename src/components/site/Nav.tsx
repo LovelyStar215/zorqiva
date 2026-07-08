@@ -3,9 +3,9 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { to: "/platform", label: "Platform" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/pricing", label: "Pricing" },
+  { to: "/services", label: "Services" },
+  { to: "/solutions", label: "Industries" },
+  { to: "/pricing", label: "Engagement" },
   { to: "/about", label: "About" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
@@ -38,14 +38,14 @@ export function Nav() {
         style={{ height: ANNOUNCEMENT_H }}
       >
         <span className="hidden sm:inline">
-          <span className="text-accent font-semibold">Verdian 4.0</span>
+          <span className="text-accent font-semibold">Now hiring</span>
           <span className="mx-2 text-background/30">·</span>
-          The AI-native operating system for modern companies.
-          <Link to="/platform" className="ml-2 text-accent hover:underline font-medium">
-            Explore →
+          Senior engineers & designers — join our global studio.
+          <Link to="/careers" className="ml-2 text-accent hover:underline font-medium">
+            View roles →
           </Link>
         </span>
-        <span className="sm:hidden text-accent font-semibold">Verdian 4.0 — AI-native ERP</span>
+        <span className="sm:hidden text-accent font-semibold">Now hiring — view roles</span>
       </div>
 
       <header className="fixed left-0 right-0 z-50 px-4 sm:px-6" style={{ top: ANNOUNCEMENT_H }}>
@@ -80,17 +80,11 @@ export function Nav() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-2 shrink-0">
-              <a
-                href="https://app.verdian.io"
-                className="px-3 py-2 text-[13px] font-medium text-foreground/70 hover:text-primary transition"
-              >
-                Sign in
-              </a>
               <Link
                 to="/contact"
                 className="btn-primary !py-2.5 !px-5 !text-[13px] !shadow-[var(--shadow-soft)]"
               >
-                Book a demo <Icon icon="solar:arrow-right-linear" />
+                Start a project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
 
@@ -123,7 +117,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 justify-center !text-sm"
             >
-              Book a demo
+              Start a project
             </Link>
           </div>
         )}

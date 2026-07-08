@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Icon } from "@iconify/react";
 
-export function Eyebrow({ children }: { children: ReactNode }) {
-  return <div className="eyebrow mb-5">{children}</div>;
+export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`eyebrow mb-7 ${className}`}>{children}</div>;
 }
 
 export function PrimaryButton({
@@ -61,7 +61,7 @@ export function PremiumCard({
 }) {
   return (
     <div
-      className={`${hover ? "card-premium" : "rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]"} p-7 ${className}`}
+      className={`${hover ? "card-premium" : "rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]"} p-7 h-full flex flex-col ${className}`}
     >
       {children}
     </div>

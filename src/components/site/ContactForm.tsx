@@ -1,13 +1,14 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 const inquiryTypes = [
-  "Book a demo",
-  "Sales inquiry",
-  "Support",
+  "New project",
+  "Staff augmentation",
+  "Support & maintenance",
   "Partnerships",
   "Careers",
 ] as const;
@@ -27,7 +28,7 @@ type FormData = z.infer<typeof schema>;
 export function ContactForm({
   title = "Send us a message",
   subtitle = "Our field team responds within one business day.",
-  defaultInquiry = "Book a demo",
+  defaultInquiry = "New project",
 }: {
   title?: string;
   subtitle?: string;
@@ -133,7 +134,7 @@ export function ContactForm({
           <span className="text-xs font-medium text-foreground/70">How can we help?</span>
           <textarea
             rows={4}
-            placeholder="Tell us about your current stack, goals, and timeline…"
+            placeholder="Tell us about your project, goals, and timeline…"
             {...register("message")}
             className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition resize-none"
           />
@@ -151,8 +152,11 @@ export function ContactForm({
         </button>
 
         <p className="text-[11px] text-muted-foreground leading-relaxed">
-          By submitting, you agree to our privacy policy. We never share your information with third
-          parties.
+          By submitting, you agree to our{" "}
+          <Link to="/privacy" className="text-primary font-semibold hover:underline">
+            Privacy Policy
+          </Link>
+          . We never share your information with third parties.
         </p>
       </form>
     </>

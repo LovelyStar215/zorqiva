@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
@@ -6,18 +5,22 @@ import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { IndustryExplorer } from "@/components/site/IndustryExplorer";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solutions — Verdian" },
+      { title: "Industries — Verdian IT Agency" },
       {
         name: "description",
         content:
-          "Verdian solutions by industry and role — from SaaS finance to multi-entity manufacturing.",
+          "Verdian serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
       },
-      { property: "og:title", content: "Solutions — Verdian" },
-      { property: "og:description", content: "Purpose-built configurations for every industry." },
+      { property: "og:title", content: "Industries — Verdian" },
+      {
+        property: "og:description",
+        content: "Industry expertise across regulated and high-growth sectors.",
+      },
     ],
   }),
   component: SolutionsPage,
@@ -28,36 +31,36 @@ const roles = [
     t: "Founders & CEOs",
     i: "solar:crown-bold",
     p: [
-      "Board-ready reporting in one click",
-      "Real-time cash and pipeline in the same view",
-      "Scale from 10 to 10,000 without a re-platform",
+      "MVP to market in weeks, not months",
+      "Technical co-founder-level guidance",
+      "Investor-ready demos and roadmaps",
     ],
   },
   {
-    t: "CFOs",
-    i: "solar:chart-square-bold",
+    t: "CTOs & VPs Engineering",
+    i: "solar:code-bold",
     p: [
-      "Continuous close — no more month-end sprints",
-      "Multi-entity consolidations native",
-      "Audit-grade trail on every transaction",
+      "Augment your team without hiring delays",
+      "Architecture reviews and code audits",
+      "Cloud migration and DevOps setup",
     ],
   },
   {
-    t: "Revenue Leaders",
-    i: "solar:graph-new-up-bold",
+    t: "Product Leaders",
+    i: "solar:palette-bold",
     p: [
-      "Pipeline that reconciles to bookings",
-      "AI forecasting with signal-based accuracy",
-      "Territory and comp fully automated",
+      "UX research and design systems",
+      "Rapid prototyping and user testing",
+      "Design-to-development handoff",
     ],
   },
   {
-    t: "Ops Leaders",
-    i: "solar:box-bold",
+    t: "Operations Leaders",
+    i: "solar:settings-bold",
     p: [
-      "Inventory, procurement, and fulfillment in sync",
-      "Workflow Studio for any process",
-      "One place for every operational metric",
+      "Internal tools and workflow automation",
+      "Legacy system modernization",
+      "Managed services and monitoring",
     ],
   },
 ];
@@ -68,16 +71,16 @@ function SolutionsPage() {
     <Layout>
       <div ref={scope}>
         <PageHero
-          eyebrow="Solutions"
-          title="Configured for how your industry actually runs."
-          lede="Industry blueprints and role-based workspaces that get you live in weeks — not quarters."
+          eyebrow="Industries"
+          title="Deep expertise across sectors."
+          lede="We've delivered projects for healthcare, fintech, retail, SaaS, and enterprise clients — with compliance and security built in from day one."
         />
 
         <SectionShell className="!pt-0">
           <SectionHeader
             eyebrow="By industry"
-            title="Pick your vertical. See what's included."
-            lede="Interactive blueprints with pre-built workflows, reports, and compliance packs."
+            title="Select your sector. See what we deliver."
+            lede="Every industry has unique requirements — we bring domain experience and technical depth to each engagement."
           />
           <div data-reveal>
             <IndustryExplorer />
@@ -85,8 +88,8 @@ function SolutionsPage() {
         </SectionShell>
 
         <SectionShell tone="subtle">
-          <SectionHeader eyebrow="By role" title="One platform. Every leader's view." />
-          <div className="grid sm:grid-cols-2 gap-4" data-reveal-stagger>
+          <SectionHeader eyebrow="By stakeholder" title="Built for every decision-maker." />
+          <div className="grid sm:grid-cols-2 gap-4 card-grid" data-reveal-stagger>
             {roles.map((r) => (
               <PremiumCard key={r.t}>
                 <IconBadge icon={r.i} className="mb-4" />
@@ -108,9 +111,9 @@ function SolutionsPage() {
         </SectionShell>
 
         <CTABanner
-          title="Not sure which configuration fits?"
-          lede="Our field team will map Verdian to your business in a 30-minute working session."
-          primaryLabel="Start with a demo"
+          title="Not sure where to start?"
+          lede="Book a free discovery call — we'll map the right services and team to your industry and goals."
+          primaryLabel="Start a project"
         />
       </div>
     </Layout>

@@ -1,16 +1,16 @@
-const logos = [
-  "Halcyon Bio",
-  "Northstar Commerce",
+const clients = [
+  "Halcyon Health",
+  "Northstar Retail",
+  "Meridian Finance",
   "Cascade Systems",
-  "Meridian SaaS",
-  "Atlas Rowe",
+  "Atlas Digital",
   "Kestrel Labs",
-  "Vantage Health",
-  "Ironwood Capital",
+  "Vantage Media",
+  "Ironwood Group",
 ];
 
 export function LogoMarquee() {
-  const items = [...logos, ...logos];
+  const items = [...clients, ...clients];
   return (
     <section className="logo-marquee-band overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center gap-8">

@@ -1,24 +1,26 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { useGsapReveal } from "@/hooks/useGsapReveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { ChannelCard } from "@/components/site/ChannelCard";
 import { Eyebrow, PremiumCard } from "@/components/site/primitives";
-import { AustinVisual } from "@/components/site/Visuals";
+import { StudioVisual } from "@/components/site/Visuals";
+import { FaqList } from "@/components/site/FaqList";
+import { contactFaqs } from "@/lib/faq-data";
 import { offices } from "@/lib/site-data";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Verdian" },
+      { title: "Contact — Verdian IT Agency" },
       {
         name: "description",
         content:
-          "Talk to the Verdian team in Austin, Texas. Book a demo, reach sales, support, partnerships, or careers.",
+          "Contact Verdian. Start a project, partnerships, careers, or general inquiries.",
       },
       { property: "og:title", content: "Contact Verdian" },
-      { property: "og:description", content: "Book a demo or reach our team in Austin." },
+      { property: "og:description", content: "Start a project with our global studio." },
     ],
   }),
   component: ContactPage,
@@ -27,61 +29,46 @@ export const Route = createFileRoute("/contact")({
 const channels = [
   {
     icon: "solar:calendar-bold",
-    title: "Book a demo",
-    desc: "30-minute session tailored to your business. See Verdian mapped to your stack live.",
-    action: "Schedule via form",
+    title: "Start a project",
+    desc: "Free 30-minute discovery call. Tell us your goals and we'll outline a plan.",
+    action: "Use the form below",
     href: "#contact-form",
   },
   {
     icon: "solar:phone-bold",
-    title: "Sales",
-    desc: "Speak with our enterprise team about pricing, migration, and rollout.",
-    action: "+1 (512) 555-0140",
-    href: "tel:+15125550140",
+    title: "Call us",
+    desc: "Speak directly with our team about timelines, scope, and engagement models.",
+    action: "+1 (888) 555-0140",
+    href: "tel:+18885550140",
   },
   {
     icon: "solar:letter-bold",
     title: "Email",
-    desc: "General inquiries, product questions, and account support.",
+    desc: "General inquiries, project questions, and new business.",
     action: "hello@verdian.io",
     href: "mailto:hello@verdian.io",
   },
   {
     icon: "solar:hand-shake-bold",
     title: "Partnerships",
-    desc: "Technology partners, integrators, and referral programs.",
+    desc: "Referral partners, technology alliances, and subcontracting.",
     action: "partners@verdian.io",
     href: "mailto:partners@verdian.io",
   },
   {
     icon: "solar:headphones-round-bold",
-    title: "Support",
-    desc: "Existing customers — 24/7 for Enterprise plans.",
+    title: "Client support",
+    desc: "Existing retainer and dedicated squad clients.",
     action: "support@verdian.io",
     href: "mailto:support@verdian.io",
   },
   {
     icon: "solar:case-round-bold",
     title: "Careers",
-    desc: "Join our team in Austin, New York, London, or Singapore.",
+    desc: "Join our team in Texas, Hong Kong, or remotely.",
     action: "View open roles",
     href: "/careers",
   },
-];
-
-const faqs = [
-  [
-    "How quickly will I hear back?",
-    "Our field team responds within one business day. Demo requests are typically scheduled within 48 hours.",
-  ],
-  [
-    "Do you offer migration support?",
-    "Yes — every Growth and Enterprise plan includes white-glove migration from your existing CRM, ERP, or billing stack.",
-  ],
-  [
-    "Can I visit your Austin office?",
-    "Absolutely. Email hello@verdian.io to schedule an in-person session at our HQ on West 2nd Street.",
-  ],
 ];
 
 function ContactPage() {
@@ -92,8 +79,8 @@ function ContactPage() {
       <div ref={scope}>
         <PageHero
           eyebrow="Contact"
-          title="Let's build your operating system."
-          lede="Whether you're exploring Verdian, migrating from a legacy stack, or scaling to IPO — our team is ready to help."
+          title="Let's talk about your project."
+          lede="Whether you're scoping an MVP, augmenting your team, or need ongoing development — we're ready to help."
         >
           <div className="flex flex-wrap justify-center gap-3 mt-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-muted-foreground backdrop-blur-sm">
@@ -101,23 +88,24 @@ function ContactPage() {
               business day
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-              <Icon icon="solar:map-point-bold" className="text-primary" /> Austin, TX · Global team
+              <Icon icon="solar:map-point-bold" className="text-primary" /> Texas · Hong Kong
             </span>
           </div>
         </PageHero>
 
         {/* Contact channels */}
         <SectionShell className="!pt-0">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid" data-reveal-stagger>
             {channels.map((c) => (
-              <ChannelCard
-                key={c.title}
-                icon={c.icon}
-                title={c.title}
-                desc={c.desc}
-                action={c.action}
-                href={c.href}
-              />
+              <div key={c.title} className="h-full min-h-0">
+                <ChannelCard
+                  icon={c.icon}
+                  title={c.title}
+                  desc={c.desc}
+                  action={c.action}
+                  href={c.href}
+                />
+              </div>
             ))}
           </div>
         </SectionShell>
@@ -128,23 +116,20 @@ function ContactPage() {
             <div data-reveal>
               <Eyebrow>Headquarters</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] leading-tight tracking-[-0.02em]">
-                500 W 2nd Street
-                <br />
-                Austin, Texas 78701
+                Global headquarters
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                Our global HQ sits five blocks from the Colorado River in downtown Austin. We also
-                operate hubs in New York, London, and Singapore — with field engineers available
-                worldwide.
+                We operate from two headquarters — Texas and Hong Kong — with field engineers
+                available worldwide.
               </p>
 
               <div className="mt-8 rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-soft)]">
-                <AustinVisual />
+                <StudioVisual />
               </div>
 
               <div className="mt-8 grid grid-cols-2 gap-3">
                 {[
-                  { i: "solar:clock-circle-bold", l: "Hours", v: "Mon–Fri, 8am–6pm CT" },
+                  { i: "solar:clock-circle-bold", l: "Hours", v: "Mon–Fri, 8am–6pm" },
                   { i: "solar:global-bold", l: "Coverage", v: "US · EU · APAC" },
                 ].map((item) => (
                   <div key={item.l} className="rounded-xl border border-border bg-card p-4">
@@ -172,21 +157,21 @@ function ContactPage() {
 
         {/* Global offices */}
         <SectionShell>
-          <Eyebrow>Global offices</Eyebrow>
+          <Eyebrow>Our offices</Eyebrow>
           <h2
             className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em] mb-10"
             data-reveal
           >
             Where we work.
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl" data-reveal-stagger>
             {offices.map((o) => (
               <PremiumCard key={o.city} className="!p-6">
                 <div className="font-serif text-2xl text-[color:var(--ink)]">{o.city}</div>
                 <div className="text-xs text-accent font-semibold mt-1 uppercase tracking-wider">
                   {o.role}
                 </div>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{o.address}</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-1">{o.address}</p>
                 <p className="text-xs text-muted-foreground/70 mt-1">{o.country}</p>
               </PremiumCard>
             ))}
@@ -201,22 +186,15 @@ function ContactPage() {
               Before you reach out.
             </h2>
             <div className="space-y-3" data-reveal-stagger>
-              {faqs.map(([q, a]) => (
-                <details
-                  key={q}
-                  className="group rounded-2xl border border-border bg-card px-6 py-5 open:shadow-[var(--shadow-soft)] transition"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer font-semibold text-[color:var(--ink)] text-[15px]">
-                    {q}
-                    <Icon
-                      icon="solar:alt-arrow-down-linear"
-                      className="text-muted-foreground group-open:rotate-180 transition-transform"
-                    />
-                  </summary>
-                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{a}</p>
-                </details>
-              ))}
+              <FaqList items={contactFaqs} />
             </div>
+            <p className="mt-8 text-center text-sm text-muted-foreground" data-reveal>
+              More answers on our{" "}
+              <Link to="/faq" className="text-primary font-semibold hover:underline">
+                FAQ page
+              </Link>
+              .
+            </p>
           </div>
         </SectionShell>
       </div>

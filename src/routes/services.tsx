@@ -12,31 +12,34 @@ import {
 } from "@/components/site/PlatformExplorer";
 import { Eyebrow } from "@/components/site/primitives";
 
-export const Route = createFileRoute("/platform")({
+export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Platform — Verdian" },
+      { title: "Services — Verdian IT Agency" },
       {
         name: "description",
         content:
-          "Explore the Verdian platform: unified CRM, ERP, finance, workflows, and AI on one intelligent graph.",
+          "Custom software development, cloud & DevOps, UI/UX design, AI integration, and managed IT services.",
       },
-      { property: "og:title", content: "Verdian Platform" },
-      { property: "og:description", content: "The unified CRM + ERP graph for modern operators." },
+      { property: "og:title", content: "Services — Verdian" },
+      {
+        property: "og:description",
+        content: "Full-stack IT agency services for modern companies.",
+      },
     ],
   }),
-  component: PlatformPage,
+  component: ServicesPage,
 });
 
-function PlatformPage() {
+function ServicesPage() {
   const scope = useGsapReveal();
   return (
     <Layout>
       <div ref={scope}>
         <PageHero
-          eyebrow="The Platform"
-          title="One graph. Every discipline. Zero seams."
-          lede="CRM, ERP, finance, inventory, workflows, and AI — native modules on a single intelligent ledger with shared permissions and real-time sync."
+          eyebrow="Our Services"
+          title="Everything you need to build, ship, and scale."
+          lede="From custom software and cloud infrastructure to design and AI — one agency, one accountable team, end to end."
         />
 
         <SectionShell className="!pt-0">
@@ -47,9 +50,9 @@ function PlatformPage() {
 
         <SectionShell tone="subtle">
           <SectionHeader
-            eyebrow="Architecture"
-            title="Enterprise-grade by design."
-            lede="Sub-50ms queries, event-driven sync, and audit-grade governance — built for regulated industries."
+            eyebrow="Capabilities"
+            title="Senior talent across every discipline."
+            lede="Cross-functional squads with engineers, designers, and delivery leads — no handoff gaps."
           />
           <div data-reveal-stagger>
             <AdvancedCapabilities />
@@ -58,31 +61,31 @@ function PlatformPage() {
 
         <SectionShell>
           <SectionHeader
-            eyebrow="Comparison"
-            title="Why teams leave legacy stacks."
-            lede="The difference between stitching tools together and running on one platform."
+            eyebrow="Why Verdian"
+            title="Agency quality. Partner accountability."
+            lede="The difference between patching freelancers together and working with a dedicated studio."
           />
           <div data-reveal>
             <EnterpriseMatrix />
           </div>
         </SectionShell>
 
-        <SectionShell id="tour" className="scroll-mt-28" tone="muted">
+        <SectionShell id="process" className="scroll-mt-28" tone="muted">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div data-reveal>
-              <Eyebrow>Developer platform</Eyebrow>
+              <Eyebrow>How we build</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em]">
-                Programmatic access to everything.
+                Modern stack. Production standards.
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                Query the unified graph, subscribe to webhook events, and deploy AI agents — all
-                through one typed API surface.
+                TypeScript, React, cloud-native infrastructure, and automated testing — the same
+                practices we use on our own products, applied to every client engagement.
               </p>
               <Link
                 to="/contact"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold shadow-[var(--shadow-soft)] hover:opacity-90 transition"
               >
-                Talk to an engineer <Icon icon="solar:arrow-right-linear" />
+                Discuss your project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
             <div data-reveal>
@@ -92,10 +95,10 @@ function PlatformPage() {
         </SectionShell>
 
         <CTABanner
-          title="See how Verdian maps to your stack."
-          lede="Our field engineers configure a live environment for your industry in 30 minutes."
-          primaryLabel="Book a demo"
-          secondaryLabel="View pricing"
+          title="Ready to start your next project?"
+          lede="Tell us what you're building — we'll respond within one business day with a clear plan."
+          primaryLabel="Start a project"
+          secondaryLabel="View engagement models"
         />
       </div>
     </Layout>

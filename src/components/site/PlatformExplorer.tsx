@@ -67,7 +67,7 @@ export function PlatformExplorer() {
         <div className="flex-1 flex justify-center">
           <div className="flex items-center gap-2 rounded-lg bg-white/6 border border-white/8 px-4 py-1.5 text-[10px] text-white/40 max-w-xs w-full">
             <Icon icon="solar:magnifer-linear" />
-            <span className="truncate">Search accounts, invoices, SKUs…</span>
+            <span className="truncate">Search projects, deployments, designs…</span>
             <span className="ml-auto text-white/25 shrink-0">⌘K</span>
           </div>
         </div>
@@ -151,20 +151,20 @@ export function LiveActivityFeed() {
   }, []);
 
   return (
-    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-soft)]">
+    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-soft)] h-full flex flex-col">
       <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-muted/30">
         <div className="flex items-center gap-2 text-xs font-semibold text-[color:var(--ink)]">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          Live platform activity
+          Live project activity
         </div>
         <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
           Real-time
         </span>
       </div>
-      <div className="divide-y divide-border">
+      <div className="divide-y divide-border flex-1">
         {liveEvents.map((e, i) => (
           <div
             key={e.event}
@@ -188,11 +188,11 @@ export function LiveActivityFeed() {
 
 export function EnterpriseMatrix() {
   return (
-    <div className="rounded-2xl border border-border overflow-hidden shadow-[var(--shadow-soft)]">
+    <div className="rounded-2xl border border-border overflow-hidden shadow-[var(--shadow-soft)] h-full">
       <div className="grid grid-cols-[1.2fr_1fr_1fr] bg-muted/40 border-b border-border text-[10px] uppercase tracking-wider font-semibold text-muted-foreground">
         <div className="px-5 py-3.5">Capability</div>
-        <div className="px-5 py-3.5 border-l border-border">Legacy stack</div>
-        <div className="px-5 py-3.5 border-l border-border text-primary">Verdian</div>
+        <div className="px-5 py-3.5 border-l border-border">In-house / DIY</div>
+        <div className="px-5 py-3.5 border-l border-border text-primary">With Verdian</div>
       </div>
       {enterpriseMatrix.map((row, i) => (
         <div
@@ -223,8 +223,8 @@ export function CodePreview() {
           <div className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
         </div>
-        <span className="text-[10px] text-white/35 font-mono">api.example.ts</span>
-        <span className="text-[10px] text-accent font-semibold">GraphQL · REST · SDK</span>
+        <span className="text-[10px] text-white/35 font-mono">project-handler.ts</span>
+        <span className="text-[10px] text-accent font-semibold">TypeScript · React · Node</span>
       </div>
       <pre className="p-5 overflow-x-auto text-[11px] leading-relaxed font-mono text-white/75">
         <code>{apiExample}</code>
@@ -235,16 +235,18 @@ export function CodePreview() {
 
 export function AdvancedCapabilities() {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid" data-reveal-stagger>
       {advancedCapabilities.map((cap) => (
-        <div key={cap.title} className="card-premium !p-6 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition">
-            <Icon icon={cap.icon} className="text-lg" />
-          </div>
-          <div className="font-serif text-lg text-[color:var(--ink)]">{cap.title}</div>
-          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{cap.desc}</p>
-          <div className="mt-4 text-[10px] uppercase tracking-wider font-semibold text-accent">
-            {cap.spec}
+        <div key={cap.title} className="h-full min-h-0">
+          <div className="card-premium !p-6 group h-full flex flex-col">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition">
+              <Icon icon={cap.icon} className="text-lg" />
+            </div>
+            <div className="font-serif text-lg text-[color:var(--ink)]">{cap.title}</div>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{cap.desc}</p>
+            <div className="mt-4 text-[10px] uppercase tracking-wider font-semibold text-accent">
+              {cap.spec}
+            </div>
           </div>
         </div>
       ))}

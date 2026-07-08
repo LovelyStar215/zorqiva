@@ -3,73 +3,73 @@ import { useState } from "react";
 
 const industries = [
   {
-    id: "saas",
-    label: "SaaS & Software",
-    icon: "solar:cloud-bold",
-    metric: "$12M ARR",
-    metricLabel: "Avg. customer scale",
-    features: [
-      "Usage & subscription billing",
-      "MRR / ARR analytics",
-      "Rev-rec automation",
-      "PLG + enterprise CRM",
-    ],
-    outcome: "38% faster month-end close",
-  },
-  {
-    id: "life",
-    label: "Life Sciences",
-    icon: "solar:pill-bold",
+    id: "health",
+    label: "Healthcare",
+    icon: "solar:heart-pulse-bold",
     metric: "HIPAA",
-    metricLabel: "Compliance ready",
+    metricLabel: "Compliance experience",
     features: [
-      "Clinical account tracking",
-      "Study finance",
-      "HIPAA audit trails",
-      "Sample & trial logistics",
+      "Patient portals",
+      "EHR integrations",
+      "HIPAA-compliant cloud",
+      "Telehealth platforms",
     ],
-    outcome: "SOX-ready from day one",
+    outcome: "8-week MVP delivery",
   },
   {
-    id: "mfg",
-    label: "Manufacturing",
-    icon: "solar:factory-bold",
-    metric: "14 plants",
-    metricLabel: "Avg. sites managed",
-    features: ["BOM & MRP", "Multi-plant inventory", "Procure-to-pay", "Unit economics per SKU"],
-    outcome: "99.7% inventory accuracy",
-  },
-  {
-    id: "commerce",
-    label: "Commerce",
-    icon: "solar:cart-large-2-bold",
-    metric: "2.4M SKUs",
-    metricLabel: "Catalog scale",
-    features: ["Omnichannel orders", "Returns & refunds", "Per-SKU margin", "3PL integrations"],
-    outcome: "Real-time margin visibility",
-  },
-  {
-    id: "services",
-    label: "Professional Services",
-    icon: "solar:buildings-bold",
-    metric: "94%",
-    metricLabel: "Utilization tracking",
-    features: [
-      "Time & materials billing",
-      "Project profitability",
-      "Resource planning",
-      "Milestone rev-rec",
-    ],
-    outcome: "Automated invoicing",
-  },
-  {
-    id: "finserv",
+    id: "fintech",
     label: "Financial Services",
     icon: "solar:banknote-2-bold",
-    metric: "SOX",
-    metricLabel: "Audit grade",
-    features: ["Client CRM", "Portfolio ops", "Regulatory reporting", "Immutable audit trail"],
-    outcome: "Continuous compliance",
+    metric: "SOC 2",
+    metricLabel: "Security standard",
+    features: [
+      "Secure web apps",
+      "Payment integrations",
+      "Audit-ready infrastructure",
+      "Data encryption",
+    ],
+    outcome: "Zero-downtime migrations",
+  },
+  {
+    id: "retail",
+    label: "Retail & E-commerce",
+    icon: "solar:cart-large-2-bold",
+    metric: "2.4M",
+    metricLabel: "Orders processed",
+    features: [
+      "Custom storefronts",
+      "Inventory systems",
+      "Payment gateways",
+      "Analytics dashboards",
+    ],
+    outcome: "40% faster deployments",
+  },
+  {
+    id: "saas",
+    label: "SaaS & Startups",
+    icon: "solar:cloud-bold",
+    metric: "180+",
+    metricLabel: "Products launched",
+    features: ["MVP development", "SaaS architecture", "Auth & billing", "Growth-ready infra"],
+    outcome: "Seed to Series B builds",
+  },
+  {
+    id: "enterprise",
+    label: "Enterprise",
+    icon: "solar:buildings-bold",
+    metric: "Fortune 500",
+    metricLabel: "Clients served",
+    features: ["Legacy modernization", "Cloud migration", "Internal tools", "Dedicated squads"],
+    outcome: "99.9% uptime SLAs",
+  },
+  {
+    id: "gov",
+    label: "Government & Non-profit",
+    icon: "solar:shield-check-bold",
+    metric: "WCAG AA",
+    metricLabel: "Accessibility standard",
+    features: ["Accessible web apps", "Secure hosting", "Grant-funded projects", "Citizen portals"],
+    outcome: "FedRAMP-aligned practices",
   },
 ] as const;
 
@@ -78,7 +78,7 @@ export function IndustryExplorer() {
   const ind = industries[active];
 
   return (
-    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-(--shadow-lift)">
+    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-lift)]">
       <div className="flex flex-wrap gap-2 p-4 border-b border-border bg-muted/20">
         {industries.map((item, i) => (
           <button
@@ -87,7 +87,7 @@ export function IndustryExplorer() {
             onClick={() => setActive(i)}
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all ${
               active === i
-                ? "bg-primary text-primary-foreground shadow-(--shadow-soft)"
+                ? "bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
                 : "border border-border bg-background text-foreground/65 hover:border-primary/30"
             }`}
           >
@@ -103,8 +103,8 @@ export function IndustryExplorer() {
             {ind.metricLabel}
           </div>
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-            Pre-configured blueprints for {ind.label.toLowerCase()} — go live in weeks with
-            industry-specific workflows, reports, and compliance packs.
+            We&apos;ve delivered projects for {ind.label.toLowerCase()} organizations — from MVPs to
+            enterprise-scale platforms with compliance and security built in.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/10 text-accent px-4 py-2 text-xs font-semibold">
             <Icon icon="solar:graph-up-bold" /> {ind.outcome}
@@ -112,7 +112,7 @@ export function IndustryExplorer() {
         </div>
         <div className="p-8 bg-background/50">
           <div className="text-[10px] uppercase tracking-widest text-accent font-semibold mb-4">
-            Included capabilities
+            What we deliver
           </div>
           <ul className="space-y-3">
             {ind.features.map((f) => (
@@ -129,27 +129,27 @@ export function IndustryExplorer() {
 }
 
 export const pricingFeatures = [
-  { name: "Revenue CRM & GL", starter: true, growth: true, enterprise: true },
-  { name: "AR, AP & Billing", starter: true, growth: true, enterprise: true },
-  { name: "Verdian AI Copilots", starter: "Basic", growth: true, enterprise: true },
-  { name: "Inventory & Projects", starter: false, growth: true, enterprise: true },
-  { name: "Multi-entity consolidation", starter: false, growth: false, enterprise: true },
-  { name: "Dedicated environment", starter: false, growth: false, enterprise: true },
-  { name: "HIPAA & SOX pack", starter: false, growth: "SOC 2", enterprise: true },
-  { name: "Named CSM & SLAs", starter: false, growth: false, enterprise: true },
-  { name: "Custom AI agents", starter: false, growth: false, enterprise: true },
+  { name: "Discovery & scoping", starter: true, growth: true, enterprise: true },
+  { name: "UI/UX design", starter: "Basic", growth: true, enterprise: true },
+  { name: "Full-stack development", starter: true, growth: true, enterprise: true },
+  { name: "Cloud & DevOps setup", starter: false, growth: true, enterprise: true },
+  { name: "Dedicated squad", starter: false, growth: false, enterprise: true },
+  { name: "AI & data engineering", starter: false, growth: "Add-on", enterprise: true },
+  { name: "Ongoing maintenance", starter: false, growth: "Optional", enterprise: true },
+  { name: "SLA & priority support", starter: false, growth: false, enterprise: true },
+  { name: "Technical account manager", starter: false, growth: false, enterprise: true },
 ] as const;
 
 export function PricingMatrix() {
   return (
-    <div className="rounded-2xl border border-border overflow-hidden shadow-(--shadow-soft) overflow-x-auto">
-      <table className="w-full min-w-160 text-sm">
+    <div className="rounded-2xl border border-border overflow-hidden shadow-[var(--shadow-soft)] overflow-x-auto">
+      <table className="w-full min-w-[640px] text-sm">
         <thead>
           <tr className="bg-muted/40 border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
-            <th className="text-left px-5 py-4 font-semibold">Feature</th>
-            <th className="px-5 py-4 font-semibold">Starter</th>
-            <th className="px-5 py-4 font-semibold text-primary">Growth</th>
-            <th className="px-5 py-4 font-semibold">Enterprise</th>
+            <th className="text-left px-5 py-4 font-semibold">Deliverable</th>
+            <th className="px-5 py-4 font-semibold">Project</th>
+            <th className="px-5 py-4 font-semibold text-primary">Retainer</th>
+            <th className="px-5 py-4 font-semibold">Dedicated Squad</th>
           </tr>
         </thead>
         <tbody>
@@ -158,7 +158,7 @@ export function PricingMatrix() {
               key={row.name}
               className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-card" : "bg-background"}`}
             >
-              <td className="px-5 py-3.5 font-medium text-(--ink)">{row.name}</td>
+              <td className="px-5 py-3.5 font-medium text-[color:var(--ink)]">{row.name}</td>
               {(["starter", "growth", "enterprise"] as const).map((plan) => {
                 const val = row[plan];
                 return (

@@ -38,8 +38,7 @@ export function useGsapReveal() {
       stags.forEach((parent) => {
         gsap.from(parent.children, {
           opacity: 0,
-          y: 30,
-          duration: 0.8,
+          duration: 0.7,
           stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: {

@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { LegalPage } from "@/components/site/LegalPage";
-import { complianceBadges } from "@/lib/site-data";
+import { partnerBadges } from "@/lib/site-data";
 
 export const Route = createFileRoute("/security")({
   head: () => ({
     meta: [
-      { title: "Security — Verdian" },
+      { title: "Security — Verdian IT Agency" },
       {
         name: "description",
-        content: "Verdian security practices, certifications, and compliance.",
+        content: "Verdian security practices, certifications, and how we protect client projects.",
       },
     ],
   }),
@@ -19,23 +19,23 @@ export const Route = createFileRoute("/security")({
 const practices = [
   {
     icon: "solar:lock-keyhole-bold",
-    title: "Encryption everywhere",
-    desc: "AES-256 at rest, TLS 1.3 in transit. Customer-managed keys available on Enterprise.",
+    title: "Secure development lifecycle",
+    desc: "Code review, dependency scanning, secrets management, and encrypted environments for every project.",
   },
   {
     icon: "solar:shield-check-bold",
-    title: "Certified compliance",
-    desc: "SOC 2 Type II, HIPAA, GDPR, and ISO 27001 with annual third-party audits.",
+    title: "Certified practices",
+    desc: "SOC 2 Type II, ISO 27001, and HIPAA-aligned processes for regulated industry clients.",
   },
   {
     icon: "solar:user-id-bold",
-    title: "Granular access control",
-    desc: "Role-based permissions, SSO/SAML, SCIM provisioning, and field-level security.",
+    title: "Access control",
+    desc: "Least-privilege access, MFA, SSO integration, and role-based permissions on all client systems.",
   },
   {
     icon: "solar:history-bold",
-    title: "Immutable audit trails",
-    desc: "Every change logged with actor, timestamp, and before/after state — SOX-ready.",
+    title: "Audit-ready documentation",
+    desc: "Change logs, deployment records, and security assessments available for client compliance reviews.",
   },
 ];
 
@@ -43,12 +43,13 @@ function SecurityPage() {
   return (
     <LegalPage title="Security & Compliance" updated="July 1, 2026">
       <p>
-        Security is not a feature tier at Verdian — it's foundational. Our platform is designed for
-        regulated industries and enterprise operators who require audit-grade controls from day one.
+        Security is foundational to how we work. Every client engagement follows secure development
+        practices — from code review and dependency scanning to encrypted infrastructure and access
+        controls.
       </p>
-      <div className="not-prose grid sm:grid-cols-2 gap-4 my-10">
+      <div className="not-prose grid sm:grid-cols-2 gap-4 card-grid my-10">
         {practices.map((p) => (
-          <div key={p.title} className="border border-border rounded-2xl p-6 bg-card">
+          <div key={p.title} className="border border-border rounded-2xl p-6 bg-card h-full">
             <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary grid place-items-center mb-3">
               <Icon icon={p.icon} className="text-xl" />
             </div>
@@ -57,9 +58,9 @@ function SecurityPage() {
           </div>
         ))}
       </div>
-      <h2>Certifications</h2>
+      <h2>Certifications & partnerships</h2>
       <div className="not-prose flex flex-wrap gap-3 my-6">
-        {complianceBadges.map((b) => (
+        {partnerBadges.map((b) => (
           <span
             key={b}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium"
@@ -70,13 +71,13 @@ function SecurityPage() {
       </div>
       <h2>Responsible disclosure</h2>
       <p>
-        If you discover a security vulnerability, please report it to security@verdian.io. We
-        acknowledge reports within 24 hours and maintain a coordinated disclosure process.
+        If you discover a security vulnerability in our systems, please report it to
+        security@verdian.io. We acknowledge reports within 24 hours.
       </p>
-      <h2>Request documentation</h2>
+      <h2>Client documentation</h2>
       <p>
-        Enterprise customers can request our SOC 2 report, penetration test summary, and
-        subprocessor list.{" "}
+        Retainer and dedicated squad clients can request our SOC 2 report, security questionnaire
+        responses, and subprocessor list.{" "}
         <Link to="/contact" className="text-primary font-semibold hover:underline">
           Contact our team
         </Link>{" "}

@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 export function CTABanner({
   title,
   lede,
-  primaryLabel = "Book a demo",
+  primaryLabel = "Start a project",
   primaryTo = "/contact",
   secondaryLabel,
   secondaryTo = "/pricing",

@@ -12,14 +12,14 @@ import { benefits, companyValues, offices, openRoles, type JobDepartment } from 
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Verdian" },
+      { title: "Careers — Verdian IT Agency" },
       {
         name: "description",
         content:
-          "Join Verdian in Austin, Texas. Build the native CRM & ERP platform for modern operators.",
+          "Join Verdian — build software, cloud systems, and digital products for ambitious clients worldwide.",
       },
       { property: "og:title", content: "Careers at Verdian" },
-      { property: "og:description", content: "Build the operating system for modern companies." },
+      { property: "og:description", content: "Join our global IT agency." },
     ],
   }),
   component: CareersPage,
@@ -28,8 +28,8 @@ export const Route = createFileRoute("/careers")({
 const departments: Array<JobDepartment | "All"> = [
   "All",
   "Engineering",
-  "Product",
   "Design",
+  "Delivery",
   "Sales",
   "Operations",
 ];
@@ -47,8 +47,8 @@ function CareersPage() {
       <div ref={scope}>
         <PageHero
           eyebrow="Careers"
-          title="Build the operating system for modern companies."
-          lede="We're a team of operators, engineers, and designers headquartered in Austin — solving the hardest problems in revenue, finance, and operations."
+          title="Build remarkable things for remarkable clients."
+          lede="We're engineers, designers, and delivery leads shipping software that matters for companies around the world."
         />
 
         <SectionShell className="!pt-0">
@@ -56,13 +56,9 @@ function CareersPage() {
             <div data-reveal>
               <SectionHeader
                 eyebrow="Life at Verdian"
-                title="Small enough to care. Ambitious enough to matter."
+                title="Small studio. Big impact."
+                lede="You'll work on diverse client projects across healthcare, fintech, and SaaS — with the craft of a product company and the variety of agency life. We ship weekly, debate openly, and measure success by client outcomes."
               />
-              <p className="text-lg text-muted-foreground leading-relaxed -mt-4">
-                You'll work alongside former CFOs, staff engineers from category-defining companies,
-                and designers who treat enterprise software as craft. We ship weekly, debate openly,
-                and measure success by customer outcomes — not slide decks.
-              </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
                   "Weekly demos",
@@ -93,12 +89,12 @@ function CareersPage() {
             eyebrow="Benefits"
             title="Compensation and support that match the mission."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid" data-reveal-stagger>
             {benefits.map((b) => (
               <PremiumCard key={b.title}>
                 <IconBadge icon={b.icon} className="mb-4" />
                 <div className="font-serif text-xl text-[color:var(--ink)]">{b.title}</div>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{b.desc}</p>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{b.desc}</p>
               </PremiumCard>
             ))}
           </div>
@@ -106,40 +102,37 @@ function CareersPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="Our values" title="How we work together." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-reveal-stagger>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid" data-reveal-stagger>
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
                 <IconBadge icon={v.icon} className="mb-4 !bg-accent/15 !text-accent" />
                 <div className="font-serif text-xl text-[color:var(--ink)]">{v.title}</div>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{v.desc}</p>
               </PremiumCard>
             ))}
           </div>
         </SectionShell>
 
-        <section className="section-band-dark py-24">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mb-14" data-reveal>
-              <div className="eyebrow mb-5">Where we work</div>
-              <h2 className="font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-background">
-                Four hubs. One platform.
-              </h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 -mt-4" data-reveal-stagger>
-              {offices.map((o) => (
-                <div
-                  key={o.city}
-                  className="rounded-2xl border border-background/10 bg-background/5 p-6 hover:bg-background/10 transition"
-                >
-                  <div className="font-serif text-2xl">{o.city}</div>
-                  <div className="text-sm text-accent mt-1">{o.role}</div>
-                  <p className="text-sm text-background/60 mt-3">{o.address}</p>
-                  <p className="text-xs text-background/40 mt-1">{o.country}</p>
-                </div>
-              ))}
-            </div>
+        <SectionShell dark className="section-dark">
+          <SectionHeader
+            eyebrow="Where we work"
+            title="Two headquarters. One team."
+            dark
+          />
+          <div className="grid sm:grid-cols-2 gap-5 card-grid max-w-3xl" data-reveal-stagger>
+            {offices.map((o) => (
+              <div
+                key={o.city}
+                className="rounded-2xl border border-background/10 bg-background/5 p-6 hover:bg-background/10 transition h-full flex flex-col"
+              >
+                <div className="font-serif text-2xl">{o.city}</div>
+                <div className="text-sm text-accent mt-1">{o.role}</div>
+                <p className="text-sm text-background/60 mt-3 flex-1">{o.address}</p>
+                <p className="text-xs text-background/40 mt-1">{o.country}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </SectionShell>
 
         <SectionShell id="open-roles">
           <div
@@ -147,7 +140,7 @@ function CareersPage() {
             data-reveal
           >
             <div>
-              <div className="eyebrow mb-5">Open roles</div>
+              <div className="eyebrow mb-7">Open roles</div>
               <h2 className="font-serif text-4xl md:text-[2.75rem] leading-[1.08] tracking-[-0.02em] text-[color:var(--ink)]">
                 {filtered.length} positions open
               </h2>
@@ -221,8 +214,8 @@ function CareersPage() {
         </SectionShell>
 
         <CTABanner
-          title="Ready to build something enduring?"
-          lede="Talk to our team about how your experience maps to what we're building next."
+          title="Ready to join the studio?"
+          lede="Tell us about your experience and what kind of work excites you."
           primaryLabel="Get in touch"
           secondaryLabel="About Verdian"
           secondaryTo="/about"

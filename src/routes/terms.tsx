@@ -1,41 +1,59 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
       { title: "Terms of Service — Verdian" },
-      { name: "description", content: "Terms governing use of the Verdian platform and website." },
+      { name: "description", content: "Terms governing use of Verdian's website and services." },
     ],
   }),
   component: () => (
     <LegalPage title="Terms of Service" updated="July 1, 2026">
       <p>
-        These Terms of Service ("Terms") govern your access to and use of Verdian's website,
-        platform, and related services. By using Verdian, you agree to these Terms.
+        These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of Verdian&apos;s
+        website and professional services. By engaging Verdian, you agree to these Terms.
       </p>
       <h2>Service description</h2>
       <p>
-        Verdian provides a unified CRM and ERP platform. Features, availability, and pricing are
-        described on our website and in your order form or subscription agreement.
+        Verdian provides IT consulting and software development services including custom
+        application development, cloud infrastructure, UI/UX design, and managed services. Scope,
+        deliverables, and fees are defined in your statement of work or master services agreement.
       </p>
       <h2>Acceptable use</h2>
       <p>
-        You may not misuse the service, attempt unauthorized access, interfere with other users, or
-        use Verdian in violation of applicable law. Enterprise customers may have additional terms
-        in their master subscription agreement.
+        You may not misuse our services, attempt unauthorized access to our systems, or use Verdian
+        deliverables in violation of applicable law. Client-specific terms may be defined in your
+        services agreement.
       </p>
       <h2>Intellectual property</h2>
       <p>
-        Verdian retains all rights to the platform, documentation, and branding. You retain
-        ownership of your data. You grant Verdian a limited license to process your data solely to
-        provide the service.
+        Unless otherwise agreed in writing, client owns deliverables created specifically for their
+        project upon full payment. Verdian retains rights to pre-existing tools, frameworks, and
+        methodologies. Verdian branding and website content remain our property.
       </p>
       <h2>Limitation of liability</h2>
       <p>
-        To the maximum extent permitted by law, Verdian's liability is limited to the fees paid by
-        you in the twelve months preceding the claim. We provide the service "as is" except as
-        expressly stated in your agreement.
+        To the maximum extent permitted by law, Verdian&apos;s liability is limited to the fees paid
+        by you in the twelve months preceding the claim, except as expressly stated in your services
+        agreement.
+      </p>
+      <h2>Governing law</h2>
+      <p>
+        These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law
+        principles, except where your services agreement specifies otherwise.
+      </p>
+      <h2>Related policies</h2>
+      <p>
+        Our{" "}
+        <Link to="/privacy" className="text-primary font-semibold hover:underline">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link to="/cookies" className="text-primary font-semibold hover:underline">
+          Cookie Policy
+        </Link>{" "}
+        describe how we handle personal data and website cookies.
       </p>
       <h2>Contact</h2>
       <p>Questions about these Terms? Email legal@verdian.io.</p>

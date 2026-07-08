@@ -15,9 +15,11 @@ export function Footer() {
       <div className="footer-fade">
         <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <div>
-            <h3 className="font-serif text-3xl text-(--ink)">Stay ahead of the platform.</h3>
+            <h3 className="font-serif text-3xl text-[color:var(--ink)]">
+              Insights from the studio.
+            </h3>
             <p className="mt-3 text-muted-foreground max-w-md">
-              Product updates, operator insights, and release notes — once a month, no noise.
+              Tech trends, project lessons, and agency updates — once a month, no spam.
             </p>
           </div>
           <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
@@ -43,8 +45,8 @@ export function Footer() {
                 <span className="font-serif text-2xl">Verdian</span>
               </div>
               <p className="max-w-sm text-background/50 leading-relaxed text-[15px]">
-                The native CRM & ERP workspace for teams that build enduring companies. Engineered
-                in Austin, Texas.
+                A premium IT agency building software, cloud infrastructure, and digital products
+                for ambitious companies worldwide.
               </p>
               <div className="flex items-center gap-2.5 mt-8">
                 {socialIcons.map(({ key, icon, label }) => (
@@ -61,58 +63,51 @@ export function Footer() {
                 ))}
               </div>
             </div>
-            {[
-              {
-                title: "Product",
-                links: [
-                  ["Platform", "/platform"],
-                  ["Solutions", "/solutions"],
-                  ["Pricing", "/pricing"],
-                  ["Security", "/security"],
-                ] as const,
-              },
-              {
-                title: "Company",
-                links: [
-                  ["About", "/about"],
-                  ["Careers", "/careers"],
-                  ["Contact", "/contact"],
-                  ["Press", "mailto:press@verdian.io"],
-                ] as const,
-              },
-              {
-                title: "Resources",
-                links: [
-                  ["Documentation", "/platform"],
-                  ["Status", "https://status.verdian.io"],
-                  ["Privacy", "/privacy"],
-                  ["Terms", "/terms"],
-                ] as const,
-              },
-            ].map((col) => (
+            {(
+              [
+                {
+                  title: "Services",
+                  links: [
+                    { label: "What we do", to: "/services" },
+                    { label: "Industries", to: "/solutions" },
+                    { label: "Engagement", to: "/pricing" },
+                    { label: "Security", to: "/security" },
+                  ],
+                },
+                {
+                  title: "Company",
+                  links: [
+                    { label: "About", to: "/about" },
+                    { label: "Careers", to: "/careers" },
+                    { label: "Contact", to: "/contact" },
+                    { label: "Press", href: "mailto:press@verdian.io" },
+                  ],
+                },
+                {
+                  title: "Resources",
+                  links: [
+                    { label: "FAQ", to: "/faq" },
+                    { label: "Privacy", to: "/privacy" },
+                    { label: "Terms", to: "/terms" },
+                    { label: "Cookie Policy", to: "/cookies" },
+                  ],
+                },
+              ] as const
+            ).map((col) => (
               <div key={col.title}>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold mb-5">
                   {col.title}
                 </div>
                 <ul className="space-y-3 text-sm text-background/55">
-                  {col.links.map(([label, href]) => (
-                    <li key={label}>
-                      {href.startsWith("/") ? (
-                        <Link to={href} className="hover:text-accent transition">
-                          {label}
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      {"to" in link ? (
+                        <Link to={link.to} className="hover:text-accent transition">
+                          {link.label}
                         </Link>
-                      ) : href.startsWith("mailto:") ? (
-                        <a href={href} className="hover:text-accent transition">
-                          {label}
-                        </a>
                       ) : (
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-accent transition"
-                        >
-                          {label}
+                        <a href={link.href} className="hover:text-accent transition">
+                          {link.label}
                         </a>
                       )}
                     </li>
@@ -123,11 +118,21 @@ export function Footer() {
           </div>
           <div className="mt-16 pt-8 border-t border-background/8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-background/35">
             <div>
-              © {new Date().getFullYear()} Verdian Systems, Inc. · 500 W 2nd St, Austin, TX 78701
+              © {new Date().getFullYear()} Verdian Digital, Inc. · 500 W 2nd St, Austin, TX 78701
             </div>
-            <div className="flex items-center gap-2 text-background/45">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/80" /> All systems
-              operational
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-background/45">
+              <Link to="/privacy" className="hover:text-accent transition">
+                Privacy
+              </Link>
+              <Link to="/terms" className="hover:text-accent transition">
+                Terms
+              </Link>
+              <Link to="/cookies" className="hover:text-accent transition">
+                Cookies
+              </Link>
+              <Link to="/faq" className="hover:text-accent transition">
+                FAQ
+              </Link>
             </div>
           </div>
         </div>
