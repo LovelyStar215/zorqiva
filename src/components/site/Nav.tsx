@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/site/Logo";
 
 const links = [
   { to: "/services", label: "Services" },
@@ -34,7 +35,7 @@ export function Nav() {
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 z-[60] bg-[color:var(--ink)] text-background/80 text-center text-[11px] py-2 tracking-wide"
+        className="fixed top-0 inset-x-0 z-60 bg-(--ink) text-background/80 text-center text-xs py-2 tracking-wide"
         style={{ height: ANNOUNCEMENT_H }}
       >
         <span className="hidden sm:inline">
@@ -48,31 +49,24 @@ export function Nav() {
         <span className="sm:hidden text-accent font-semibold">Now hiring — view roles</span>
       </div>
 
-      <header className="fixed left-0 right-0 z-50 px-4 sm:px-6" style={{ top: ANNOUNCEMENT_H }}>
+      <header className="fixed inset-x-0 z-50" style={{ top: ANNOUNCEMENT_H }}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-60 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
         >
           Skip to content
         </a>
-        <div className="max-w-7xl mx-auto">
-          <div className={`nav-bar ${scrolled ? "nav-bar--solid" : "nav-bar--transparent"}`}>
-            <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-8 h-8 rounded-lg bg-primary text-primary-foreground grid place-items-center shadow-[var(--shadow-soft)] group-hover:scale-105 transition-transform">
-                <Icon icon="solar:leaf-bold" className="text-lg" />
-              </div>
-              <span className="font-serif text-xl tracking-tight text-[color:var(--ink)]">
-                Verdian
-              </span>
-            </Link>
+        <div className={`nav-bar ${scrolled ? "nav-bar--solid" : "nav-bar--transparent"}`}>
+          <div className="nav-bar__inner">
+            <Logo link />
 
-            <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main">
+            <nav className="hidden xl:flex items-center gap-1" aria-label="Main">
               {links.map((l) => (
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="px-3 py-2 text-[13px] font-medium text-foreground/70 hover:text-primary rounded-lg hover:bg-primary/5 transition-all"
-                  activeProps={{ className: "text-primary bg-primary/8 font-semibold" }}
+                  className="nav-link"
+                  activeProps={{ className: "nav-link" }}
                 >
                   {l.label}
                 </Link>
@@ -80,10 +74,7 @@ export function Nav() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-2 shrink-0">
-              <Link
-                to="/contact"
-                className="btn-primary !py-2.5 !px-5 !text-[13px] !shadow-[var(--shadow-soft)]"
-              >
+              <Link to="/contact" className="btn-primary py-2.5! px-5! shadow-(--shadow-soft)!">
                 Start a project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
@@ -101,24 +92,26 @@ export function Nav() {
         </div>
 
         {open && (
-          <div className="lg:hidden mt-2 glass rounded-2xl px-5 py-4 flex flex-col gap-1 shadow-[var(--shadow-lift)] max-h-[70vh] overflow-y-auto">
-            {links.map((l) => (
+          <div className="lg:hidden border-b border-border bg-background/95 backdrop-blur-md px-6 py-4 shadow-(--shadow-lift) max-h-[70vh] overflow-y-auto">
+            <div className="section-inner flex flex-col gap-1">
+              {links.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="nav-link-mobile"
+                >
+                  {l.label}
+                </Link>
+              ))}
               <Link
-                key={l.to}
-                to={l.to}
+                to="/contact"
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium py-2.5 text-foreground/80 hover:text-primary"
+                className="btn-primary mt-2 justify-center py-2.5!"
               >
-                {l.label}
+                Start a project
               </Link>
-            ))}
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-2 justify-center !text-sm"
-            >
-              Start a project
-            </Link>
+            </div>
           </div>
         )}
       </header>

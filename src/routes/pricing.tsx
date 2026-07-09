@@ -12,13 +12,13 @@ import { siteImages } from "@/lib/site-images";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Engagement Models — Verdian" },
+      { title: "Engagement Models — Tek4Real" },
       {
         name: "description",
         content:
           "Flexible engagement models — project-based, monthly retainer, or dedicated squad.",
       },
-      { property: "og:title", content: "Engagement — Verdian" },
+      { property: "og:title", content: "Engagement — Tek4Real" },
       { property: "og:description", content: "Three ways to work with our agency." },
     ],
   }),
@@ -106,13 +106,13 @@ function PricingPage() {
                   {p.tag}
                 </div>
                 <div
-                  className={`font-serif text-3xl mt-3 ${p.highlight ? "text-background" : "text-[color:var(--ink)]"}`}
+                  className={`font-serif text-3xl mt-3 ${p.highlight ? "text-background" : "text-(--ink)"}`}
                 >
                   {p.name}
                 </div>
                 <div className="mt-6 font-serif text-5xl leading-none">{p.price}</div>
                 <div
-                  className={`text-sm mt-1 min-h-[1.25rem] ${p.highlight ? "text-background/60" : "text-muted-foreground"}`}
+                  className={`text-sm mt-1 min-h-5 ${p.highlight ? "text-background/60" : "text-muted-foreground"}`}
                 >
                   {p.unit}
                 </div>
@@ -152,7 +152,7 @@ function PricingPage() {
             </div>
             <SectionImage
               src={siteImages.pricingPartnership}
-              alt="Verdian client partnership and engagement"
+              alt="Tek4Real client partnership and engagement"
               aspect="video"
             />
           </div>
@@ -167,7 +167,7 @@ function PricingPage() {
 
         <SectionShell>
           <SectionHeader eyebrow="FAQ" title="Common questions." />
-          <div className="max-w-3xl">
+          <div>
             <FaqList items={pricingFaqs} />
           </div>
         </SectionShell>

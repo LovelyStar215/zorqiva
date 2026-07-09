@@ -11,13 +11,13 @@ import { companyValues } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Verdian IT Agency" },
+      { title: "About — Tek4Real" },
       {
         name: "description",
         content:
-          "Verdian is a premium IT agency. We build custom software for ambitious companies worldwide.",
+          "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
       },
-      { property: "og:title", content: "About Verdian" },
+      { property: "og:title", content: "About Tek4Real" },
       { property: "og:description", content: "Global IT agency since 2012." },
     ],
   }),
@@ -28,7 +28,7 @@ const leadership = [
   {
     name: "Sarah Chen",
     role: "CEO & Founder",
-    bio: "Former engineering director at two Fortune 500 companies. Founded Verdian to deliver agency work at product-company quality.",
+    bio: "Former engineering director at two Fortune 500 companies. Founded Tek4Real to deliver agency work at product-company quality.",
   },
   {
     name: "Marcus Webb",
@@ -50,8 +50,8 @@ const leadership = [
 const timeline = [
   {
     year: "2012",
-    title: "Verdian founded",
-    desc: "Sarah launches Verdian as a boutique dev shop — three engineers, one mission: build software that lasts.",
+    title: "Tek4Real founded",
+    desc: "Sarah launches Tek4Real as a boutique dev shop — three engineers, one mission: build software that lasts.",
   },
   {
     year: "2016",
@@ -84,7 +84,7 @@ function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <SectionImage
               src={siteImages.aboutStudio}
-              alt="Verdian studio workspace"
+              alt="Tek4Real studio workspace"
               aspect="video"
             />
             <div>
@@ -113,7 +113,7 @@ function AboutPage() {
 
         <SectionShell tone="warm">
           <SectionHeader eyebrow="Our story" title="From boutique shop to global agency." />
-          <div className="relative max-w-3xl">
+          <div className="relative">
             <div className="absolute left-2.75 top-2 bottom-2 w-px bg-border" aria-hidden />
             <div className="space-y-8">
               {timeline.map((t) => (
@@ -179,7 +179,11 @@ function AboutPage() {
                 View open roles <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <SectionImage src={siteImages.aboutTeam} alt="The Verdian team at work" aspect="wide" />
+            <SectionImage
+              src={siteImages.aboutTeam}
+              alt="The Tek4Real team at work"
+              aspect="wide"
+            />
           </div>
         </SectionShell>
 

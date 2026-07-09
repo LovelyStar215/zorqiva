@@ -34,7 +34,7 @@ const inputClass =
   "mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition";
 
 export function JobApplicationForm({
-  title = "Apply to Verdian",
+  title = "Apply to Tek4Real",
   subtitle = "Our talent team reviews every application and responds within five business days.",
   selectedRoleId,
 }: {
@@ -73,9 +73,9 @@ export function JobApplicationForm({
         <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary grid place-items-center mx-auto">
           <Icon icon="solar:verified-check-bold" className="text-4xl" />
         </div>
-        <h3 className="font-serif text-3xl text-[color:var(--ink)] mt-6">Application received.</h3>
+        <h3 className="font-serif text-3xl text-(--ink) mt-6">Application received.</h3>
         <p className="mt-3 text-muted-foreground max-w-sm mx-auto leading-relaxed">
-          Thank you for your interest in Verdian. Our talent team will review your application and
+          Thank you for your interest in Tek4Real. Our talent team will review your application and
           get back to you within five business days.
         </p>
       </div>
@@ -84,7 +84,7 @@ export function JobApplicationForm({
 
   return (
     <>
-      <h3 className="font-serif text-3xl text-[color:var(--ink)]">{title}</h3>
+      <h3 className="font-serif text-3xl text-(--ink)">{title}</h3>
       <p className="text-sm text-muted-foreground mt-2">{subtitle}</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4" noValidate>
@@ -217,7 +217,7 @@ export function JobApplicationForm({
 
         <label className="block">
           <span className="text-xs font-medium text-foreground/70">
-            Why Verdian? Tell us about your experience.
+            Why Tek4Real? Tell us about your experience.
           </span>
           <textarea
             rows={5}

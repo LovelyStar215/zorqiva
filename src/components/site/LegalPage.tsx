@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Layout, PageHero } from "@/components/site/Layout";
+import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 
 export function LegalPage({
   title,
@@ -13,11 +13,13 @@ export function LegalPage({
   return (
     <Layout>
       <PageHero eyebrow="Legal" title={title} lede={`Last updated ${updated}`} />
-      <article className="max-w-3xl mx-auto px-6 py-16 prose prose-neutral dark:prose-invert">
-        <div className="space-y-6 text-foreground/85 leading-relaxed [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:text-[color:var(--ink)] [&_h2]:mt-10 [&_h2]:mb-4 [&_ul]:space-y-2 [&_strong]:text-[color:var(--ink)]">
-          {children}
-        </div>
-      </article>
+      <SectionShell>
+        <article className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="space-y-6 text-foreground/85 leading-relaxed [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:text-(--ink) [&_h2]:mt-10 [&_h2]:mb-4 [&_ul]:space-y-2 [&_strong]:text-(--ink)">
+            {children}
+          </div>
+        </article>
+      </SectionShell>
     </Layout>
   );
 }

@@ -21,7 +21,7 @@ export const siteImages = {
   /** Contact page — global headquarters */
   contactHeadquarters: "/images/contact-headquarters.jpg",
 
-  /** Careers page — "Life at Verdian" culture */
+  /** Careers page — "Life at Tek4Real" culture */
   careersCulture: "/images/careers-culture.jpg",
 
   /** Industries page — cross-sector client work */
@@ -40,17 +40,17 @@ export const siteImageBriefs: Record<SiteImageKey, string> = {
   homeDevelopment:
     "Engineers shipping software — sprint demo, pair programming, or modern delivery workflow in action.",
   servicesOverview:
-    "Wide shot of Verdian service delivery — planning session, multi-discipline team, client-ready professionalism.",
+    "Wide shot of Tek4Real service delivery — planning session, multi-discipline team, client-ready professionalism.",
   servicesProcess:
     "Hands-on engineering and QA — code review, testing, or launch-ready product work (real, not fake UI).",
   aboutStudio:
-    "Verdian workspace or headquarters — polished office/studio interior representing Texas & Hong Kong presence.",
+    "Tek4Real workspace or headquarters — polished office/studio interior representing Texas & Hong Kong presence.",
   aboutTeam:
     "Team culture moment — builders collaborating authentically; warm, diverse, craft-focused.",
   contactHeadquarters:
     "Welcoming headquarters visual — office exterior/interior or reception; establishes real-world presence.",
   careersCulture:
-    "Life at Verdian — candid team energy, workshop or social moment that appeals to candidates.",
+    "Life at Tek4Real — candid team energy, workshop or social moment that appeals to candidates.",
   solutionsIndustries:
     "Client work across sectors — healthcare, fintech, retail, or enterprise context; compliance-ready professionalism.",
   pricingPartnership:

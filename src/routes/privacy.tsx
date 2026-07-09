@@ -1,19 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
+import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Verdian" },
-      { name: "description", content: "How Verdian collects, uses, and protects your data." },
+      { title: "Privacy Policy — Tek4Real" },
+      { name: "description", content: "How Tek4Real collects, uses, and protects your data." },
     ],
   }),
   component: () => (
     <LegalPage title="Privacy Policy" updated="July 1, 2026">
       <p>
-        Verdian Digital, Inc. (&ldquo;Verdian&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects
-        your privacy. This policy describes how we collect, use, and safeguard information when you
-        use our website and engage our services.
+        Tek4Real, Inc. (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your
+        privacy. This policy describes how we collect, use, and safeguard information when you use
+        our website and engage our services.
       </p>
       <h2>Information we collect</h2>
       <p>
@@ -44,12 +45,12 @@ export const Route = createFileRoute("/privacy")({
       <h2>Your rights</h2>
       <p>
         Depending on your jurisdiction, you may have rights to access, correct, delete, or export
-        your personal data. Contact privacy@verdian.io to exercise these rights.
+        your personal data. Contact {brand.contactEmail} to exercise these rights.
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about this policy? Email privacy@verdian.io or write to Verdian Digital, Inc., 500
-        W 2nd Street, Suite 1900, Austin, TX 78701.
+        Questions about this policy? Email {brand.contactEmail} or write to Tek4Real, Inc., 500 W
+        2nd Street, Suite 1900, Austin, TX 78701.
       </p>
     </LegalPage>
   ),

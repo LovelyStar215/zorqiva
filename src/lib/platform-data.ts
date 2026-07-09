@@ -33,30 +33,34 @@ export const enterpriseMatrix = [
   {
     capability: "Team composition",
     legacy: "Freelancer patchwork",
-    verdian: "Senior cross-functional squad",
+    withTek4Real: "Senior cross-functional squad",
   },
-  { capability: "Time to start", legacy: "2–3 months hiring", verdian: "2 weeks to kickoff" },
+  { capability: "Time to start", legacy: "2–3 months hiring", withTek4Real: "2 weeks to kickoff" },
   {
     capability: "Code quality",
     legacy: "Inconsistent standards",
-    verdian: "Reviewed, tested, documented",
+    withTek4Real: "Reviewed, tested, documented",
   },
   {
     capability: "Design & dev alignment",
     legacy: "Separate handoffs",
-    verdian: "Unified workflow",
+    withTek4Real: "Unified workflow",
   },
   {
     capability: "Post-launch support",
     legacy: "None or ad-hoc",
-    verdian: "Retainer & SLA options",
+    withTek4Real: "Retainer & SLA options",
   },
   {
     capability: "Security practices",
     legacy: "Varies by contractor",
-    verdian: "SOC 2-aligned SDLC",
+    withTek4Real: "SOC 2-aligned SDLC",
   },
-  { capability: "Scalability", legacy: "Short-term fixes", verdian: "Architecture for growth" },
+  {
+    capability: "Scalability",
+    legacy: "Short-term fixes",
+    withTek4Real: "Architecture for growth",
+  },
 ] as const;
 
 export const advancedCapabilities = [

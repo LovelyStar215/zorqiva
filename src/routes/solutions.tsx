@@ -11,13 +11,13 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Industries — Verdian IT Agency" },
+      { title: "Industries — Tek4Real" },
       {
         name: "description",
         content:
-          "Verdian serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
+          "Tek4Real serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
       },
-      { property: "og:title", content: "Industries — Verdian" },
+      { property: "og:title", content: "Industries — Tek4Real" },
       {
         property: "og:description",
         content: "Industry expertise across regulated and high-growth sectors.",
@@ -76,7 +76,7 @@ function SolutionsPage() {
           lede="We've delivered projects for healthcare, fintech, retail, SaaS, and enterprise clients — with compliance and security built in from day one."
         />
 
-        <SectionShell className="!pt-0">
+        <SectionShell className="pt-0!">
           <SectionHeader
             eyebrow="By industry"
             title="Select your sector. See what we deliver."
@@ -86,7 +86,7 @@ function SolutionsPage() {
           <div className="mt-8">
             <SectionImage
               src={siteImages.solutionsIndustries}
-              alt="Verdian client work across industries"
+              alt="Tek4Real client work across industries"
               aspect="video"
             />
           </div>
@@ -98,7 +98,7 @@ function SolutionsPage() {
             {roles.map((r) => (
               <PremiumCard key={r.t}>
                 <IconBadge icon={r.i} className="mb-4" />
-                <div className="font-serif text-xl text-[color:var(--ink)] mb-4">{r.t}</div>
+                <div className="font-serif text-xl text-(--ink) mb-4">{r.t}</div>
                 <ul className="space-y-2.5">
                   {r.p.map((p) => (
                     <li key={p} className="flex gap-2.5 text-sm text-foreground/80">

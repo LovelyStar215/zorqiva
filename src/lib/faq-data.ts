@@ -1,3 +1,5 @@
+import { brand } from "./brand";
+
 export type FaqItem = { q: string; a: string };
 
 export type FaqSection = { title: string; lede?: string; items: FaqItem[] };
@@ -29,7 +31,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "Can I visit your offices?",
-        a: "Yes. Email hello@verdian.io to schedule an in-person session at our Texas or Hong Kong headquarters.",
+        a: `Yes. Email ${brand.contactEmail} to schedule an in-person session at our Texas or Hong Kong headquarters.`,
       },
     ],
   },

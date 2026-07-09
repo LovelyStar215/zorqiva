@@ -1,25 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { useMemo, useState } from "react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
-import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { benefits, companyValues, offices, openRoles, type JobDepartment } from "@/lib/site-data";
+import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Verdian IT Agency" },
+      { title: "Careers — Tek4Real" },
       {
         name: "description",
         content:
-          "Join Verdian — build software, cloud systems, and digital products for ambitious clients worldwide.",
+          "Join Tek4Real — build software, cloud systems, and digital products for ambitious clients worldwide.",
       },
-      { property: "og:title", content: "Careers at Verdian" },
+      { property: "og:title", content: "Careers at Tek4Real" },
       { property: "og:description", content: "Join our global IT agency." },
     ],
   }),
@@ -37,16 +37,10 @@ const departments: Array<JobDepartment | "All"> = [
 
 function CareersPage() {
   const [dept, setDept] = useState<JobDepartment | "All">("All");
-  const [selectedRoleId, setSelectedRoleId] = useState<string | undefined>();
   const filtered = useMemo(
     () => (dept === "All" ? openRoles : openRoles.filter((j) => j.department === dept)),
     [dept],
   );
-
-  const scrollToApply = (roleId?: string) => {
-    if (roleId) setSelectedRoleId(roleId);
-    document.getElementById("apply")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <Layout>
@@ -61,7 +55,7 @@ function CareersPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                eyebrow="Life at Verdian"
+                eyebrow="Life at Tek4Real"
                 title="Small studio. Big impact."
                 lede="You'll work on diverse client projects across healthcare, fintech, and SaaS — with the craft of a product company and the variety of agency life. We ship weekly, debate openly, and measure success by client outcomes."
               />
@@ -83,7 +77,7 @@ function CareersPage() {
             </div>
             <SectionImage
               src={siteImages.careersCulture}
-              alt="Culture and life at Verdian"
+              alt="Culture and life at Tek4Real"
               aspect="wide"
             />
           </div>
@@ -124,7 +118,7 @@ function CareersPage() {
 
         <SectionShell dark className="section-dark">
           <SectionHeader eyebrow="Where we work" title="Two headquarters. One team." dark />
-          <div className="grid sm:grid-cols-2 gap-5 card-grid max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-5 card-grid">
             {offices.map((o) => (
               <div
                 key={o.city}
@@ -166,12 +160,14 @@ function CareersPage() {
           </div>
           <div className="space-y-4">
             {filtered.map((job) => (
-              <article
+              <Link
                 key={job.id}
-                className="group card-premium p-6! md:p-8! hover:border-primary/40! hover:shadow-(--shadow-soft) transition"
+                to="/careers/$jobId"
+                params={{ jobId: job.id }}
+                className="link-arrow group card-premium p-6! md:p-8! hover:border-primary/40! hover:shadow-(--shadow-soft) transition block"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
+                <div className="flex items-center gap-4">
+                  <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="text-xs uppercase tracking-widest text-accent font-semibold">
                         {job.department}
@@ -179,10 +175,10 @@ function CareersPage() {
                       <span className="text-xs text-muted-foreground">·</span>
                       <span className="text-xs text-muted-foreground">{job.level}</span>
                     </div>
-                    <h3 className="font-serif text-2xl text-(--ink) group-hover:text-primary transition">
+                    <div className="font-serif text-2xl text-(--ink) group-hover:text-primary transition">
                       {job.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-2 max-w-2xl leading-relaxed">
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                       {job.description}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-3 text-xs text-muted-foreground">
@@ -194,82 +190,32 @@ function CareersPage() {
                       </span>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => scrollToApply(job.id)}
-                    className="shrink-0 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
-                  >
-                    Apply <Icon icon="solar:arrow-right-linear" />
-                  </button>
+                  <Icon
+                    icon="solar:arrow-right-linear"
+                    className="link-arrow__icon text-primary text-xl shrink-0"
+                  />
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
           <p className="mt-10 text-center text-muted-foreground">
             Don't see a fit?{" "}
             <a
-              href="mailto:careers@verdian.io"
+              href={`mailto:${brand.contactEmail}`}
               className="text-primary font-semibold hover:underline"
             >
-              careers@verdian.io
+              {brand.contactEmail}
             </a>
           </p>
         </SectionShell>
 
-        <SectionShell id="apply" tone="muted" className="scroll-mt-28">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 xl:gap-16 items-start">
-            <div>
-              <SectionHeader
-                eyebrow="Apply"
-                title="Tell us about yourself."
-                lede="Whether you're applying for a specific role or exploring opportunities, we'd love to hear from you. Share your background, links, and what kind of work excites you."
-              />
-              <div className="mt-8 space-y-4">
-                {[
-                  {
-                    icon: "solar:clock-circle-bold",
-                    title: "Response time",
-                    desc: "Our talent team replies within five business days.",
-                  },
-                  {
-                    icon: "solar:users-group-rounded-bold",
-                    title: "Interview process",
-                    desc: "Intro call, skills conversation, and team meet — typically two weeks.",
-                  },
-                  {
-                    icon: "solar:global-bold",
-                    title: "Locations",
-                    desc: "Texas, Hong Kong, and remote roles across the US.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="flex gap-4 rounded-xl border border-border bg-card p-4"
-                  >
-                    <Icon icon={item.icon} className="text-primary text-xl shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-sm font-semibold text-(--ink)">{item.title}</div>
-                      <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-4xl border border-border bg-card p-8 md:p-10 shadow-(--shadow-lift) ring-1 ring-primary/5">
-              <JobApplicationForm selectedRoleId={selectedRoleId} />
-            </div>
-          </div>
-        </SectionShell>
-
         <CTABanner
           title="Ready to join the studio?"
-          lede="Tell us about your experience and what kind of work excites you."
-          primaryLabel="Submit application"
+          lede="Browse our open roles and apply directly from the role page."
+          primaryLabel="Browse open roles"
           primaryTo="/careers"
-          primaryHash="apply"
-          secondaryLabel="About Verdian"
+          primaryHash="open-roles"
+          secondaryLabel="About Tek4Real"
           secondaryTo="/about"
         />
       </div>

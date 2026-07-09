@@ -15,13 +15,13 @@ import { Eyebrow } from "@/components/site/primitives";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Verdian IT Agency" },
+      { title: "Services — Tek4Real" },
       {
         name: "description",
         content:
           "Custom software development, cloud & DevOps, UI/UX design, AI integration, and managed IT services.",
       },
-      { property: "og:title", content: "Services — Verdian" },
+      { property: "og:title", content: "Services — Tek4Real" },
       {
         property: "og:description",
         content: "Full-stack IT agency services for modern companies.",
@@ -46,7 +46,7 @@ function ServicesPage() {
           <div className="mt-8">
             <SectionImage
               src={siteImages.servicesOverview}
-              alt="Overview of Verdian agency services"
+              alt="Overview of Tek4Real agency services"
               aspect="video"
             />
           </div>
@@ -65,7 +65,7 @@ function ServicesPage() {
 
         <SectionShell>
           <SectionHeader
-            eyebrow="Why Verdian"
+            eyebrow="Why Tek4Real"
             title="Agency quality. Partner accountability."
             lede="The difference between patching freelancers together and working with a dedicated studio."
           />
@@ -92,7 +92,7 @@ function ServicesPage() {
             </div>
             <SectionImage
               src={siteImages.servicesProcess}
-              alt="Verdian engineering and delivery process"
+              alt="Tek4Real engineering and delivery process"
               aspect="video"
             />
           </div>

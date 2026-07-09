@@ -23,7 +23,7 @@ export function EnterpriseMatrix() {
       <div className="grid grid-cols-[1.2fr_1fr_1fr] bg-muted/40 border-b border-border text-[10px] uppercase tracking-wider font-semibold text-muted-foreground">
         <div className="px-5 py-3.5">Capability</div>
         <div className="px-5 py-3.5 border-l border-border">In-house / DIY</div>
-        <div className="px-5 py-3.5 border-l border-border text-primary">With Verdian</div>
+        <div className="px-5 py-3.5 border-l border-border text-primary">With Tek4Real</div>
       </div>
       {enterpriseMatrix.map((row, i) => (
         <div
@@ -37,7 +37,7 @@ export function EnterpriseMatrix() {
           </div>
           <div className="px-5 py-4 border-l border-border text-foreground/85 font-medium flex items-center gap-2">
             <Icon icon="solar:check-circle-bold" className="text-primary shrink-0" />
-            {row.verdian}
+            {row.withTek4Real}
           </div>
         </div>
       ))}

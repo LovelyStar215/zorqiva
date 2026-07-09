@@ -8,13 +8,13 @@ import { faqSections } from "@/lib/faq-data";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Verdian IT Agency" },
+      { title: "FAQ — Tek4Real" },
       {
         name: "description",
         content:
-          "Frequently asked questions about working with Verdian — projects, pricing, teams, and policies.",
+          "Frequently asked questions about working with Tek4Real — projects, pricing, teams, and policies.",
       },
-      { property: "og:title", content: "FAQ — Verdian" },
+      { property: "og:title", content: "FAQ — Tek4Real" },
       {
         property: "og:description",
         content:
@@ -37,7 +37,7 @@ function FaqPage() {
         <PageHero
           eyebrow="FAQ"
           title="Answers before you reach out."
-          lede="Projects, pricing, how we work across Texas and Hong Kong — and what to expect when you partner with Verdian."
+          lede="Projects, pricing, how we work across Texas and Hong Kong — and what to expect when you partner with Tek4Real."
         />
 
         <SectionShell className="pt-0!">
@@ -82,7 +82,7 @@ function FaqPage() {
         <SectionShell tone="warm">
           <div className="text-center">
             <h2 className="font-serif text-2xl md:text-3xl text-(--ink) mb-4">Policies & legal</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed">
               Read our{" "}
               <Link to="/privacy" className="text-primary font-semibold hover:underline">
                 Privacy Policy

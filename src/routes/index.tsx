@@ -17,13 +17,13 @@ import { caseStudies, partnerBadges } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Verdian — Premium IT Agency" },
+      { title: "Tek4Real — Premium IT Agency" },
       {
         name: "description",
         content:
-          "Verdian is a premium IT agency — custom software, cloud, design, and AI for ambitious companies.",
+          "Tek4Real is a premium IT agency — custom software, cloud, design, and AI for ambitious companies.",
       },
-      { property: "og:title", content: "Verdian — IT Agency" },
+      { property: "og:title", content: "Tek4Real — IT Agency" },
       { property: "og:description", content: "Build. Ship. Scale. With a partner you can trust." },
     ],
   }),
@@ -41,12 +41,13 @@ function Home() {
   return (
     <Layout>
       <div>
-        <section
-          className="relative overflow-hidden page-hero page-hero--clean hero-viewport"
-          style={{ background: "var(--gradient-hero)" }}
-        >
+        <section className="relative page-hero hero-viewport">
           <div className="absolute inset-0 premium-grid opacity-50" />
           <div className="absolute inset-0 grain" />
+          <div
+            className="absolute inset-0 hero-mesh"
+            style={{ background: "var(--gradient-mesh)" }}
+          />
           <div className="hero-viewport__content relative">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/50 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-primary mb-10 shadow-(--shadow-soft)">
               <span className="rounded-full bg-primary text-primary-foreground px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold">
@@ -54,7 +55,7 @@ function Home() {
               </span>
               Texas · Hong Kong
             </div>
-            <h1 className="font-serif text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] tracking-[-0.03em] text-(--ink) max-w-4xl mx-auto">
+            <h1 className="font-hero text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] text-(--ink) max-w-4xl mx-auto">
               <span className="block">We build digital products</span>
               <span className="block">
                 that <span className="text-gradient">move businesses forward.</span>
@@ -99,7 +100,7 @@ function Home() {
           <div className="mt-8">
             <SectionImage
               src={siteImages.homeServices}
-              alt="Verdian service offerings on the homepage"
+              alt="Tek4Real service offerings on the homepage"
               aspect="video"
             />
           </div>
@@ -109,10 +110,10 @@ function Home() {
 
         <section className="relative overflow-hidden section-dark-flat section-shell">
           <div className="absolute inset-0 premium-grid opacity-[0.06] pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 items-center card-grid">
+          <div className="section-inner grid grid-cols-2 lg:grid-cols-4 gap-8 items-center card-grid">
             {metrics.map((m) => (
               <div key={m.l} className="text-center h-full">
-                <div className="font-serif text-4xl lg:text-5xl text-gradient-gold tracking-tight">
+                <div className="font-serif text-4xl lg:text-5xl text-gradient tracking-tight">
                   {m.v}
                 </div>
                 <div className="text-[10px] mt-2 text-background/40 uppercase tracking-[0.2em] font-medium">
@@ -125,7 +126,7 @@ function Home() {
 
         <SectionShell>
           <SectionHeader
-            eyebrow="Why Verdian"
+            eyebrow="Why Tek4Real"
             title="Stop stitching freelancers together."
             lede="Side-by-side comparison of in-house hiring and DIY vs. working with a dedicated agency squad."
           />
@@ -164,16 +165,14 @@ function Home() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/services"
-                className="mt-8 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
-              >
-                Explore our services <Icon icon="solar:arrow-right-linear" />
+              <Link to="/services" className="link-arrow mt-8 text-primary font-semibold text-sm">
+                Explore our services{" "}
+                <Icon icon="solar:arrow-right-linear" className="link-arrow__icon" />
               </Link>
             </div>
             <SectionImage
               src={siteImages.homeDevelopment}
-              alt="Verdian development process on the homepage"
+              alt="Tek4Real development process on the homepage"
               aspect="video"
             />
           </div>

@@ -25,7 +25,7 @@ export function SectionHeader({
       </h2>
       {lede && (
         <p
-          className={`mt-5 text-lg text-muted-foreground leading-relaxed max-w-3xl ${align === "center" ? "mx-auto" : ""}`}
+          className={`mt-5 text-lg text-muted-foreground leading-relaxed ${align === "center" ? "mx-auto" : ""}`}
         >
           {lede}
         </p>

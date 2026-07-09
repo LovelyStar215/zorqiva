@@ -9,16 +9,19 @@ import { siteImages } from "@/lib/site-images";
 import { FaqList } from "@/components/site/FaqList";
 import { contactFaqs } from "@/lib/faq-data";
 import { offices } from "@/lib/site-data";
+import { brand } from "@/lib/brand";
+
+const contactMailto = `mailto:${brand.contactEmail}`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Verdian IT Agency" },
+      { title: "Contact — Tek4Real" },
       {
         name: "description",
-        content: "Contact Verdian. Start a project, partnerships, careers, or general inquiries.",
+        content: "Contact Tek4Real. Start a project, partnerships, careers, or general inquiries.",
       },
-      { property: "og:title", content: "Contact Verdian" },
+      { property: "og:title", content: "Contact Tek4Real" },
       { property: "og:description", content: "Start a project with our global studio." },
     ],
   }),
@@ -44,29 +47,29 @@ const channels = [
     icon: "solar:letter-bold",
     title: "Email",
     desc: "General inquiries, project questions, and new business.",
-    action: "hello@verdian.io",
-    href: "mailto:hello@verdian.io",
+    action: brand.contactEmail,
+    href: contactMailto,
   },
   {
     icon: "solar:hand-shake-bold",
     title: "Partnerships",
     desc: "Referral partners, technology alliances, and subcontracting.",
-    action: "partners@verdian.io",
-    href: "mailto:partners@verdian.io",
+    action: brand.contactEmail,
+    href: contactMailto,
   },
   {
     icon: "solar:headphones-round-bold",
     title: "Client support",
     desc: "Existing retainer and dedicated squad clients.",
-    action: "support@verdian.io",
-    href: "mailto:support@verdian.io",
+    action: brand.contactEmail,
+    href: contactMailto,
   },
   {
     icon: "solar:case-round-bold",
     title: "Careers",
     desc: "Join our team in Texas, Hong Kong, or remotely.",
-    action: "Apply on careers page",
-    href: "/careers#apply",
+    action: "View open roles",
+    href: "/careers#open-roles",
   },
 ];
 
@@ -122,7 +125,7 @@ function ContactPage() {
 
               <SectionImage
                 src={siteImages.contactHeadquarters}
-                alt="Verdian global headquarters"
+                alt="Tek4Real global headquarters"
                 aspect="video"
               />
 
@@ -157,7 +160,7 @@ function ContactPage() {
           <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em] mb-10">
             Where we work.
           </h2>
-          <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid">
             {offices.map((o) => (
               <PremiumCard key={o.city} className="p-6!">
                 <div className="font-serif text-2xl text-(--ink)">{o.city}</div>
@@ -175,7 +178,7 @@ function ContactPage() {
 
         {/* FAQ */}
         <SectionShell tone="muted">
-          <div className="max-w-3xl mx-auto">
+          <div>
             <Eyebrow>Common questions</Eyebrow>
             <h2 className="font-serif text-3xl text-(--ink) mb-8">Before you reach out.</h2>
             <div className="space-y-3">

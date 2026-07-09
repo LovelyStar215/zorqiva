@@ -1,15 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { LegalPage } from "@/components/site/LegalPage";
+import { brand } from "@/lib/brand";
 import { partnerBadges } from "@/lib/site-data";
 
 export const Route = createFileRoute("/security")({
   head: () => ({
     meta: [
-      { title: "Security — Verdian IT Agency" },
+      { title: "Security — Tek4Real" },
       {
         name: "description",
-        content: "Verdian security practices, certifications, and how we protect client projects.",
+        content: "Tek4Real security practices, certifications, and how we protect client projects.",
       },
     ],
   }),
@@ -53,7 +54,7 @@ function SecurityPage() {
             <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary grid place-items-center mb-3">
               <Icon icon={p.icon} className="text-xl" />
             </div>
-            <div className="font-serif text-lg text-[color:var(--ink)]">{p.title}</div>
+            <div className="font-serif text-lg text-(--ink)">{p.title}</div>
             <p className="text-sm text-muted-foreground mt-2">{p.desc}</p>
           </div>
         ))}
@@ -71,8 +72,8 @@ function SecurityPage() {
       </div>
       <h2>Responsible disclosure</h2>
       <p>
-        If you discover a security vulnerability in our systems, please report it to
-        security@verdian.io. We acknowledge reports within 24 hours.
+        If you discover a security vulnerability in our systems, please report it to{" "}
+        {brand.contactEmail}. We acknowledge reports within 24 hours.
       </p>
       <h2>Client documentation</h2>
       <p>

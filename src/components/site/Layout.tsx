@@ -4,14 +4,16 @@ import { Footer } from "./Footer";
 import { ScrollProgress } from "./ScrollProgress";
 
 /** Fixed announcement + nav height */
-export const HEADER_STACK = "5.75rem";
+export const HEADER_STACK = "6rem";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen text-foreground antialiased">
       <ScrollProgress />
       <Nav />
-      <main id="main-content">{children}</main>
+      <main id="main-content" className="site-page-gradient">
+        {children}
+      </main>
       <Footer />
     </div>
   );
@@ -29,16 +31,13 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section
-      className="relative overflow-hidden section-shell page-hero nav-offset"
-      style={{ background: "var(--gradient-hero)" }}
-    >
+    <section className="relative page-hero section-shell nav-offset">
       <div className="absolute inset-0 premium-grid opacity-60" />
       <div className="absolute inset-0 grain" />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-mesh)" }} />
-      <div className="relative max-w-7xl mx-auto px-6 text-center">
+      <div className="absolute inset-0 hero-mesh" style={{ background: "var(--gradient-mesh)" }} />
+      <div className="relative section-inner text-center">
         <div className="eyebrow justify-center mb-10">{eyebrow}</div>
-        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.02em] text-[color:var(--ink)]">
+        <h1 className="font-hero text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-(--ink)">
           {title}
         </h1>
         <p className="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -73,9 +72,9 @@ export function SectionShell({
   return (
     <section
       id={id}
-      className={`section-shell ${dark ? "bg-[color:var(--ink)] text-background" : ""} ${toneClass} ${className}`}
+      className={`section-shell ${dark ? "section-dark" : ""} ${toneClass} ${className}`}
     >
-      <div className="max-w-7xl mx-auto px-6">{children}</div>
+      <div className="section-inner">{children}</div>
     </section>
   );
 }

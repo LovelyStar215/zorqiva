@@ -16,18 +16,18 @@ export function ChannelCard({
   href: string;
 }) {
   const className =
-    "card-premium !p-6 group flex flex-col h-full hover:!border-primary/35 transition-all";
+    "card-premium p-6! group flex flex-col h-full hover:border-primary/35! transition-[border-color,box-shadow]";
 
   const content = (
     <>
       <IconBadge
         icon={icon}
-        className="mb-4 group-hover:!bg-primary group-hover:!text-primary-foreground transition-colors"
+        className="mb-4 group-hover:bg-primary! group-hover:text-primary-foreground! transition-colors"
       />
-      <div className="font-serif text-xl text-[color:var(--ink)]">{title}</div>
+      <div className="font-serif text-xl text-(--ink)">{title}</div>
       <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{desc}</p>
-      <div className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
-        {action} <Icon icon="solar:arrow-right-linear" />
+      <div className="link-arrow mt-auto pt-4 text-sm font-semibold text-primary">
+        {action} <Icon icon="solar:arrow-right-linear" className="link-arrow__icon" />
       </div>
     </>
   );

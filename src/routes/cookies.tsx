@@ -1,22 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
+import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/cookies")({
   head: () => ({
     meta: [
-      { title: "Cookie Policy — Verdian" },
+      { title: "Cookie Policy — Tek4Real" },
       {
         name: "description",
-        content: "How Verdian uses cookies and similar technologies on our website.",
+        content: "How Tek4Real uses cookies and similar technologies on our website.",
       },
     ],
   }),
   component: () => (
     <LegalPage title="Cookie Policy" updated="July 1, 2026">
       <p>
-        This Cookie Policy explains how Verdian Digital, Inc. (&ldquo;Verdian&rdquo;,
-        &ldquo;we&rdquo;, &ldquo;us&rdquo;) uses cookies and similar technologies when you visit
-        verdian.io and related pages.
+        This Cookie Policy explains how Tek4Real, Inc. (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;,
+        &ldquo;us&rdquo;) uses cookies and similar technologies when you visit tek4real.com and
+        related pages.
       </p>
       <h2>What are cookies?</h2>
       <p>
@@ -61,7 +62,7 @@ export const Route = createFileRoute("/cookies")({
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about cookies? Email privacy@verdian.io or see our{" "}
+        Questions about cookies? Email {brand.contactEmail} or see our{" "}
         <Link to="/privacy" className="text-primary font-semibold hover:underline">
           Privacy Policy
         </Link>
