@@ -12,8 +12,17 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/site/Layout";
-import { brand, brandAssets } from "@/lib/brand";
-import { defaultDescription, organizationJsonLd, pageTitle, siteIconLinks } from "@/lib/seo";
+import { brand } from "@/lib/brand";
+import {
+  defaultDescription,
+  defaultOgImage,
+  defaultOgImageHeight,
+  defaultOgImageWidth,
+  defaultOgImageAlt,
+  organizationJsonLd,
+  pageTitle,
+  siteIconLinks,
+} from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -97,9 +106,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: brand.siteUrl },
-      { property: "og:image", content: `${brand.siteUrl}${brandAssets.logoSquare}` },
-      { property: "og:image:width", content: "512" },
-      { property: "og:image:height", content: "512" },
+      { property: "og:image", content: defaultOgImage },
+      { property: "og:image:alt", content: defaultOgImageAlt },
+      { property: "og:image:width", content: String(defaultOgImageWidth) },
+      { property: "og:image:height", content: String(defaultOgImageHeight) },
+      { name: "twitter:image", content: defaultOgImage },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/privacy")({
   component: () => (
     <LegalPage title="Privacy Policy" updated="July 1, 2026">
       <p>
-        Tek4Real, Inc. (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your
+        {brand.legalName} (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your
         privacy. This policy describes how we collect, use, and safeguard information when you use
         our website and engage our services.
       </p>

@@ -1,7 +1,7 @@
 export const brand = {
   name: "Tek4Real",
   displayName: "Tek4Real",
-  legalName: "Tek4Real, Inc.",
+  legalName: "Tek4Real, LLC",
   siteUrl: "https://tek4real.com",
   emailDomain: "tek4real.com",
   contactEmail: "hello@tek4real.com",
@@ -64,6 +64,8 @@ export const brandAssets = {
   logo: "/logo.png",
   logoIcon: "/logo-icon.png",
   logoSquare: "/logo-square.png",
+  /** Default Open Graph / Twitter card (1200×630). */
+  ogDefault: "/default.png",
   favicon: "/favicon.ico",
   favicon48: "/favicon-48x48.png",
   favicon96: "/favicon-96x96.png",

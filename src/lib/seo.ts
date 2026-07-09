@@ -6,7 +6,11 @@ import { openRoles, socialLinks, type Job } from "./site-data";
 export const defaultDescription =
   "Tek4Real is a premium IT agency – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
 
-export const defaultOgImage = `${brand.siteUrl}${brandAssets.logoSquare}`;
+export const defaultOgImageWidth = 1200;
+export const defaultOgImageHeight = 630;
+
+export const defaultOgImage = `${brand.siteUrl}${brandAssets.ogDefault}`;
+export const defaultOgImageAlt = `${brand.name} – Premium IT Agency`;
 
 /** Browser tab titles: en dash (–), not hyphen (-) or em dash (–). */
 export function pageTitle(...segments: string[]) {
@@ -107,9 +111,9 @@ export function pageSeo({
       { property: "og:type", content: ogType },
       { property: "og:url", content: canonical },
       { property: "og:image", content: ogImage },
-      { property: "og:image:alt", content: `${brand.name} logo` },
-      { property: "og:image:width", content: "512" },
-      { property: "og:image:height", content: "512" },
+      { property: "og:image:alt", content: defaultOgImageAlt },
+      { property: "og:image:width", content: String(defaultOgImageWidth) },
+      { property: "og:image:height", content: String(defaultOgImageHeight) },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: ogTitle ?? title },
@@ -129,7 +133,7 @@ export function organizationJsonLd() {
     legalName: brand.legalName,
     url: brand.siteUrl,
     logo: organizationLogoJsonLd(),
-    image: absoluteUrl(brandAssets.logoSquare),
+    image: defaultOgImage,
     email: brand.contactEmail,
     sameAs: Object.values(socialLinks),
     address: [hqOffices.americas, hqOffices.apac].map(officePostalAddressJsonLd),
@@ -142,7 +146,7 @@ export function professionalServiceJsonLd() {
     "@type": "ProfessionalService",
     name: brand.name,
     url: brand.siteUrl,
-    image: absoluteUrl(brandAssets.logoSquare),
+    image: defaultOgImage,
     logo: organizationLogoJsonLd(),
     description: defaultDescription,
     email: brand.contactEmail,

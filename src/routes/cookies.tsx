@@ -13,7 +13,7 @@ export const Route = createFileRoute("/cookies")({
   component: () => (
     <LegalPage title="Cookie Policy" updated="July 1, 2026">
       <p>
-        This Cookie Policy explains how Tek4Real, Inc. (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;,
+        This Cookie Policy explains how {brand.legalName} (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;,
         &ldquo;us&rdquo;) uses cookies and similar technologies when you visit tek4real.com and
         related pages.
       </p>
