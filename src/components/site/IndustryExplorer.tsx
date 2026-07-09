@@ -1,76 +1,104 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { pricingFeatures } from "@/lib/pricing-data";
+import { pricingFeatures, type EngagementPlan } from "@/lib/pricing-data";
+
+const engagementPlans = [
+  "project",
+  "retainer",
+  "squad",
+] as const satisfies readonly EngagementPlan[];
 
 const industries = [
   {
     id: "health",
     label: "Healthcare",
     icon: "solar:heart-pulse-bold",
-    metric: "HIPAA",
-    metricLabel: "Compliance experience",
+    metric: "Sofi Health",
+    metricLabel: "Wellness · connected product",
+    description:
+      "We built the mobile app and analytics layer for Sofi Health — Bluetooth pod pairing, usage journaling, and personalized recommendations backed by pioneer program data.",
     features: [
-      "Patient portals",
-      "EHR integrations",
-      "HIPAA-compliant cloud",
-      "Telehealth platforms",
+      "Patient & wellness portals",
+      "Device-to-app integrations",
+      "HIPAA-aligned cloud practices",
+      "Telehealth-ready mobile apps",
     ],
-    outcome: "8-week MVP delivery",
+    outcome: "Kickoff in under 2 weeks",
   },
   {
     id: "fintech",
     label: "Financial Services",
     icon: "solar:banknote-2-bold",
-    metric: "SOC 2",
-    metricLabel: "Security standard",
+    metric: "Silo Markets",
+    metricLabel: "Investing · rewards platform",
+    description:
+      "For Silo Markets we delivered onboarding, membership tiers, and portfolio flows with compliance-forward UX tied to IBKR custody — built for a regulated consumer fintech launch.",
     features: [
-      "Secure web apps",
-      "Payment integrations",
+      "Secure web & mobile apps",
+      "Payment & brokerage integrations",
       "Audit-ready infrastructure",
-      "Data encryption",
+      "Compliance-first disclosures",
     ],
-    outcome: "Zero-downtime migrations",
+    outcome: "Senior squad from day one",
   },
   {
     id: "retail",
     label: "Retail & E-commerce",
     icon: "solar:cart-large-2-bold",
-    metric: "2.4M",
-    metricLabel: "Orders processed",
+    metric: "Mompou Tapas",
+    metricLabel: "Hospitality · creator commerce",
+    description:
+      "Mompou Tapas Bar — reservations, menus, and private events for Newark dining. Pitch'em — a mobile platform for creators to discover brands and send AI-generated partnership pitches.",
     features: [
-      "Custom storefronts",
-      "Inventory systems",
-      "Payment gateways",
-      "Analytics dashboards",
+      "Custom storefronts & menus",
+      "Reservations & event booking",
+      "Mobile commerce flows",
+      "Conversion-focused UX",
     ],
-    outcome: "40% faster deployments",
+    outcome: "Mobile-first by default",
   },
   {
     id: "saas",
     label: "SaaS & Startups",
     icon: "solar:cloud-bold",
-    metric: "180+",
-    metricLabel: "Products launched",
-    features: ["MVP development", "SaaS architecture", "Auth & billing", "Growth-ready infra"],
-    outcome: "Seed to Series B builds",
+    metric: "HomeDesigns AI",
+    metricLabel: "AI · marketplace · travel",
+    description:
+      "HomeDesigns AI, Pitch'em, Boondockers Welcome, and FreshBridge — from AI-powered consumer apps to membership marketplaces, shipped since our 2025 launch.",
+    features: ["MVP development", "SaaS architecture", "Auth & billing", "Scale-ready cloud infra"],
+    outcome: "MVP to production",
   },
   {
     id: "enterprise",
     label: "Enterprise",
     icon: "solar:buildings-bold",
-    metric: "Fortune 500",
-    metricLabel: "Clients served",
-    features: ["Legacy modernization", "Cloud migration", "Internal tools", "Dedicated squads"],
-    outcome: "99.9% uptime SLAs",
+    metric: "Narratize",
+    metricLabel: "Manufacturing intelligence",
+    description:
+      "Narratize centralizes product knowledge and AI-assisted documentation for R&D teams — we helped architect their platform from individual hubs to portfolio management.",
+    features: [
+      "Knowledge & documentation systems",
+      "AI-assisted workflows",
+      "Cross-team collaboration tools",
+      "Dedicated senior squads",
+    ],
+    outcome: "Architecture-led delivery",
   },
   {
     id: "gov",
     label: "Government & Non-profit",
     icon: "solar:shield-check-bold",
     metric: "WCAG AA",
-    metricLabel: "Accessibility standard",
-    features: ["Accessible web apps", "Secure hosting", "Grant-funded projects", "Citizen portals"],
-    outcome: "FedRAMP-aligned practices",
+    metricLabel: "Accessible by design",
+    description:
+      "Accessible UI patterns, semantic markup, and secure hosting on every engagement — ready for grant-funded and public-facing projects from day one.",
+    features: [
+      "Accessible web applications",
+      "Secure cloud hosting",
+      "Grant-funded project delivery",
+      "Citizen & community portals",
+    ],
+    outcome: "Accessibility in every sprint",
   },
 ] as const;
 
@@ -103,10 +131,7 @@ export function IndustryExplorer() {
           <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
             {ind.metricLabel}
           </div>
-          <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-            We&apos;ve delivered projects for {ind.label.toLowerCase()} organizations – from MVPs to
-            enterprise-scale platforms with compliance and security built in.
-          </p>
+          <p className="mt-6 text-sm text-muted-foreground leading-relaxed">{ind.description}</p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/10 text-accent px-4 py-2 text-xs font-semibold">
             <Icon icon="solar:graph-up-bold" /> {ind.outcome}
           </div>
@@ -148,7 +173,7 @@ export function PricingMatrix() {
               className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-card" : "bg-background"}`}
             >
               <td className="px-5 py-3.5 font-medium text-(--ink)">{row.name}</td>
-              {(["starter", "growth", "enterprise"] as const).map((plan) => {
+              {engagementPlans.map((plan) => {
                 const val = row[plan];
                 return (
                   <td key={plan} className="px-5 py-3.5 text-center">

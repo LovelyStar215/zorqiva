@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { socialLinks } from "@/lib/site-data";
 import { Logo } from "@/components/site/Logo";
-import { brand, brandEmail } from "@/lib/brand";
+import { brand, brandEmail, hqOffices } from "@/lib/brand";
 
 const socialIcons = [
   { key: "twitter" as const, icon: "ion:logo-twitter", label: "Twitter" },
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
           <div className="mt-16 pt-8 border-t border-background/8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-background/35">
             <div>
-              © {new Date().getFullYear()} {brand.legalName} · Denver, CO, USA
+              © {new Date().getFullYear()} {brand.legalName} · {hqOffices.americas.addressInline}
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-background/45">
               <Link to="/privacy" className="hover:text-accent transition">

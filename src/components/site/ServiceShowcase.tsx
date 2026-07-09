@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { enterpriseMatrix, serviceAreas } from "@/lib/platform-data";
+import { agencyComparisonMatrix, serviceAreas } from "@/lib/services-data";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 
 export function ServiceAreas() {
@@ -28,7 +28,7 @@ export function EnterpriseMatrix() {
         <div className="px-5 py-3.5 border-l border-border">In-house / DIY</div>
         <div className="px-5 py-3.5 border-l border-border text-primary">With Tek4Real</div>
       </div>
-      {enterpriseMatrix.map((row, i) => (
+      {agencyComparisonMatrix.map((row, i) => (
         <div
           key={row.capability}
           className={`grid grid-cols-[1.2fr_1fr_1fr] border-b border-border last:border-0 text-sm ${i % 2 === 0 ? "bg-card" : "bg-background"}`}

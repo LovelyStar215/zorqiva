@@ -4,7 +4,7 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { EnterpriseMatrix, ServiceAreas } from "@/components/site/ServiceShowcase";
-import { CaseStudiesGrid } from "@/components/site/CaseStudies.tsx";
+import { CaseStudiesGrid } from "@/components/site/CaseStudies";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow } from "@/components/site/primitives";

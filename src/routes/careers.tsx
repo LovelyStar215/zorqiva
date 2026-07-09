@@ -7,7 +7,8 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
-import { benefits, companyValues, offices, openRoles, type JobDepartment } from "@/lib/site-data";
+import { benefits, companyValues, openRoles, type JobDepartment } from "@/lib/site-data";
+import { offices } from "@/lib/brand";
 import { brand } from "@/lib/brand";
 import { pageSeo, pageTitle } from "@/lib/seo";
 

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
-import { brand } from "@/lib/brand";
+import { brand, hqOffices } from "@/lib/brand";
 import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
@@ -50,8 +50,8 @@ export const Route = createFileRoute("/privacy")({
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about this policy? Email {brand.contactEmail} or write to Tek4Real, Inc., Denver,
-        CO, USA.
+        Questions about this policy? Email {brand.contactEmail} or write to {brand.legalName},{" "}
+        {hqOffices.americas.addressInline}.
       </p>
     </LegalPage>
   ),

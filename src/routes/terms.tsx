@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
-import { brand } from "@/lib/brand";
+import { brand, hqOffices } from "@/lib/brand";
 import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
@@ -59,7 +59,10 @@ export const Route = createFileRoute("/terms")({
         describe how we handle personal data and website cookies.
       </p>
       <h2>Contact</h2>
-      <p>Questions about these Terms? Email {brand.contactEmail}.</p>
+      <p>
+        Questions about these Terms? Email {brand.contactEmail} or write to {brand.legalName},{" "}
+        {hqOffices.americas.addressInline}.
+      </p>
     </LegalPage>
   ),
 });

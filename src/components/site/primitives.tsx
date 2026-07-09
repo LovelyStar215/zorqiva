@@ -67,7 +67,7 @@ export function PremiumCard({
 }) {
   return (
     <div
-      className={`${hover ? "card-premium" : "rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]"} p-7 h-full flex flex-col ${className}`}
+      className={`${hover ? "card-premium" : "rounded-2xl border border-border bg-card shadow-(--shadow-soft)"} p-7 h-full flex flex-col ${className}`}
     >
       {children}
     </div>

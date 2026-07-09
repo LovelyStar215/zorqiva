@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
-import { partnerBadges } from "@/lib/site-data";
+import { trustBadges } from "@/lib/site-data";
 import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/security")({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/security")({
     pageSeo({
       title: pageTitle("Security", "Tek4Real"),
       description:
-        "Tek4Real security practices, certifications, and how we protect client projects.",
+        "Tek4Real security practices and how we protect client projects with secure SDLC and compliance-aligned delivery.",
       path: "/security",
     }),
   component: SecurityPage,
@@ -24,8 +24,8 @@ const practices = [
   },
   {
     icon: "solar:shield-check-bold",
-    title: "Certified practices",
-    desc: "SOC 2 Type II, ISO 27001, and HIPAA-aligned processes for regulated industry clients.",
+    title: "Compliance-aligned delivery",
+    desc: "HIPAA-aligned processes, secure SDLC, and audit-ready documentation for regulated industry clients.",
   },
   {
     icon: "solar:user-id-bold",
@@ -58,9 +58,9 @@ function SecurityPage() {
           </div>
         ))}
       </div>
-      <h2>Certifications & partnerships</h2>
+      <h2>Technology & practices</h2>
       <div className="not-prose flex flex-wrap gap-3 my-6">
-        {partnerBadges.map((b) => (
+        {trustBadges.map((b) => (
           <span
             key={b}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium"
@@ -76,8 +76,8 @@ function SecurityPage() {
       </p>
       <h2>Client documentation</h2>
       <p>
-        Retainer and dedicated squad clients can request our SOC 2 report, security questionnaire
-        responses, and subprocessor list.{" "}
+        Retainer and dedicated squad clients can request security questionnaire responses, our
+        subprocessor list, and delivery documentation.{" "}
         <Link to="/contact" className="text-primary font-semibold hover:underline">
           Contact our team
         </Link>{" "}

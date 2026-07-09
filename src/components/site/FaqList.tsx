@@ -7,9 +7,9 @@ export function FaqList({ items, className = "" }: { items: FaqItem[]; className
       {items.map((item) => (
         <details
           key={item.q}
-          className="group rounded-2xl border border-border bg-card px-6 py-5 open:shadow-[var(--shadow-soft)] transition"
+          className="group rounded-2xl border border-border bg-card px-6 py-5 open:shadow-(--shadow-soft) transition"
         >
-          <summary className="flex items-center justify-between cursor-pointer font-semibold text-[color:var(--ink)] text-[15px]">
+          <summary className="flex items-center justify-between cursor-pointer font-semibold text-(--ink) text-[15px]">
             {item.q}
             <Icon
               icon="solar:alt-arrow-down-linear"

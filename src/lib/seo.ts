@@ -1,4 +1,4 @@
-import { brand, brandAssets } from "./brand";
+import { brand, brandAssets, hqOffices, officePostalAddressJsonLd } from "./brand";
 import { caseStudies, type CaseStudy } from "./case-studies-data";
 import { faqSections } from "./faq-data";
 import { openRoles, socialLinks, type Job } from "./site-data";
@@ -132,6 +132,7 @@ export function organizationJsonLd() {
     image: absoluteUrl(brandAssets.logoSquare),
     email: brand.contactEmail,
     sameAs: Object.values(socialLinks),
+    address: [hqOffices.americas, hqOffices.apac].map(officePostalAddressJsonLd),
   };
 }
 
@@ -146,6 +147,7 @@ export function professionalServiceJsonLd() {
     description: defaultDescription,
     email: brand.contactEmail,
     areaServed: ["United States", "Hong Kong"],
+    address: [hqOffices.americas, hqOffices.apac].map(officePostalAddressJsonLd),
     serviceType: [
       "Custom Software Development",
       "Mobile App Development",
@@ -203,20 +205,26 @@ function jobLocationJsonLd(job: Job) {
     };
   }
 
-  const locality =
+  const office =
     job.location === "Hong Kong"
-      ? "Hong Kong"
+      ? hqOffices.apac
       : job.location === "Colorado"
-        ? "Denver"
-        : "United States";
-  const country = job.location === "Hong Kong" ? "HK" : "US";
+        ? hqOffices.americas
+        : null;
+
+  if (office) {
+    return {
+      "@type": "Place",
+      address: officePostalAddressJsonLd(office),
+    };
+  }
 
   return {
     "@type": "Place",
     address: {
       "@type": "PostalAddress",
-      addressLocality: locality,
-      addressCountry: country,
+      addressLocality: "United States",
+      addressCountry: "US",
     },
   };
 }

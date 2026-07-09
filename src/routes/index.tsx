@@ -8,7 +8,7 @@ import { EnterpriseMatrix, ServiceAreas } from "@/components/site/ServiceShowcas
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow, PrimaryButton, SecondaryButton } from "@/components/site/primitives";
-import { partnerBadges } from "@/lib/site-data";
+import { trustBadges } from "@/lib/site-data";
 import { CaseStudiesGrid } from "@/components/site/CaseStudies";
 import { pageSeo, pageTitle, professionalServiceJsonLd } from "@/lib/seo";
 
@@ -27,9 +27,9 @@ export const Route = createFileRoute("/")({
 });
 
 const metrics = [
-  { v: "180+", l: "Projects delivered" },
-  { v: "96%", l: "Client retention" },
-  { v: "12 yrs", l: "Combined experience" },
+  { v: "8", l: "Published case studies" },
+  { v: "10+", l: "Senior team" },
+  { v: "2025", l: "Founded" },
   { v: "<2 wks", l: "Avg. kickoff time" },
 ];
 
@@ -70,7 +70,7 @@ function Home() {
               </SecondaryButton>
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2 max-w-3xl mx-auto">
-              {partnerBadges.map((b) => (
+              {trustBadges.map((b) => (
                 <span
                   key={b}
                   className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground font-medium"

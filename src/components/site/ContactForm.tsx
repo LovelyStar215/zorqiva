@@ -58,7 +58,7 @@ export function ContactForm({
         <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary grid place-items-center mx-auto">
           <Icon icon="solar:verified-check-bold" className="text-4xl" />
         </div>
-        <h3 className="font-serif text-3xl text-[color:var(--ink)] mt-6">Message received.</h3>
+        <h3 className="font-serif text-3xl text-(--ink) mt-6">Message received.</h3>
         <p className="mt-3 text-muted-foreground max-w-sm mx-auto leading-relaxed">
           A member of our team will reach out within one business day. We look forward to speaking
           with you.
@@ -69,7 +69,7 @@ export function ContactForm({
 
   return (
     <>
-      <h3 className="font-serif text-3xl text-[color:var(--ink)]">{title}</h3>
+      <h3 className="font-serif text-3xl text-(--ink)">{title}</h3>
       <p className="text-sm text-muted-foreground mt-2">{subtitle}</p>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -80,7 +80,7 @@ export function ContactForm({
             onClick={() => setValue("inquiry", type, { shouldValidate: true })}
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${
               inquiry === type
-                ? "bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
+                ? "bg-primary text-primary-foreground shadow-(--shadow-soft)"
                 : "border border-border bg-background text-foreground/65 hover:border-primary/30"
             }`}
           >

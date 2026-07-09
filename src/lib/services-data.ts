@@ -76,8 +76,8 @@ export const serviceAreas = [
     label: "Security & Compliance",
     icon: "solar:shield-check-bold",
     headline: "Secure by design, audit-ready.",
-    desc: "Secure SDLC, penetration testing coordination, and HIPAA/SOC 2-aligned practices for regulated industries.",
-    spec: "SOC 2 · HIPAA · OWASP",
+    desc: "Secure SDLC, penetration testing coordination, and HIPAA-aligned practices for regulated industries.",
+    spec: "Secure SDLC · HIPAA · OWASP",
   },
   {
     id: "maintenance",
@@ -97,7 +97,7 @@ export const serviceAreas = [
   },
 ] as const;
 
-export const enterpriseMatrix = [
+export const agencyComparisonMatrix = [
   {
     capability: "Team composition",
     legacy: "Freelancer patchwork",
@@ -122,7 +122,7 @@ export const enterpriseMatrix = [
   {
     capability: "Security practices",
     legacy: "Varies by contractor",
-    withTek4Real: "SOC 2-aligned SDLC",
+    withTek4Real: "Secure, documented SDLC",
   },
   {
     capability: "Scalability",

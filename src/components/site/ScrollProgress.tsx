@@ -16,11 +16,11 @@ export function ScrollProgress() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[70] h-[2px] bg-transparent pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-70 h-0.5 bg-transparent pointer-events-none"
       aria-hidden
     >
       <div
-        className="h-full bg-gradient-to-r from-primary via-accent to-primary transition-[width] duration-150 ease-out"
+        className="h-full bg-linear-to-r from-primary via-accent to-primary transition-[width] duration-150 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>

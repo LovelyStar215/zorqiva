@@ -9,7 +9,7 @@ import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { FaqList } from "@/components/site/FaqList";
 import { contactFaqs } from "@/lib/faq-data";
-import { offices } from "@/lib/site-data";
+import { offices } from "@/lib/brand";
 import { brand } from "@/lib/brand";
 import { pageSeo, pageTitle } from "@/lib/seo";
 

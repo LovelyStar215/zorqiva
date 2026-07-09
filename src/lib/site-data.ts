@@ -54,11 +54,6 @@ export const benefits = [
   },
 ] as const;
 
-export const offices = [
-  { city: "Denver", country: "USA", role: "Americas HQ", address: "Denver, Colorado" },
-  { city: "Hong Kong", country: "HK", role: "APAC HQ", address: "1 Exchange Square, Central" },
-] as const;
-
 export type JobDepartment = "Engineering" | "Design" | "Delivery" | "Sales" | "Operations";
 export type JobLocation = "Colorado" | "Hong Kong" | "Hybrid (US)" | "Remote (US)";
 
@@ -284,13 +279,11 @@ export const techStack = [
   "Terraform",
 ] as const;
 
-export const partnerBadges = [
-  "AWS Partner",
-  "Microsoft Azure",
-  "Google Cloud",
-  "ISO 27001",
-  "SOC 2 Type II",
-  "Agile Certified",
+export const trustBadges = [
+  "AWS · Azure · GCP",
+  "TypeScript & React",
+  "Secure SDLC",
+  "HIPAA-aligned delivery",
 ] as const;
 
 export const agencyComparison = {
