@@ -1,8 +1,11 @@
 import "./lib/error-capture";
 
+import { loadEnvFile } from "./lib/load-env-file";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 import { buildSitemapXml } from "./lib/seo";
+
+loadEnvFile();
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;

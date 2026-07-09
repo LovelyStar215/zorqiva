@@ -1,0 +1,20 @@
+<mj-text
+  font-size="12px"
+  font-weight="600"
+  letter-spacing="0.04em"
+  text-transform="uppercase"
+  color="#6b7280"
+  padding="24px 0 10px"
+>
+  {{ label }}
+</mj-text>
+<mj-text
+  font-size="15px"
+  color="#374151"
+  line-height="1.65"
+  padding="16px 18px"
+  container-background-color="#f9fafb"
+  css-class="message-box"
+>
+  {{ content }}
+</mj-text>

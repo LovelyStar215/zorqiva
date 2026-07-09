@@ -43,6 +43,7 @@ export function JobApplicationForm({
   selectedRoleId?: string;
 }) {
   const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -62,9 +63,42 @@ export function JobApplicationForm({
     }
   }, [selectedRoleId, setValue]);
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 600));
-    setSent(true);
+  const onSubmit = async (data: FormData) => {
+    setSubmitError(null);
+
+    const payload = new FormData();
+    payload.set("role", data.role);
+    payload.set("firstName", data.firstName);
+    payload.set("lastName", data.lastName);
+    payload.set("email", data.email);
+    if (data.phone) payload.set("phone", data.phone);
+    if (data.linkedin) payload.set("linkedin", data.linkedin);
+    if (data.portfolio) payload.set("portfolio", data.portfolio);
+    payload.set("location", data.location);
+    payload.set("experience", data.experience);
+    payload.set("availability", data.availability);
+    payload.set("resumeLink", data.resumeLink);
+    payload.set("coverLetter", data.coverLetter);
+    payload.set("_hp", "");
+
+    try {
+      const response = await fetch("/api/job-application", {
+        method: "POST",
+        body: payload,
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "We couldn't submit your application. Please try again.");
+        return;
+      }
+
+      setSent(true);
+    } catch {
+      setSubmitError(
+        "We couldn't submit your application. Please check your connection and try again.",
+      );
+    }
   };
 
   if (sent) {
@@ -88,6 +122,15 @@ export function JobApplicationForm({
       <p className="text-sm text-muted-foreground mt-2">{subtitle}</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4" noValidate>
+        <input
+          type="text"
+          name="_hp"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-2499.75 h-0 w-0 opacity-0"
+        />
+
         <label className="block">
           <span className="text-xs font-medium text-foreground/70">Role</span>
           <select {...register("role")} className={inputClass}>
@@ -229,6 +272,12 @@ export function JobApplicationForm({
             <p className="mt-1 text-xs text-destructive">{errors.coverLetter.message}</p>
           )}
         </label>
+
+        {submitError && (
+          <p className="text-sm text-destructive" role="alert">
+            {submitError}
+          </p>
+        )}
 
         <button
           type="submit"

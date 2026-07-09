@@ -1,9 +1,11 @@
 export const brand = {
   name: "Tek4Real",
+  displayName: "Tek4Real",
   legalName: "Tek4Real, Inc.",
   siteUrl: "https://tek4real.com",
   emailDomain: "tek4real.com",
   contactEmail: "hello@tek4real.com",
+  tagline: "Premium IT agency – custom software, cloud, design, and AI.",
 } as const;
 
 export type HqOffice = {

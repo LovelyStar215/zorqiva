@@ -1,0 +1,3 @@
+<mj-text padding="16px 0 0">
+  <span class="category-pill">{{ category }}</span>
+</mj-text>

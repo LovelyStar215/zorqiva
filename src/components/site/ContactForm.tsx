@@ -4,13 +4,9 @@ import { Link } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { INQUIRY_TYPES } from "@/lib/contact-options";
 
-const inquiryTypes = [
-  "New project",
-  "Staff augmentation",
-  "Support & maintenance",
-  "Partnerships",
-] as const;
+const inquiryTypes = INQUIRY_TYPES;
 
 const schema = z.object({
   inquiry: z.enum(inquiryTypes),
@@ -34,6 +30,7 @@ export function ContactForm({
   defaultInquiry?: (typeof inquiryTypes)[number];
 }) {
   const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -47,9 +44,35 @@ export function ContactForm({
 
   const inquiry = watch("inquiry");
 
-  const onSubmit = async (_data: FormData) => {
-    await new Promise((r) => setTimeout(r, 600));
-    setSent(true);
+  const onSubmit = async (data: FormData) => {
+    setSubmitError(null);
+
+    const payload = new FormData();
+    payload.set("firstName", data.firstName);
+    payload.set("lastName", data.lastName);
+    payload.set("email", data.email);
+    payload.set("company", data.company);
+    payload.set("inquiry", data.inquiry);
+    if (data.teamSize) payload.set("teamSize", data.teamSize);
+    payload.set("message", data.message);
+    payload.set("_hp", "");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: payload,
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+
+      if (!response.ok || !result.ok) {
+        setSubmitError(result.error ?? "We couldn't send your message. Please try again.");
+        return;
+      }
+
+      setSent(true);
+    } catch {
+      setSubmitError("We couldn't send your message. Please check your connection and try again.");
+    }
   };
 
   if (sent) {
@@ -91,6 +114,15 @@ export function ContactForm({
       <input type="hidden" {...register("inquiry")} />
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4" noValidate>
+        <input
+          type="text"
+          name="_hp"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        />
+
         <div className="grid sm:grid-cols-2 gap-4">
           {(
             [
@@ -141,6 +173,12 @@ export function ContactForm({
             <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>
           )}
         </label>
+
+        {submitError && (
+          <p className="text-sm text-destructive" role="alert">
+            {submitError}
+          </p>
+        )}
 
         <button
           type="submit"
