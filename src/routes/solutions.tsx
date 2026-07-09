@@ -7,16 +7,16 @@ import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { createFileRoute } from "@tanstack/react-router";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/solutions")({
   head: () =>
     pageSeo({
-      title: "Industries — Tek4Real",
+      title: pageTitle("Industries", "Tek4Real"),
       description:
         "Tek4Real serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
       path: "/solutions",
-      ogTitle: "Industries — Tek4Real",
+      ogTitle: pageTitle("Industries", "Tek4Real"),
       ogDescription: "Industry expertise across regulated and high-growth sectors.",
     }),
   component: SolutionsPage,
@@ -68,14 +68,14 @@ function SolutionsPage() {
         <PageHero
           eyebrow="Industries"
           title="Deep expertise across sectors."
-          lede="We've delivered projects for healthcare, fintech, retail, SaaS, and enterprise clients — with compliance and security built in from day one."
+          lede="We've delivered projects for healthcare, fintech, retail, SaaS, and enterprise clients – with compliance and security built in from day one."
         />
 
         <SectionShell className="pt-0!">
           <SectionHeader
             eyebrow="By industry"
             title="Select your sector. See what we deliver."
-            lede="Every industry has unique requirements — we bring domain experience and technical depth to each engagement."
+            lede="Every industry has unique requirements – we bring domain experience and technical depth to each engagement."
           />
           <IndustryExplorer />
           <div className="mt-8">
@@ -112,7 +112,7 @@ function SolutionsPage() {
 
         <CTABanner
           title="Not sure where to start?"
-          lede="Book a free discovery call — we'll map the right services and team to your industry and goals."
+          lede="Book a free discovery call – we'll map the right services and team to your industry and goals."
           primaryLabel="Start a project"
         />
       </div>

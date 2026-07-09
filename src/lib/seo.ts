@@ -1,11 +1,17 @@
 import { brand, brandAssets } from "./brand";
+import { caseStudies, type CaseStudy } from "./case-studies-data";
 import { faqSections } from "./faq-data";
 import { openRoles, socialLinks, type Job } from "./site-data";
 
 export const defaultDescription =
-  "Tek4Real is a premium IT agency — custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
+  "Tek4Real is a premium IT agency – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
 
 export const defaultOgImage = `${brand.siteUrl}${brandAssets.logoSquare}`;
+
+/** Browser tab titles: en dash (–), not hyphen (-) or em dash (–). */
+export function pageTitle(...segments: string[]) {
+  return segments.join(" – ");
+}
 
 type HeadLink = {
   rel: string;
@@ -142,9 +148,17 @@ export function professionalServiceJsonLd() {
     areaServed: ["United States", "Hong Kong"],
     serviceType: [
       "Custom Software Development",
-      "Cloud Infrastructure",
+      "Mobile App Development",
+      "Cloud Infrastructure & DevOps",
       "UI/UX Design",
       "AI Engineering",
+      "Data Engineering",
+      "QA & Test Automation",
+      "Product Strategy",
+      "IT Consulting",
+      "Security & Compliance",
+      "Application Maintenance",
+      "Managed IT Services",
     ],
   };
 }
@@ -189,7 +203,12 @@ function jobLocationJsonLd(job: Job) {
     };
   }
 
-  const locality = job.location === "Hong Kong" ? "Hong Kong" : "Texas";
+  const locality =
+    job.location === "Hong Kong"
+      ? "Hong Kong"
+      : job.location === "Colorado"
+        ? "Denver"
+        : "United States";
   const country = job.location === "Hong Kong" ? "HK" : "US";
 
   return {
@@ -234,9 +253,33 @@ export function jobPostingJsonLd(job: Job) {
   return posting;
 }
 
+export function caseStudyJsonLd(study: CaseStudy) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${study.company} Case Study`,
+    description: study.summary,
+    author: {
+      "@type": "Organization",
+      name: brand.name,
+      url: brand.siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: brand.name,
+      logo: organizationLogoJsonLd(),
+    },
+    url: absoluteUrl(`/case-studies/${study.id}`),
+    image: absoluteUrl(study.image),
+    about: study.industry,
+    keywords: study.services.join(", "),
+  };
+}
+
 const sitemapEntries = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/services", changefreq: "monthly", priority: "0.9" },
+  { path: "/case-studies", changefreq: "monthly", priority: "0.9" },
   { path: "/solutions", changefreq: "monthly", priority: "0.8" },
   { path: "/pricing", changefreq: "monthly", priority: "0.8" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
@@ -256,6 +299,12 @@ export function buildSitemapXml() {
     ...openRoles.map((job) => ({
       path: `/careers/${job.id}`,
       changefreq: "weekly",
+      priority: "0.7",
+      lastmod,
+    })),
+    ...caseStudies.map((study) => ({
+      path: `/case-studies/${study.id}`,
+      changefreq: "monthly",
       priority: "0.7",
       lastmod,
     })),

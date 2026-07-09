@@ -11,7 +11,7 @@ const roleOptions = [
   ...openRoles.map((j) => ({ value: j.id, label: j.title })),
 ] as const;
 
-const locationOptions = ["Texas", "Hong Kong", "Remote (US)", "Flexible"] as const;
+const locationOptions = ["Colorado", "Hong Kong", "Remote (US)", "Flexible"] as const;
 
 const schema = z.object({
   role: z.string().min(1, "Select a role"),

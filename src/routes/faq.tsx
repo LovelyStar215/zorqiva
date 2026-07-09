@@ -4,18 +4,18 @@ import { CTABanner } from "@/components/site/CTABanner";
 import { FaqList } from "@/components/site/FaqList";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { faqSections } from "@/lib/faq-data";
-import { faqPageJsonLd, pageSeo } from "@/lib/seo";
+import { faqPageJsonLd, pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq")({
   head: () =>
     pageSeo({
-      title: "FAQ — Tek4Real",
+      title: pageTitle("FAQ", "Tek4Real"),
       description:
-        "Frequently asked questions about working with Tek4Real — projects, pricing, teams, and policies.",
+        "Frequently asked questions about working with Tek4Real – projects, pricing, teams, and policies.",
       path: "/faq",
-      ogTitle: "FAQ — Tek4Real",
+      ogTitle: pageTitle("FAQ", "Tek4Real"),
       ogDescription:
-        "Answers about our agency services, engagement models, and Texas & Hong Kong offices.",
+        "Answers about our agency services, engagement models, and Colorado & Hong Kong offices.",
       jsonLd: faqPageJsonLd(),
     }),
   component: FaqPage,
@@ -33,7 +33,7 @@ function FaqPage() {
         <PageHero
           eyebrow="FAQ"
           title="Answers before you reach out."
-          lede="Projects, pricing, how we work across Texas and Hong Kong — and what to expect when you partner with Tek4Real."
+          lede="Projects, pricing, how we work across Colorado and Hong Kong – and what to expect when you partner with Tek4Real."
         />
 
         <SectionShell className="pt-0!">
@@ -102,7 +102,7 @@ function FaqPage() {
 
         <CTABanner
           title="Didn't find your answer?"
-          lede="Send us a message — we respond within one business day."
+          lede="Send us a message – we respond within one business day."
           primaryLabel="Contact us"
           primaryTo="/contact"
           secondaryLabel="View engagement models"

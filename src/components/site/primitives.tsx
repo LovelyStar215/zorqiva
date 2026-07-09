@@ -9,11 +9,13 @@ export function Eyebrow({ children, className = "" }: { children: ReactNode; cla
 export function PrimaryButton({
   to,
   href,
+  hash,
   children,
   className = "",
 }: {
   to?: string;
   href?: string;
+  hash?: string;
   children: ReactNode;
   className?: string;
 }) {
@@ -26,7 +28,11 @@ export function PrimaryButton({
     );
   }
   return (
-    <Link to={to ?? "/contact"} className={cls}>
+    <Link
+      to={to ?? "/contact"}
+      hash={hash ?? (to === undefined || to === "/contact" ? "contact-form" : undefined)}
+      className={cls}
+    >
       {children}
     </Link>
   );

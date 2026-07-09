@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useRouterState } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { ContactForm } from "@/components/site/ContactForm";
@@ -10,14 +11,14 @@ import { FaqList } from "@/components/site/FaqList";
 import { contactFaqs } from "@/lib/faq-data";
 import { offices } from "@/lib/site-data";
 import { brand } from "@/lib/brand";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 const contactMailto = `mailto:${brand.contactEmail}`;
 
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageSeo({
-      title: "Contact — Tek4Real",
+      title: pageTitle("Contact", "Tek4Real"),
       description:
         "Contact Tek4Real. Start a project, partnerships, careers, or general inquiries.",
       path: "/contact",
@@ -36,13 +37,6 @@ const channels = [
     href: "#contact-form",
   },
   {
-    icon: "solar:phone-bold",
-    title: "Call us",
-    desc: "Speak directly with our team about timelines, scope, and engagement models.",
-    action: "+1 (888) 555-0140",
-    href: "tel:+18885550140",
-  },
-  {
     icon: "solar:letter-bold",
     title: "Email",
     desc: "General inquiries, project questions, and new business.",
@@ -50,36 +44,32 @@ const channels = [
     href: contactMailto,
   },
   {
-    icon: "solar:hand-shake-bold",
-    title: "Partnerships",
-    desc: "Referral partners, technology alliances, and subcontracting.",
-    action: brand.contactEmail,
-    href: contactMailto,
-  },
-  {
-    icon: "solar:headphones-round-bold",
-    title: "Client support",
-    desc: "Existing retainer and dedicated squad clients.",
-    action: brand.contactEmail,
-    href: contactMailto,
-  },
-  {
     icon: "solar:case-round-bold",
     title: "Careers",
-    desc: "Join our team in Texas, Hong Kong, or remotely.",
+    desc: "Join our team in Colorado, Hong Kong, or remotely.",
     action: "View open roles",
     href: "/careers#open-roles",
   },
 ];
 
 function ContactPage() {
+  const hash = useRouterState({ select: (state) => state.location.hash });
+
+  useEffect(() => {
+    if (hash === "contact-form") {
+      document
+        .getElementById("contact-form")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [hash]);
+
   return (
     <Layout>
       <div>
         <PageHero
           eyebrow="Contact"
           title="Let's talk about your project."
-          lede="Whether you're scoping an MVP, augmenting your team, or need ongoing development — we're ready to help."
+          lede="Whether you're scoping an MVP, augmenting your team, or need ongoing development – we're ready to help."
         >
           <div className="flex flex-wrap justify-center gap-3 mt-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-muted-foreground backdrop-blur-sm">
@@ -87,7 +77,7 @@ function ContactPage() {
               business day
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-              <Icon icon="solar:map-point-bold" className="text-primary" /> Texas · Hong Kong
+              <Icon icon="solar:map-point-bold" className="text-primary" /> Colorado · Hong Kong
             </span>
           </div>
         </PageHero>
@@ -118,7 +108,7 @@ function ContactPage() {
                 Global headquarters
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                We operate from two headquarters — Texas and Hong Kong — with field engineers
+                We operate from two headquarters – Colorado and Hong Kong – with field engineers
                 available worldwide.
               </p>
 

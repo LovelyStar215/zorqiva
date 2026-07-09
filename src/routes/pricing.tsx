@@ -9,16 +9,16 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/pricing")({
   head: () =>
     pageSeo({
-      title: "Engagement Models — Tek4Real",
+      title: pageTitle("Engagement Models", "Tek4Real"),
       description:
-        "Flexible engagement models — project-based, monthly retainer, or dedicated squad.",
+        "Flexible engagement models – project-based, monthly retainer, or dedicated squad.",
       path: "/pricing",
-      ogTitle: "Engagement — Tek4Real",
+      ogTitle: pageTitle("Engagement", "Tek4Real"),
       ogDescription: "Three ways to work with our agency.",
     }),
   component: PricingPage,
@@ -85,7 +85,7 @@ function PricingPage() {
         <PageHero
           eyebrow="Engagement"
           title="Flexible models. Clear expectations."
-          lede="Whether you need a focused MVP build, ongoing development, or a dedicated squad — we structure engagements around outcomes, not hours billed."
+          lede="Whether you need a focused MVP build, ongoing development, or a dedicated squad – we structure engagements around outcomes, not hours billed."
         />
 
         <SectionShell className="pt-0!">
@@ -130,7 +130,11 @@ function PricingPage() {
                   ))}
                 </ul>
                 <div className="mt-auto pt-8">
-                  <Link to="/contact" className={`pricing-cta pricing-cta--${p.ctaVariant}`}>
+                  <Link
+                    to="/contact"
+                    hash="contact-form"
+                    className={`pricing-cta pricing-cta--${p.ctaVariant}`}
+                  >
                     {p.cta}
                     <Icon icon="solar:arrow-right-linear" className="text-[1.05rem]" />
                   </Link>
@@ -146,7 +150,7 @@ function PricingPage() {
               <SectionHeader
                 eyebrow="Partnership"
                 title="Engagements built on trust."
-                lede="Every model starts with discovery, clear scope, and a senior team accountable to outcomes — not billable hours alone."
+                lede="Every model starts with discovery, clear scope, and a senior team accountable to outcomes – not billable hours alone."
               />
             </div>
             <SectionImage
@@ -173,7 +177,7 @@ function PricingPage() {
 
         <CTABanner
           title="Not sure which model fits?"
-          lede="Book a free 30-minute discovery call — we'll recommend the right engagement for your goals and budget."
+          lede="Book a free 30-minute discovery call – we'll recommend the right engagement for your goals and budget."
           primaryLabel="Start a project"
         />
       </div>

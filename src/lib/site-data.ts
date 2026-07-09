@@ -2,7 +2,7 @@ export const companyValues = [
   {
     icon: "solar:diamond-bold",
     title: "Craft over shortcuts",
-    desc: "We ship polished software — thoughtful architecture, clean code, and interfaces people enjoy using.",
+    desc: "We ship polished software – thoughtful architecture, clean code, and interfaces people enjoy using.",
   },
   {
     icon: "solar:hand-shake-bold",
@@ -12,7 +12,7 @@ export const companyValues = [
   {
     icon: "solar:earth-bold",
     title: "Built to last",
-    desc: "We design systems that scale with your business — maintainable, documented, and ready for what's next.",
+    desc: "We design systems that scale with your business – maintainable, documented, and ready for what's next.",
   },
   {
     icon: "solar:shield-star-bold",
@@ -25,7 +25,7 @@ export const benefits = [
   {
     icon: "solar:heart-pulse-bold",
     title: "Premium health",
-    desc: "Medical, dental, vision, and mental health — 100% covered for you and dependents.",
+    desc: "Medical, dental, vision, and mental health – 100% covered for you and dependents.",
   },
   {
     icon: "solar:chart-2-bold",
@@ -35,7 +35,7 @@ export const benefits = [
   {
     icon: "solar:home-2-bold",
     title: "Flexible work",
-    desc: "Hybrid flexibility across our Texas and Hong Kong offices. Core collaboration hours, async-friendly culture.",
+    desc: "Hybrid flexibility across our Colorado and Hong Kong offices. Core collaboration hours, async-friendly culture.",
   },
   {
     icon: "solar:book-2-bold",
@@ -55,12 +55,12 @@ export const benefits = [
 ] as const;
 
 export const offices = [
-  { city: "Texas", country: "USA", role: "Americas HQ", address: "500 W 2nd Street, Suite 1900" },
+  { city: "Denver", country: "USA", role: "Americas HQ", address: "Denver, Colorado" },
   { city: "Hong Kong", country: "HK", role: "APAC HQ", address: "1 Exchange Square, Central" },
 ] as const;
 
 export type JobDepartment = "Engineering" | "Design" | "Delivery" | "Sales" | "Operations";
-export type JobLocation = "Texas" | "Hong Kong" | "Hybrid (US)" | "Remote (US)";
+export type JobLocation = "Colorado" | "Hong Kong" | "Hybrid (US)" | "Remote (US)";
 
 export type Job = {
   id: string;
@@ -85,13 +85,13 @@ export const openRoles: Job[] = [
     id: "senior-fullstack",
     title: "Senior Full-Stack Engineer",
     department: "Engineering",
-    location: "Texas",
+    location: "Colorado",
     type: "Full-time",
     level: "Senior",
     description:
-      "Lead client builds across React, Node, and cloud-native stacks — from architecture through production launch.",
+      "Lead client builds across React, Node, and cloud-native stacks – from architecture through production launch.",
     overview:
-      "You'll join a senior engineering squad shipping production software for healthcare, fintech, and SaaS clients. This role blends hands-on development with technical leadership — you set patterns, review code, and partner with designers and delivery leads to ship reliably every sprint.",
+      "You'll join a senior engineering squad shipping production software for healthcare, fintech, and SaaS clients. This role blends hands-on development with technical leadership – you set patterns, review code, and partner with designers and delivery leads to ship reliably every sprint.",
     responsibilities: [
       "Architect and build full-stack features in TypeScript, React, and Node.js",
       "Lead technical decisions on greenfield builds and legacy modernizations",
@@ -120,7 +120,7 @@ export const openRoles: Job[] = [
     type: "Full-time",
     level: "Lead",
     overview:
-      "You'll own the platform layer for client engagements — CI/CD, cloud infrastructure, security baselines, and observability. You work embedded with product squads while establishing reusable patterns the wider studio can adopt.",
+      "You'll own the platform layer for client engagements – CI/CD, cloud infrastructure, security baselines, and observability. You work embedded with product squads while establishing reusable patterns the wider studio can adopt.",
     description:
       "Design CI/CD pipelines, infrastructure-as-code, and observability for enterprise client environments.",
     responsibilities: [
@@ -147,13 +147,13 @@ export const openRoles: Job[] = [
     id: "product-designer",
     title: "Senior UX/UI Designer",
     department: "Design",
-    location: "Texas",
+    location: "Colorado",
     type: "Full-time",
     level: "Senior",
     description:
-      "Shape digital products for clients — research, wireframes, design systems, and developer handoff.",
+      "Shape digital products for clients – research, wireframes, design systems, and developer handoff.",
     overview:
-      "You'll lead design for client products from discovery through developer handoff. You balance user research, visual craft, and pragmatic delivery — producing systems and specs engineers can build against without guesswork.",
+      "You'll lead design for client products from discovery through developer handoff. You balance user research, visual craft, and pragmatic delivery – producing systems and specs engineers can build against without guesswork.",
     responsibilities: [
       "Run discovery sessions, user flows, and wireframes for new client products",
       "Create high-fidelity UI in Figma with accessible, responsive patterns",
@@ -178,13 +178,13 @@ export const openRoles: Job[] = [
     id: "delivery-manager",
     title: "Technical Delivery Manager",
     department: "Delivery",
-    location: "Texas",
+    location: "Colorado",
     type: "Full-time",
     level: "Senior",
     description:
       "Own sprint planning, stakeholder communication, and on-time delivery across multiple client engagements.",
     overview:
-      "You'll be the operational backbone for one or more client squads — keeping schedules honest, risks visible, and stakeholders aligned. You understand software delivery deeply enough to translate between engineers, designers, and client leadership.",
+      "You'll be the operational backbone for one or more client squads – keeping schedules honest, risks visible, and stakeholders aligned. You understand software delivery deeply enough to translate between engineers, designers, and client leadership.",
     responsibilities: [
       "Own sprint planning, backlog grooming, and release coordination",
       "Track milestones, budgets, and scope with clear client-facing reporting",
@@ -215,7 +215,7 @@ export const openRoles: Job[] = [
     description:
       "Identify and close new agency partnerships across mid-market and enterprise accounts.",
     overview:
-      "You'll grow Tek4Real's pipeline by identifying fit, building relationships, and closing engagements that match our delivery strengths. You partner with technical leaders on scoping and proposals — selling outcomes, not slide decks.",
+      "You'll grow Tek4Real's pipeline by identifying fit, building relationships, and closing engagements that match our delivery strengths. You partner with technical leaders on scoping and proposals – selling outcomes, not slide decks.",
     responsibilities: [
       "Build and manage a qualified pipeline of mid-market and enterprise prospects",
       "Lead discovery calls and translate business goals into engagement outlines",
@@ -246,7 +246,7 @@ export const openRoles: Job[] = [
     description:
       "Ensure long-term client satisfaction, retention, and expansion across APAC accounts.",
     overview:
-      "You'll own the post-sale relationship for APAC clients — ensuring engagements stay healthy, value stays visible, and expansion opportunities surface early. You are the client's trusted point of contact between leadership and delivery teams.",
+      "You'll own the post-sale relationship for APAC clients – ensuring engagements stay healthy, value stays visible, and expansion opportunities surface early. You are the client's trusted point of contact between leadership and delivery teams.",
     responsibilities: [
       "Run QBRs and health checks for assigned client accounts",
       "Monitor satisfaction, utilization, and renewal timelines proactively",
@@ -282,39 +282,6 @@ export const techStack = [
   "PostgreSQL",
   "Figma",
   "Terraform",
-] as const;
-
-export const caseStudies = [
-  {
-    company: "Halcyon Health",
-    industry: "Healthcare",
-    metric: "8 weeks",
-    metricLabel: "MVP to production",
-    quote:
-      "Tek4Real rebuilt our patient portal from scratch — secure, fast, and live in two months. Our internal team couldn't have moved that quickly.",
-    author: "Maren Klaassen",
-    role: "CTO",
-  },
-  {
-    company: "Northstar Retail",
-    industry: "Commerce",
-    metric: "40%",
-    metricLabel: "Faster deployments",
-    quote:
-      "They modernized our e-commerce stack and CI/CD pipeline. We ship features weekly now instead of quarterly.",
-    author: "James Okonkwo",
-    role: "VP Engineering",
-  },
-  {
-    company: "Meridian Finance",
-    industry: "Financial Services",
-    metric: "99.9%",
-    metricLabel: "Uptime achieved",
-    quote:
-      "From legacy monolith to cloud-native microservices — Tek4Real guided us end-to-end without a single day of downtime.",
-    author: "Elena Vasquez",
-    role: "CIO",
-  },
 ] as const;
 
 export const partnerBadges = [

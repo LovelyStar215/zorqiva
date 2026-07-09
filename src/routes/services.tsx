@@ -3,24 +3,21 @@ import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import {
-  AdvancedCapabilities,
-  EnterpriseMatrix,
-  ServiceAreas,
-} from "@/components/site/ServiceShowcase";
+import { EnterpriseMatrix, ServiceAreas } from "@/components/site/ServiceShowcase";
+import { CaseStudiesGrid } from "@/components/site/CaseStudies.tsx";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow } from "@/components/site/primitives";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
   head: () =>
     pageSeo({
-      title: "Services — Tek4Real",
+      title: pageTitle("Services", "Tek4Real"),
       description:
-        "Custom software development, cloud & DevOps, UI/UX design, AI integration, and managed IT services.",
+        "Custom software, mobile apps, cloud & DevOps, UI/UX design, AI, data engineering, QA, consulting, maintenance, and managed IT services.",
       path: "/services",
-      ogTitle: "Services — Tek4Real",
+      ogTitle: pageTitle("Services", "Tek4Real"),
       ogDescription: "Full-stack IT agency services for modern companies.",
     }),
   component: ServicesPage,
@@ -33,7 +30,7 @@ function ServicesPage() {
         <PageHero
           eyebrow="Our Services"
           title="Everything you need to build, ship, and scale."
-          lede="From custom software and cloud infrastructure to design and AI — one agency, one accountable team, end to end."
+          lede="Twelve service lines across engineering, design, cloud, data, consulting, maintenance, and delivery – one agency, one accountable team, end to end."
         />
 
         <SectionShell className="pt-0!">
@@ -47,14 +44,18 @@ function ServicesPage() {
           </div>
         </SectionShell>
 
-        <SectionShell tone="subtle">
+        <SectionShell tone="warm">
           <SectionHeader
-            eyebrow="Capabilities"
-            title="Senior talent across every discipline."
-            lede="Cross-functional squads with engineers, designers, and delivery leads — no handoff gaps."
+            eyebrow="Case studies"
+            title="Real outcomes from recent client work."
+            lede="Healthcare, fintech, commerce, SaaS, and enterprise – see how we deliver measurable results across industries."
           />
-          <div>
-            <AdvancedCapabilities />
+          <CaseStudiesGrid detailed limit={2} />
+          <div className="mt-8 text-center">
+            <Link to="/case-studies" className="link-arrow text-primary font-semibold text-sm">
+              View all case studies{" "}
+              <Icon icon="solar:arrow-right-linear" className="link-arrow__icon" />
+            </Link>
           </div>
         </SectionShell>
 
@@ -75,11 +76,12 @@ function ServicesPage() {
                 Modern stack. Production standards.
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                TypeScript, React, cloud-native infrastructure, and automated testing — the same
+                TypeScript, React, cloud-native infrastructure, and automated testing – the same
                 practices we use on our own products, applied to every client engagement.
               </p>
               <Link
                 to="/contact"
+                hash="contact-form"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold shadow-(--shadow-soft) hover:opacity-90 transition"
               >
                 Discuss your project <Icon icon="solar:arrow-right-linear" />
@@ -95,7 +97,7 @@ function ServicesPage() {
 
         <CTABanner
           title="Ready to start your next project?"
-          lede="Tell us what you're building — we'll respond within one business day with a clear plan."
+          lede="Tell us what you're building – we'll respond within one business day with a clear plan."
           primaryLabel="Start a project"
           secondaryLabel="View engagement models"
         />

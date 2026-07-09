@@ -9,14 +9,14 @@ import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { benefits, companyValues, offices, openRoles, type JobDepartment } from "@/lib/site-data";
 import { brand } from "@/lib/brand";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers")({
   head: () =>
     pageSeo({
-      title: "Careers — Tek4Real",
+      title: pageTitle("Careers", "Tek4Real"),
       description:
-        "Join Tek4Real — build software, cloud systems, and digital products for ambitious clients worldwide.",
+        "Join Tek4Real – build software, cloud systems, and digital products for ambitious clients worldwide.",
       path: "/careers",
       ogTitle: "Careers at Tek4Real",
       ogDescription: "Join our global IT agency.",
@@ -55,7 +55,7 @@ function CareersPage() {
               <SectionHeader
                 eyebrow="Life at Tek4Real"
                 title="Small studio. Big impact."
-                lede="You'll work on diverse client projects across healthcare, fintech, and SaaS — with the craft of a product company and the variety of agency life. We ship weekly, debate openly, and measure success by client outcomes."
+                lede="You'll work on diverse client projects across healthcare, fintech, and SaaS – with the craft of a product company and the variety of agency life. We ship weekly, debate openly, and measure success by client outcomes."
               />
               <div className="mt-8 flex flex-wrap gap-3">
                 {[

@@ -4,25 +4,22 @@ import { Layout, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
-import {
-  AdvancedCapabilities,
-  EnterpriseMatrix,
-  ServiceAreas,
-} from "@/components/site/ServiceShowcase";
+import { EnterpriseMatrix, ServiceAreas } from "@/components/site/ServiceShowcase";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow, PrimaryButton, SecondaryButton } from "@/components/site/primitives";
-import { caseStudies, partnerBadges } from "@/lib/site-data";
-import { pageSeo, professionalServiceJsonLd } from "@/lib/seo";
+import { partnerBadges } from "@/lib/site-data";
+import { CaseStudiesGrid } from "@/components/site/CaseStudies";
+import { pageSeo, pageTitle, professionalServiceJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () =>
     pageSeo({
-      title: "Tek4Real — Premium IT Agency",
+      title: pageTitle("Tek4Real", "Premium IT Agency"),
       description:
-        "Tek4Real is a premium IT agency — custom software, cloud, design, and AI for ambitious companies.",
+        "Tek4Real is a premium IT agency – custom software, cloud, design, and AI for ambitious companies.",
       path: "/",
-      ogTitle: "Tek4Real — IT Agency",
+      ogTitle: pageTitle("Tek4Real", "IT Agency"),
       ogDescription: "Build. Ship. Scale. With a partner you can trust.",
       jsonLd: professionalServiceJsonLd(),
     }),
@@ -52,7 +49,7 @@ function Home() {
               <span className="rounded-full bg-primary text-primary-foreground px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold">
                 IT Agency
               </span>
-              Texas · Hong Kong
+              Colorado · Hong Kong
             </div>
             <h1 className="font-hero text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] text-(--ink) max-w-4xl mx-auto">
               <span className="block">We build digital products</span>
@@ -61,7 +58,7 @@ function Home() {
               </span>
             </h1>
             <p className="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Custom software, cloud infrastructure, UI/UX design, and AI — delivered by a senior
+              Custom software, cloud infrastructure, UI/UX design, and AI – delivered by a senior
               cross-functional team that treats your project like our own.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -89,10 +86,11 @@ function Home() {
           <div className="text-center mb-10">
             <Eyebrow className="justify-center">What we do</Eyebrow>
             <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em]">
-              Four disciplines. One accountable team.
+              Twelve service lines. One accountable team.
             </h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm">
-              Development, cloud, design, and AI — explore our service areas and see how we deliver.
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm">
+              Engineering, mobile, cloud, design, AI, data, QA, consulting, maintenance, security,
+              and managed support – explore our services and see how we deliver.
             </p>
           </div>
           <ServiceAreas />
@@ -132,15 +130,6 @@ function Home() {
           <EnterpriseMatrix />
         </SectionShell>
 
-        <SectionShell tone="subtle">
-          <SectionHeader
-            eyebrow="Our expertise"
-            title="Senior talent. Production standards."
-            lede="Every engagement is staffed with experienced engineers, designers, and delivery leads — not junior contractors."
-          />
-          <AdvancedCapabilities />
-        </SectionShell>
-
         <SectionShell>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -149,7 +138,7 @@ function Home() {
                 Modern stack. Battle-tested process.
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                TypeScript, React, cloud-native infrastructure, and automated CI/CD — the same
+                TypeScript, React, cloud-native infrastructure, and automated CI/CD – the same
                 practices we rely on for our own products, applied to every client project.
               </p>
               <ul className="mt-6 space-y-3">
@@ -183,46 +172,18 @@ function Home() {
             title="Results that speak for themselves."
             align="center"
           />
-          <div className="grid md:grid-cols-3 gap-5 items-stretch card-grid">
-            {caseStudies.map((c, i) => (
-              <div key={c.company} className="h-full min-h-0">
-                <div
-                  className={`card-premium p-8! h-full flex flex-col ${i === 1 ? "border-primary/25! ring-1! ring-primary/10!" : ""}`}
-                >
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-semibold">
-                    {c.industry}
-                  </div>
-                  <div className="font-serif text-2xl text-(--ink)! mt-2">{c.company}</div>
-                  <div className="mt-5 font-serif text-4xl text-gradient tracking-tight">
-                    {c.metric}
-                  </div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
-                    {c.metricLabel}
-                  </div>
-                  <blockquote className="mt-5 text-sm text-muted-foreground leading-relaxed border-l-2 border-accent/40 pl-4 flex-1">
-                    &ldquo;{c.quote}&rdquo;
-                  </blockquote>
-                  <div className="mt-auto pt-5 border-t border-border flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-primary/10 text-primary grid place-items-center font-serif text-sm">
-                      {c.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm">{c.author}</div>
-                      <div className="text-xs text-muted-foreground">{c.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <CaseStudiesGrid limit={3} />
+          <div className="mt-8 text-center">
+            <Link to="/case-studies" className="link-arrow text-primary font-semibold text-sm">
+              View all case studies{" "}
+              <Icon icon="solar:arrow-right-linear" className="link-arrow__icon" />
+            </Link>
           </div>
         </SectionShell>
 
         <CTABanner
           title="Let's build something great together."
-          lede="Tell us about your project — we'll respond within one business day with a clear plan and timeline."
+          lede="Tell us about your project – we'll respond within one business day with a clear plan and timeline."
           primaryLabel="Start a project"
           secondaryLabel="View engagement models"
         />

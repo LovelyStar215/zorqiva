@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/site/Layout";
 import { brand, brandAssets } from "@/lib/brand";
-import { defaultDescription, organizationJsonLd, siteIconLinks } from "@/lib/seo";
+import { defaultDescription, organizationJsonLd, pageTitle, siteIconLinks } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -84,13 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tek4Real — Premium IT Agency" },
+      { title: pageTitle("Tek4Real", "Premium IT Agency") },
       { name: "description", content: defaultDescription },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: brand.legalName },
       { name: "theme-color", content: "#1a3d32" },
       { property: "og:site_name", content: brand.name },
-      { property: "og:title", content: "Tek4Real — IT Agency" },
+      { property: "og:title", content: pageTitle("Tek4Real", "IT Agency") },
       {
         property: "og:description",
         content: "Build. Ship. Scale. With a partner you can trust.",

@@ -7,12 +7,12 @@ import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { companyValues } from "@/lib/site-data";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () =>
     pageSeo({
-      title: "About — Tek4Real",
+      title: pageTitle("About", "Tek4Real"),
       description:
         "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
       path: "/about",
@@ -24,24 +24,24 @@ export const Route = createFileRoute("/about")({
 
 const leadership = [
   {
-    name: "Sarah Chen",
+    name: "Devon Lewis",
     role: "CEO & Founder",
-    bio: "Former engineering director at two Fortune 500 companies. Founded Tek4Real to deliver agency work at product-company quality.",
+    bio: "Founded Tek4Real in 2025 to bring product-company craft to client work – pairing senior talent with accountable delivery from day one.",
   },
   {
-    name: "Marcus Webb",
+    name: "Lin Jubao",
     role: "CTO & Co-founder",
-    bio: "Staff engineer alum from Stripe and Snowflake. Leads architecture and engineering standards across all client engagements.",
+    bio: "Leads architecture, engineering standards, and technical direction across every client engagement – from greenfield builds to cloud-native modernization.",
   },
   {
-    name: "Priya Nair",
-    role: "Head of Design",
-    bio: "Led design at agencies and product companies. Obsessed with interfaces that are beautiful and ship on time.",
+    name: "Rui Qin",
+    role: "Senior Software Engineer",
+    bio: "Full-stack engineer shipping production TypeScript, React, and Node systems – focused on clean code, reliable releases, and mentoring on client squads.",
   },
   {
-    name: "David Okonkwo",
-    role: "Head of Delivery",
-    bio: "Scaled delivery operations across 180+ client projects. Ensures every engagement ships on scope, on time, on budget.",
+    name: "Daniel Wong",
+    role: "Senior Software Engineer",
+    bio: "Builds scalable backends, APIs, and cloud deployments – with a track record of turning complex requirements into maintainable software.",
   },
 ];
 
@@ -49,17 +49,17 @@ const timeline = [
   {
     year: "2025",
     title: "Tek4Real founded",
-    desc: "Sarah launches Tek4Real as a boutique dev shop — senior engineers, designers, and delivery leads united around one mission: build software that lasts.",
+    desc: "Devon Lewis launches Tek4Real as a boutique dev shop – senior engineers united around one mission: build software that lasts.",
   },
   {
     year: "2025",
-    title: "Texas & Hong Kong headquarters",
-    desc: "Dual headquarters open in Texas and Hong Kong — one global studio serving clients across the Americas and APAC from day one.",
+    title: "Colorado & Hong Kong headquarters",
+    desc: "Dual headquarters open in Colorado and Hong Kong – one global studio serving clients across the Americas and APAC from day one.",
   },
   {
     year: "2025",
     title: "Full-stack agency practices",
-    desc: "Engineering, design, cloud, and AI capabilities established under one roof — ready to take on ambitious client builds from kickoff.",
+    desc: "Engineering, design, cloud, and AI capabilities established under one roof – ready to take on ambitious client builds from kickoff.",
   },
 ];
 
@@ -70,7 +70,7 @@ function AboutPage() {
         <PageHero
           eyebrow="About"
           title="Built for craft. Trusted worldwide."
-          lede="We're a premium IT agency — engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
+          lede="We're a premium IT agency – engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
         />
 
         <SectionShell className="pt-0!">
@@ -84,12 +84,12 @@ function AboutPage() {
               <SectionHeader
                 eyebrow="Our studio"
                 title="A global team, one standard."
-                lede="We operate from two headquarters — Texas and Hong Kong — with the same engineering standards, design systems, and client rituals in every office."
+                lede="We operate from two headquarters – Colorado and Hong Kong – with the same engineering standards, design systems, and client rituals in every office."
               />
               <div className="mt-8 grid grid-cols-3 gap-6">
                 {[
                   { v: "2025", l: "Founded" },
-                  { v: "85+", l: "Team" },
+                  { v: "10+", l: "Team" },
                   { v: "2", l: "Headquarters" },
                 ].map((s) => (
                   <div key={s.l}>
@@ -139,7 +139,7 @@ function AboutPage() {
         </SectionShell>
 
         <SectionShell tone="muted">
-          <SectionHeader eyebrow="Leadership" title="The team behind the work." />
+          <SectionHeader eyebrow="Team" title="The people behind the work." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid">
             {leadership.map((l) => (
               <PremiumCard key={l.name} className="p-6!">
@@ -182,7 +182,7 @@ function AboutPage() {
 
         <CTABanner
           title="Ready to work together?"
-          lede="Tell us about your project — we'll respond within one business day."
+          lede="Tell us about your project – we'll respond within one business day."
           primaryLabel="Start a project"
         />
       </div>

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { getJobById, openRoles } from "@/lib/site-data";
-import { breadcrumbJsonLd, jobPostingJsonLd, pageSeo } from "@/lib/seo";
+import { breadcrumbJsonLd, jobPostingJsonLd, pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers_/$jobId")({
   loader: ({ params }) => {
@@ -16,18 +16,18 @@ export const Route = createFileRoute("/careers_/$jobId")({
     const job = loaderData?.job;
     if (!job) {
       return pageSeo({
-        title: "Careers — Tek4Real",
-        description: "Join Tek4Real — build software, cloud systems, and digital products.",
+        title: pageTitle("Careers", "Tek4Real"),
+        description: "Join Tek4Real – build software, cloud systems, and digital products.",
         path: "/careers",
       });
     }
 
     const path = `/careers/${job.id}`;
     return pageSeo({
-      title: `${job.title} — Careers — Tek4Real`,
+      title: pageTitle(job.title, "Careers", "Tek4Real"),
       description: job.description,
       path,
-      ogTitle: `${job.title} — Tek4Real Careers`,
+      ogTitle: pageTitle(job.title, "Tek4Real Careers"),
       ogDescription: job.description,
       ogType: "article",
       jsonLd: [

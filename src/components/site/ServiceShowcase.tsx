@@ -1,16 +1,19 @@
 import { Icon } from "@iconify/react";
-import { advancedCapabilities, enterpriseMatrix, serviceAreas } from "@/lib/platform-data";
+import { enterpriseMatrix, serviceAreas } from "@/lib/platform-data";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 
 export function ServiceAreas() {
   return (
-    <div className="grid sm:grid-cols-2 gap-4 items-stretch card-grid">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch card-grid">
       {serviceAreas.map((area) => (
         <PremiumCard key={area.id} className="h-full flex flex-col">
           <IconBadge icon={area.icon} className="mb-4" />
           <div className="font-serif text-xl text-(--ink)">{area.label}</div>
           <p className="text-sm font-medium text-foreground/80 mt-2">{area.headline}</p>
           <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{area.desc}</p>
+          <div className="mt-4 text-[10px] uppercase tracking-wider font-semibold text-accent">
+            {area.spec}
+          </div>
         </PremiumCard>
       ))}
     </div>
@@ -38,27 +41,6 @@ export function EnterpriseMatrix() {
           <div className="px-5 py-4 border-l border-border text-foreground/85 font-medium flex items-center gap-2">
             <Icon icon="solar:check-circle-bold" className="text-primary shrink-0" />
             {row.withTek4Real}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export function AdvancedCapabilities() {
-  return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch card-grid">
-      {advancedCapabilities.map((cap) => (
-        <div key={cap.title} className="h-full min-h-0">
-          <div className="card-premium p-6! group h-full flex flex-col">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary grid place-items-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition">
-              <Icon icon={cap.icon} className="text-lg" />
-            </div>
-            <div className="font-serif text-lg text-(--ink)">{cap.title}</div>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed flex-1">{cap.desc}</p>
-            <div className="mt-4 text-[10px] uppercase tracking-wider font-semibold text-accent">
-              {cap.spec}
-            </div>
           </div>
         </div>
       ))}

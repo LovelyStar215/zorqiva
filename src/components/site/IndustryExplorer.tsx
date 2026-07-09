@@ -104,7 +104,7 @@ export function IndustryExplorer() {
             {ind.metricLabel}
           </div>
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-            We&apos;ve delivered projects for {ind.label.toLowerCase()} organizations — from MVPs to
+            We&apos;ve delivered projects for {ind.label.toLowerCase()} organizations – from MVPs to
             enterprise-scale platforms with compliance and security built in.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/10 text-accent px-4 py-2 text-xs font-semibold">
@@ -158,7 +158,7 @@ export function PricingMatrix() {
                         className="text-primary text-lg mx-auto"
                       />
                     ) : val === false ? (
-                      <span className="text-muted-foreground/40">—</span>
+                      <span className="text-muted-foreground/40">–</span>
                     ) : (
                       <span className="text-xs font-semibold text-accent">{val}</span>
                     )}

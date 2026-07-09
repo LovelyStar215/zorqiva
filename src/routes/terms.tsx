@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
   head: () =>
     pageSeo({
-      title: "Terms of Service — Tek4Real",
+      title: pageTitle("Terms of Service", "Tek4Real"),
       description: "Terms governing use of the Tek4Real website and services.",
       path: "/terms",
     }),
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/terms")({
       </p>
       <h2>Governing law</h2>
       <p>
-        These Terms are governed by the laws of the State of Texas, without regard to
+        These Terms are governed by the laws of the State of Colorado, without regard to
         conflict-of-law principles, except where your services agreement specifies otherwise.
       </p>
       <h2>Related policies</h2>

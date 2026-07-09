@@ -3,12 +3,12 @@ import { Icon } from "@iconify/react";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
 import { partnerBadges } from "@/lib/site-data";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/security")({
   head: () =>
     pageSeo({
-      title: "Security — Tek4Real",
+      title: pageTitle("Security", "Tek4Real"),
       description:
         "Tek4Real security practices, certifications, and how we protect client projects.",
       path: "/security",
@@ -44,7 +44,7 @@ function SecurityPage() {
     <LegalPage title="Security & Compliance" updated="July 1, 2026">
       <p>
         Security is foundational to how we work. Every client engagement follows secure development
-        practices — from code review and dependency scanning to encrypted infrastructure and access
+        practices – from code review and dependency scanning to encrypted infrastructure and access
         controls.
       </p>
       <div className="not-prose grid sm:grid-cols-2 gap-4 card-grid my-10">

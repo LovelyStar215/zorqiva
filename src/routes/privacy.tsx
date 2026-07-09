@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
   head: () =>
     pageSeo({
-      title: "Privacy Policy — Tek4Real",
+      title: pageTitle("Privacy Policy", "Tek4Real"),
       description: "How Tek4Real collects, uses, and protects your data.",
       path: "/privacy",
     }),
@@ -50,8 +50,8 @@ export const Route = createFileRoute("/privacy")({
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about this policy? Email {brand.contactEmail} or write to Tek4Real, Inc., 500 W
-        2nd Street, Suite 1900, Austin, TX 78701.
+        Questions about this policy? Email {brand.contactEmail} or write to Tek4Real, Inc., Denver,
+        CO, USA.
       </p>
     </LegalPage>
   ),

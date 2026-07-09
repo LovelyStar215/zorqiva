@@ -5,6 +5,7 @@ import { Logo } from "@/components/site/Logo";
 
 const links = [
   { to: "/services", label: "Services" },
+  { to: "/case-studies", label: "Case Studies" },
   { to: "/solutions", label: "Industries" },
   { to: "/pricing", label: "Engagement" },
   { to: "/about", label: "About" },
@@ -41,12 +42,12 @@ export function Nav() {
         <span className="hidden sm:inline">
           <span className="text-accent font-semibold">Now hiring</span>
           <span className="mx-2 text-background/30">·</span>
-          Senior engineers & designers — join our global studio.
+          Senior engineers & designers – join our global studio.
           <Link to="/careers" className="ml-2 text-accent hover:underline font-medium">
             View roles →
           </Link>
         </span>
-        <span className="sm:hidden text-accent font-semibold">Now hiring — view roles</span>
+        <span className="sm:hidden text-accent font-semibold">Now hiring – view roles</span>
       </div>
 
       <header className="fixed inset-x-0 z-50" style={{ top: ANNOUNCEMENT_H }}>
@@ -74,7 +75,11 @@ export function Nav() {
             </nav>
 
             <div className="hidden lg:flex items-center gap-2 shrink-0">
-              <Link to="/contact" className="btn-primary py-2.5! px-5! shadow-(--shadow-soft)!">
+              <Link
+                to="/contact"
+                hash="contact-form"
+                className="btn-primary py-2.5! px-5! shadow-(--shadow-soft)!"
+              >
                 Start a project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
@@ -106,6 +111,7 @@ export function Nav() {
               ))}
               <Link
                 to="/contact"
+                hash="contact-form"
                 onClick={() => setOpen(false)}
                 className="btn-primary mt-2 justify-center py-2.5!"
               >

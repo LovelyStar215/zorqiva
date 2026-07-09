@@ -1,7 +1,7 @@
 {
   "name": "Tek4Real",
   "short_name": "Tek4Real",
-  "description": "Premium IT agency — custom software, cloud, design, and AI.",
+  "description": "Premium IT agency – custom software, cloud, design, and AI.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8faf9",

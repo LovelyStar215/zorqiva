@@ -6,7 +6,7 @@ export function CTABanner({
   lede,
   primaryLabel = "Start a project",
   primaryTo = "/contact",
-  primaryHash,
+  primaryHash = "contact-form",
   secondaryLabel,
   secondaryTo = "/pricing",
 }: {

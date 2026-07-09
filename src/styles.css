@@ -297,7 +297,7 @@
     box-shadow: var(--shadow-lift);
   }
 
-  /* Pricing cards — no lift on hover (prevents layout shift in grid) */
+  /* Pricing cards – no lift on hover (prevents layout shift in grid) */
   .pricing-card {
     background: var(--card);
     border: 1px solid var(--border);

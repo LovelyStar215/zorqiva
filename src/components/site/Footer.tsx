@@ -46,6 +46,7 @@ export function Footer() {
                   title: "Services",
                   links: [
                     { label: "What we do", to: "/services" },
+                    { label: "Case studies", to: "/case-studies" },
                     { label: "Industries", to: "/solutions" },
                     { label: "Engagement", to: "/pricing" },
                     { label: "Security", to: "/security" },
@@ -95,7 +96,7 @@ export function Footer() {
           </div>
           <div className="mt-16 pt-8 border-t border-background/8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-background/35">
             <div>
-              © {new Date().getFullYear()} {brand.legalName} · 500 W 2nd St, Austin, TX 78701
+              © {new Date().getFullYear()} {brand.legalName} · Denver, CO, USA
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-background/45">
               <Link to="/privacy" className="hover:text-accent transition">

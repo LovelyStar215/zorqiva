@@ -33,8 +33,9 @@ export function ChannelCard({
   );
 
   if (href.startsWith("/")) {
+    const [to, hash] = href.split("#");
     return (
-      <Link to={href} className={className}>
+      <Link to={to} hash={hash} className={className}>
         {content}
       </Link>
     );

@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, pageTitle } from "@/lib/seo";
 
 export const Route = createFileRoute("/cookies")({
   head: () =>
     pageSeo({
-      title: "Cookie Policy — Tek4Real",
+      title: pageTitle("Cookie Policy", "Tek4Real"),
       description: "How Tek4Real uses cookies and similar technologies on our website.",
       path: "/cookies",
     }),
@@ -26,15 +26,15 @@ export const Route = createFileRoute("/cookies")({
       <p>We use the following categories of cookies:</p>
       <ul className="list-disc pl-6 space-y-2">
         <li>
-          <strong>Essential cookies</strong> — required for core site functionality such as
+          <strong>Essential cookies</strong> – required for core site functionality such as
           navigation and security. These cannot be disabled.
         </li>
         <li>
-          <strong>Analytics cookies</strong> — help us understand traffic patterns and improve the
+          <strong>Analytics cookies</strong> – help us understand traffic patterns and improve the
           site. These are only set if you consent where required by law.
         </li>
         <li>
-          <strong>Preference cookies</strong> — remember choices such as display settings when
+          <strong>Preference cookies</strong> – remember choices such as display settings when
           applicable.
         </li>
       </ul>
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/cookies")({
       </p>
       <h2>Managing cookies</h2>
       <p>
-        You can control cookies through your browser settings — most browsers let you block or
+        You can control cookies through your browser settings – most browsers let you block or
         delete cookies. Blocking essential cookies may affect site functionality. Where required, we
         will ask for consent before setting non-essential cookies.
       </p>

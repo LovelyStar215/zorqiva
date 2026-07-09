@@ -19,25 +19,25 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "What happens on a discovery call?",
-        a: "We learn your goals, timeline, and constraints — then outline a recommended engagement model, team shape, and next steps. No obligation.",
+        a: "We learn your goals, timeline, and constraints – then outline a recommended engagement model, team shape, and next steps. No obligation.",
       },
       {
         q: "Do you sign NDAs before discussing projects?",
-        a: "Yes — we're happy to sign a mutual NDA before any detailed technical discussion.",
+        a: "Yes – we're happy to sign a mutual NDA before any detailed technical discussion.",
       },
       {
         q: "What services do you offer?",
-        a: "Custom software development, cloud infrastructure, UI/UX design, and AI engineering — delivered by cross-functional squads. See our Services page for detail.",
+        a: "Custom software development, cloud infrastructure, UI/UX design, and AI engineering – delivered by cross-functional squads. See our Services page for detail.",
       },
       {
         q: "Can I visit your offices?",
-        a: `Yes. Email ${brand.contactEmail} to schedule an in-person session at our Texas or Hong Kong headquarters.`,
+        a: `Yes. Email ${brand.contactEmail} to schedule an in-person session at our Colorado or Hong Kong headquarters.`,
       },
     ],
   },
   {
     title: "Engagement & pricing",
-    lede: "Project-based builds, monthly retainers, and dedicated squads — how each model works.",
+    lede: "Project-based builds, monthly retainers, and dedicated squads – how each model works.",
     items: [
       {
         q: "What engagement models do you offer?",
@@ -45,7 +45,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "What's included in a retainer?",
-        a: "A set number of sprint hours per month across engineering, design, and DevOps — with flexible reallocation as priorities shift.",
+        a: "A set number of sprint hours per month across engineering, design, and DevOps – with flexible reallocation as priorities shift.",
       },
       {
         q: "Can we scale the team up or down?",
@@ -53,7 +53,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "Do you work with existing codebases?",
-        a: "Yes. We regularly join mid-project — auditing code, stabilizing infrastructure, and shipping features on legacy stacks.",
+        a: "Yes. We regularly join mid-project – auditing code, stabilizing infrastructure, and shipping features on legacy stacks.",
       },
       {
         q: "How do you price projects?",
@@ -67,15 +67,15 @@ export const faqSections: FaqSection[] = [
   },
   {
     title: "Working with us",
-    lede: "How our teams collaborate across Texas, Hong Kong, and remote.",
+    lede: "How our teams collaborate across Colorado, Hong Kong, and remote.",
     items: [
       {
         q: "Where are you based?",
-        a: "We operate from two headquarters — Texas (Americas) and Hong Kong (APAC). Our teams work across US and APAC time zones with remote-friendly collaboration.",
+        a: "We operate from two headquarters – Colorado (Americas) and Hong Kong (APAC). Our teams work across US and APAC time zones with remote-friendly collaboration.",
       },
       {
         q: "What does a typical team look like?",
-        a: "A senior engineer, designer, and delivery lead at minimum — scaled up with DevOps, QA, or specialists as the project requires. No junior-only staffing.",
+        a: "A senior engineer, designer, and delivery lead at minimum – scaled up with DevOps, QA, or specialists as the project requires. No junior-only staffing.",
       },
       {
         q: "How do you communicate during a project?",
@@ -83,7 +83,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "What tech stacks do you work with?",
-        a: "TypeScript, React, Node.js, Python, cloud-native infrastructure (AWS, Azure, GCP), Kubernetes, PostgreSQL, and modern CI/CD — chosen to fit your project, not a one-size template.",
+        a: "TypeScript, React, Node.js, Python, cloud-native infrastructure (AWS, Azure, GCP), Kubernetes, PostgreSQL, and modern CI/CD – chosen to fit your project, not a one-size template.",
       },
       {
         q: "Do you handle security and compliance?",
