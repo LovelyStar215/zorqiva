@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
         "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
       path: "/about",
       ogTitle: "About Tek4Real",
-      ogDescription: "Global IT agency since 2012.",
+      ogDescription: "Global IT agency founded in 2025.",
     }),
   component: AboutPage,
 });
@@ -47,24 +47,19 @@ const leadership = [
 
 const timeline = [
   {
-    year: "2012",
+    year: "2025",
     title: "Tek4Real founded",
-    desc: "Sarah launches Tek4Real as a boutique dev shop — three engineers, one mission: build software that lasts.",
+    desc: "Sarah launches Tek4Real as a boutique dev shop — senior engineers, designers, and delivery leads united around one mission: build software that lasts.",
   },
   {
-    year: "2016",
-    title: "Design & cloud practices",
-    desc: "Expand into UI/UX and DevOps. Strengthen delivery from our Texas headquarters.",
+    year: "2025",
+    title: "Texas & Hong Kong headquarters",
+    desc: "Dual headquarters open in Texas and Hong Kong — one global studio serving clients across the Americas and APAC from day one.",
   },
   {
-    year: "2020",
-    title: "Enterprise & regulated industries",
-    desc: "SOC 2 certification, HIPAA experience, and first Fortune 500 retainer clients.",
-  },
-  {
-    year: "2024",
-    title: "180+ projects delivered",
-    desc: "Hong Kong headquarters opens. AI & data practice launches. Team grows to 85 across two global offices.",
+    year: "2025",
+    title: "Full-stack agency practices",
+    desc: "Engineering, design, cloud, and AI capabilities established under one roof — ready to take on ambitious client builds from kickoff.",
   },
 ];
 
@@ -93,7 +88,7 @@ function AboutPage() {
               />
               <div className="mt-8 grid grid-cols-3 gap-6">
                 {[
-                  { v: "2012", l: "Founded" },
+                  { v: "2025", l: "Founded" },
                   { v: "85+", l: "Team" },
                   { v: "2", l: "Headquarters" },
                 ].map((s) => (
@@ -110,12 +105,12 @@ function AboutPage() {
         </SectionShell>
 
         <SectionShell tone="warm">
-          <SectionHeader eyebrow="Our story" title="From boutique shop to global agency." />
+          <SectionHeader eyebrow="Our story" title="A new studio with senior standards." />
           <div className="relative">
             <div className="absolute left-2.75 top-2 bottom-2 w-px bg-border" aria-hidden />
             <div className="space-y-8">
               {timeline.map((t) => (
-                <div key={t.year} className="relative pl-10">
+                <div key={t.title} className="relative pl-10">
                   <div className="absolute left-0 top-1.5 w-5.75 h-5.75 rounded-full border-2 border-primary bg-background grid place-items-center">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                   </div>
