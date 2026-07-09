@@ -7,20 +7,18 @@ import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { companyValues } from "@/lib/site-data";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
-      },
-      { property: "og:title", content: "About Tek4Real" },
-      { property: "og:description", content: "Global IT agency since 2012." },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "About — Tek4Real",
+      description:
+        "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
+      path: "/about",
+      ogTitle: "About Tek4Real",
+      ogDescription: "Global IT agency since 2012.",
+    }),
   component: AboutPage,
 });
 

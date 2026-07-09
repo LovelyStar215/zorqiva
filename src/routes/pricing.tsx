@@ -9,19 +9,18 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 
+import { pageSeo } from "@/lib/seo";
+
 export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Engagement Models — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Flexible engagement models — project-based, monthly retainer, or dedicated squad.",
-      },
-      { property: "og:title", content: "Engagement — Tek4Real" },
-      { property: "og:description", content: "Three ways to work with our agency." },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Engagement Models — Tek4Real",
+      description:
+        "Flexible engagement models — project-based, monthly retainer, or dedicated squad.",
+      path: "/pricing",
+      ogTitle: "Engagement — Tek4Real",
+      ogDescription: "Three ways to work with our agency.",
+    }),
   component: PricingPage,
 });
 

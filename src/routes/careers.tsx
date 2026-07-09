@@ -9,20 +9,18 @@ import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { benefits, companyValues, offices, openRoles, type JobDepartment } from "@/lib/site-data";
 import { brand } from "@/lib/brand";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers")({
-  head: () => ({
-    meta: [
-      { title: "Careers — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Join Tek4Real — build software, cloud systems, and digital products for ambitious clients worldwide.",
-      },
-      { property: "og:title", content: "Careers at Tek4Real" },
-      { property: "og:description", content: "Join our global IT agency." },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Careers — Tek4Real",
+      description:
+        "Join Tek4Real — build software, cloud systems, and digital products for ambitious clients worldwide.",
+      path: "/careers",
+      ogTitle: "Careers at Tek4Real",
+      ogDescription: "Join our global IT agency.",
+    }),
   component: CareersPage,
 });
 

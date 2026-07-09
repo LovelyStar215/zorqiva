@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { getJobById, openRoles } from "@/lib/site-data";
+import { breadcrumbJsonLd, jobPostingJsonLd, pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/careers_/$jobId")({
   loader: ({ params }) => {
@@ -14,30 +15,29 @@ export const Route = createFileRoute("/careers_/$jobId")({
   head: ({ loaderData }) => {
     const job = loaderData?.job;
     if (!job) {
-      return {
-        meta: [
-          { title: "Careers — Tek4Real" },
-          {
-            name: "description",
-            content: "Join Tek4Real — build software, cloud systems, and digital products.",
-          },
-        ],
-      };
+      return pageSeo({
+        title: "Careers — Tek4Real",
+        description: "Join Tek4Real — build software, cloud systems, and digital products.",
+        path: "/careers",
+      });
     }
 
-    return {
-      meta: [
-        {
-          title: `${job.title} — Careers — Tek4Real`,
-        },
-        {
-          name: "description",
-          content: job.description,
-        },
-        { property: "og:title", content: `${job.title} — Tek4Real Careers` },
-        { property: "og:description", content: job.description },
+    const path = `/careers/${job.id}`;
+    return pageSeo({
+      title: `${job.title} — Careers — Tek4Real`,
+      description: job.description,
+      path,
+      ogTitle: `${job.title} — Tek4Real Careers`,
+      ogDescription: job.description,
+      ogType: "article",
+      jsonLd: [
+        jobPostingJsonLd(job),
+        breadcrumbJsonLd([
+          { name: "Careers", path: "/careers" },
+          { name: job.title, path },
+        ]),
       ],
-    };
+    });
   },
   component: JobDetailPage,
 });

@@ -3,17 +3,16 @@ import { Icon } from "@iconify/react";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
 import { partnerBadges } from "@/lib/site-data";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/security")({
-  head: () => ({
-    meta: [
-      { title: "Security — Tek4Real" },
-      {
-        name: "description",
-        content: "Tek4Real security practices, certifications, and how we protect client projects.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Security — Tek4Real",
+      description:
+        "Tek4Real security practices, certifications, and how we protect client projects.",
+      path: "/security",
+    }),
   component: SecurityPage,
 });
 

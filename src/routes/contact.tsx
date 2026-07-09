@@ -10,21 +10,20 @@ import { FaqList } from "@/components/site/FaqList";
 import { contactFaqs } from "@/lib/faq-data";
 import { offices } from "@/lib/site-data";
 import { brand } from "@/lib/brand";
+import { pageSeo } from "@/lib/seo";
 
 const contactMailto = `mailto:${brand.contactEmail}`;
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Tek4Real" },
-      {
-        name: "description",
-        content: "Contact Tek4Real. Start a project, partnerships, careers, or general inquiries.",
-      },
-      { property: "og:title", content: "Contact Tek4Real" },
-      { property: "og:description", content: "Start a project with our global studio." },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Contact — Tek4Real",
+      description:
+        "Contact Tek4Real. Start a project, partnerships, careers, or general inquiries.",
+      path: "/contact",
+      ogTitle: "Contact Tek4Real",
+      ogDescription: "Start a project with our global studio.",
+    }),
   component: ContactPage,
 });
 

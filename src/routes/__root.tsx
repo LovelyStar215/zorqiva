@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/site/Layout";
 import { brand, brandAssets } from "@/lib/brand";
+import { defaultDescription, organizationJsonLd, siteIconLinks } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -84,11 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Tek4Real — Premium IT Agency" },
-      {
-        name: "description",
-        content:
-          "Tek4Real is a premium IT agency. Custom software, cloud, design, and AI for ambitious companies.",
-      },
+      { name: "description", content: defaultDescription },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "author", content: brand.legalName },
+      { name: "theme-color", content: "#1a3d32" },
+      { property: "og:site_name", content: brand.name },
       { property: "og:title", content: "Tek4Real — IT Agency" },
       {
         property: "og:description",
@@ -96,7 +97,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: brand.siteUrl },
+      { property: "og:image", content: `${brand.siteUrl}${brandAssets.logoSquare}` },
+      { property: "og:image:width", content: "512" },
+      { property: "og:image:height", content: "512" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationJsonLd()),
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,8 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: brandAssets.favicon, type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: brandAssets.logoIcon },
+      ...siteIconLinks(),
     ],
   }),
   shellComponent: RootShell,

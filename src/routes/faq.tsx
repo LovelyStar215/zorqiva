@@ -4,24 +4,20 @@ import { CTABanner } from "@/components/site/CTABanner";
 import { FaqList } from "@/components/site/FaqList";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { faqSections } from "@/lib/faq-data";
+import { faqPageJsonLd, pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Frequently asked questions about working with Tek4Real — projects, pricing, teams, and policies.",
-      },
-      { property: "og:title", content: "FAQ — Tek4Real" },
-      {
-        property: "og:description",
-        content:
-          "Answers about our agency services, engagement models, and Texas & Hong Kong offices.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "FAQ — Tek4Real",
+      description:
+        "Frequently asked questions about working with Tek4Real — projects, pricing, teams, and policies.",
+      path: "/faq",
+      ogTitle: "FAQ — Tek4Real",
+      ogDescription:
+        "Answers about our agency services, engagement models, and Texas & Hong Kong offices.",
+      jsonLd: faqPageJsonLd(),
+    }),
   component: FaqPage,
 });
 

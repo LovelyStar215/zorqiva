@@ -1,17 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/cookies")({
-  head: () => ({
-    meta: [
-      { title: "Cookie Policy — Tek4Real" },
-      {
-        name: "description",
-        content: "How Tek4Real uses cookies and similar technologies on our website.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Cookie Policy — Tek4Real",
+      description: "How Tek4Real uses cookies and similar technologies on our website.",
+      path: "/cookies",
+    }),
   component: () => (
     <LegalPage title="Cookie Policy" updated="July 1, 2026">
       <p>

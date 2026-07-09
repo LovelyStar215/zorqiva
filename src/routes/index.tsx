@@ -13,20 +13,19 @@ import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow, PrimaryButton, SecondaryButton } from "@/components/site/primitives";
 import { caseStudies, partnerBadges } from "@/lib/site-data";
+import { pageSeo, professionalServiceJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Tek4Real — Premium IT Agency" },
-      {
-        name: "description",
-        content:
-          "Tek4Real is a premium IT agency — custom software, cloud, design, and AI for ambitious companies.",
-      },
-      { property: "og:title", content: "Tek4Real — IT Agency" },
-      { property: "og:description", content: "Build. Ship. Scale. With a partner you can trust." },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Tek4Real — Premium IT Agency",
+      description:
+        "Tek4Real is a premium IT agency — custom software, cloud, design, and AI for ambitious companies.",
+      path: "/",
+      ogTitle: "Tek4Real — IT Agency",
+      ogDescription: "Build. Ship. Scale. With a partner you can trust.",
+      jsonLd: professionalServiceJsonLd(),
+    }),
   component: Home,
 });
 

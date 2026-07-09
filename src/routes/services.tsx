@@ -11,23 +11,18 @@ import {
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { Eyebrow } from "@/components/site/primitives";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Custom software development, cloud & DevOps, UI/UX design, AI integration, and managed IT services.",
-      },
-      { property: "og:title", content: "Services — Tek4Real" },
-      {
-        property: "og:description",
-        content: "Full-stack IT agency services for modern companies.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Services — Tek4Real",
+      description:
+        "Custom software development, cloud & DevOps, UI/UX design, AI integration, and managed IT services.",
+      path: "/services",
+      ogTitle: "Services — Tek4Real",
+      ogDescription: "Full-stack IT agency services for modern companies.",
+    }),
   component: ServicesPage,
 });
 

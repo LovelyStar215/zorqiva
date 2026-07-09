@@ -7,23 +7,18 @@ import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { SectionImage } from "@/components/site/SectionImage";
 import { siteImages } from "@/lib/site-images";
 import { createFileRoute } from "@tanstack/react-router";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/solutions")({
-  head: () => ({
-    meta: [
-      { title: "Industries — Tek4Real" },
-      {
-        name: "description",
-        content:
-          "Tek4Real serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
-      },
-      { property: "og:title", content: "Industries — Tek4Real" },
-      {
-        property: "og:description",
-        content: "Industry expertise across regulated and high-growth sectors.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Industries — Tek4Real",
+      description:
+        "Tek4Real serves healthcare, fintech, retail, SaaS, enterprise, and government clients.",
+      path: "/solutions",
+      ogTitle: "Industries — Tek4Real",
+      ogDescription: "Industry expertise across regulated and high-growth sectors.",
+    }),
   component: SolutionsPage,
 });
 
