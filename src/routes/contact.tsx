@@ -4,7 +4,8 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { ContactForm } from "@/components/site/ContactForm";
 import { ChannelCard } from "@/components/site/ChannelCard";
 import { Eyebrow, PremiumCard } from "@/components/site/primitives";
-import { StudioVisual } from "@/components/site/Visuals";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { FaqList } from "@/components/site/FaqList";
 import { contactFaqs } from "@/lib/faq-data";
 import { offices } from "@/lib/site-data";
@@ -119,9 +120,11 @@ function ContactPage() {
                 available worldwide.
               </p>
 
-              <div className="mt-8 rounded-2xl overflow-hidden border border-border shadow-(--shadow-soft)">
-                <StudioVisual />
-              </div>
+              <SectionImage
+                src={siteImages.contactHeadquarters}
+                alt="Verdian global headquarters"
+                aspect="video"
+              />
 
               <div className="mt-8 grid grid-cols-2 gap-3">
                 {[

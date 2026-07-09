@@ -6,6 +6,8 @@ import { PricingMatrix } from "@/components/site/IndustryExplorer";
 import { FaqList } from "@/components/site/FaqList";
 import { pricingFaqs } from "@/lib/faq-data";
 import { SectionHeader } from "@/components/site/SectionHeader";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -136,6 +138,23 @@ function PricingPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </SectionShell>
+
+        <SectionShell tone="subtle">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeader
+                eyebrow="Partnership"
+                title="Engagements built on trust."
+                lede="Every model starts with discovery, clear scope, and a senior team accountable to outcomes — not billable hours alone."
+              />
+            </div>
+            <SectionImage
+              src={siteImages.pricingPartnership}
+              alt="Verdian client partnership and engagement"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 

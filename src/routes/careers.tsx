@@ -5,7 +5,8 @@ import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { TeamVisual } from "@/components/site/Visuals";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { benefits, companyValues, offices, openRoles, type JobDepartment } from "@/lib/site-data";
 
@@ -80,9 +81,11 @@ function CareersPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl overflow-hidden border border-border shadow-(--shadow-soft)">
-              <TeamVisual />
-            </div>
+            <SectionImage
+              src={siteImages.careersCulture}
+              alt="Culture and life at Verdian"
+              aspect="wide"
+            />
           </div>
         </SectionShell>
 

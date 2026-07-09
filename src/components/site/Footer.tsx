@@ -11,29 +11,7 @@ const socialIcons = [
 
 export function Footer() {
   return (
-    <footer className="mt-32">
-      <div className="footer-fade">
-        <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
-          <div>
-            <h3 className="font-serif text-3xl text-[color:var(--ink)]">
-              Insights from the studio.
-            </h3>
-            <p className="mt-3 text-muted-foreground max-w-md">
-              Tech trends, project lessons, and agency updates — once a month, no spam.
-            </p>
-          </div>
-          <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="you@company.com"
-              className="flex-1 rounded-full border border-input bg-background px-5 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15"
-            />
-            <button type="submit" className="btn-primary py-3! px-6! shrink-0">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
+    <footer className="mt-18">
       <div className="bg-(--ink) text-background/85">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid md:grid-cols-5 gap-12">

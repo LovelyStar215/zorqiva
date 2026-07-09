@@ -6,11 +6,11 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
 import {
   AdvancedCapabilities,
-  CodePreview,
   EnterpriseMatrix,
-  LiveActivityFeed,
-  PlatformExplorer,
-} from "@/components/site/PlatformExplorer";
+  ServiceAreas,
+} from "@/components/site/ServiceShowcase";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { Eyebrow, PrimaryButton, SecondaryButton } from "@/components/site/primitives";
 import { caseStudies, partnerBadges } from "@/lib/site-data";
 
@@ -95,8 +95,13 @@ function Home() {
               Development, cloud, design, and AI — explore our service areas and see how we deliver.
             </p>
           </div>
-          <div>
-            <PlatformExplorer />
+          <ServiceAreas />
+          <div className="mt-8">
+            <SectionImage
+              src={siteImages.homeServices}
+              alt="Verdian service offerings on the homepage"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 
@@ -124,14 +129,7 @@ function Home() {
             title="Stop stitching freelancers together."
             lede="Side-by-side comparison of in-house hiring and DIY vs. working with a dedicated agency squad."
           />
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-6 items-stretch">
-            <div className="h-full min-h-0">
-              <EnterpriseMatrix />
-            </div>
-            <div className="h-full min-h-0">
-              <LiveActivityFeed />
-            </div>
-          </div>
+          <EnterpriseMatrix />
         </SectionShell>
 
         <SectionShell tone="subtle">
@@ -173,9 +171,11 @@ function Home() {
                 Explore our services <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div>
-              <CodePreview />
-            </div>
+            <SectionImage
+              src={siteImages.homeDevelopment}
+              alt="Verdian development process on the homepage"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 

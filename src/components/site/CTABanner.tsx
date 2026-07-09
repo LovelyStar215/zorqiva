@@ -19,7 +19,7 @@ export function CTABanner({
   secondaryTo?: string;
 }) {
   return (
-    <section className="max-w-7xl mx-auto px-6 pb-32">
+    <section className="max-w-7xl mx-auto px-6">
       <div
         className="relative rounded-[2rem] overflow-hidden p-12 md:p-16 lg:p-20"
         style={{ background: "var(--gradient-primary)" }}

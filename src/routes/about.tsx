@@ -3,7 +3,8 @@ import { Icon } from "@iconify/react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { StudioVisual, TeamVisual } from "@/components/site/Visuals";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 import { companyValues } from "@/lib/site-data";
 
@@ -79,11 +80,13 @@ function AboutPage() {
           lede="We're a premium IT agency — engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
         />
 
-        <SectionShell className="!pt-0">
+        <SectionShell className="pt-0!">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-lift)]">
-              <StudioVisual />
-            </div>
+            <SectionImage
+              src={siteImages.aboutStudio}
+              alt="Verdian studio workspace"
+              aspect="video"
+            />
             <div>
               <SectionHeader
                 eyebrow="Our studio"
@@ -111,17 +114,17 @@ function AboutPage() {
         <SectionShell tone="warm">
           <SectionHeader eyebrow="Our story" title="From boutique shop to global agency." />
           <div className="relative max-w-3xl">
-            <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" aria-hidden />
+            <div className="absolute left-2.75 top-2 bottom-2 w-px bg-border" aria-hidden />
             <div className="space-y-8">
               {timeline.map((t) => (
                 <div key={t.year} className="relative pl-10">
-                  <div className="absolute left-0 top-1.5 w-[23px] h-[23px] rounded-full border-2 border-primary bg-background grid place-items-center">
+                  <div className="absolute left-0 top-1.5 w-5.75 h-5.75 rounded-full border-2 border-primary bg-background grid place-items-center">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                   </div>
                   <div className="text-xs font-semibold uppercase tracking-widest text-accent">
                     {t.year}
                   </div>
-                  <div className="font-serif text-xl text-[color:var(--ink)] mt-1">{t.title}</div>
+                  <div className="font-serif text-xl text-(--ink) mt-1">{t.title}</div>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{t.desc}</p>
                 </div>
               ))}
@@ -135,7 +138,7 @@ function AboutPage() {
             {companyValues.map((v) => (
               <PremiumCard key={v.title}>
                 <IconBadge icon={v.icon} className="mb-4" />
-                <div className="font-serif text-xl text-[color:var(--ink)]">{v.title}</div>
+                <div className="font-serif text-xl text-(--ink)">{v.title}</div>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{v.desc}</p>
               </PremiumCard>
             ))}
@@ -146,14 +149,14 @@ function AboutPage() {
           <SectionHeader eyebrow="Leadership" title="The team behind the work." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid">
             {leadership.map((l) => (
-              <PremiumCard key={l.name} className="!p-6">
+              <PremiumCard key={l.name} className="p-6!">
                 <div className="w-14 h-14 rounded-full bg-primary/15 text-primary grid place-items-center font-serif text-xl mb-4">
                   {l.name
                     .split(" ")
                     .map((n) => n[0])
                     .join("")}
                 </div>
-                <div className="font-serif text-lg text-[color:var(--ink)]">{l.name}</div>
+                <div className="font-serif text-lg text-(--ink)">{l.name}</div>
                 <div className="text-xs text-accent font-semibold mt-1">{l.role}</div>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{l.bio}</p>
               </PremiumCard>
@@ -176,9 +179,7 @@ function AboutPage() {
                 View open roles <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-soft)]">
-              <TeamVisual />
-            </div>
+            <SectionImage src={siteImages.aboutTeam} alt="The Verdian team at work" aspect="wide" />
           </div>
         </SectionShell>
 

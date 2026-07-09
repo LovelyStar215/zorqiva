@@ -4,6 +4,8 @@ import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { IndustryExplorer } from "@/components/site/IndustryExplorer";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/solutions")({
@@ -80,8 +82,13 @@ function SolutionsPage() {
             title="Select your sector. See what we deliver."
             lede="Every industry has unique requirements — we bring domain experience and technical depth to each engagement."
           />
-          <div>
-            <IndustryExplorer />
+          <IndustryExplorer />
+          <div className="mt-8">
+            <SectionImage
+              src={siteImages.solutionsIndustries}
+              alt="Verdian client work across industries"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 

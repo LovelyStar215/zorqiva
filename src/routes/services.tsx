@@ -5,10 +5,11 @@ import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import {
   AdvancedCapabilities,
-  CodePreview,
   EnterpriseMatrix,
-  PlatformExplorer,
-} from "@/components/site/PlatformExplorer";
+  ServiceAreas,
+} from "@/components/site/ServiceShowcase";
+import { SectionImage } from "@/components/site/SectionImage";
+import { siteImages } from "@/lib/site-images";
 import { Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/services")({
@@ -40,9 +41,14 @@ function ServicesPage() {
           lede="From custom software and cloud infrastructure to design and AI — one agency, one accountable team, end to end."
         />
 
-        <SectionShell className="!pt-0">
-          <div>
-            <PlatformExplorer />
+        <SectionShell className="pt-0!">
+          <ServiceAreas />
+          <div className="mt-8">
+            <SectionImage
+              src={siteImages.servicesOverview}
+              alt="Overview of Verdian agency services"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 
@@ -63,16 +69,14 @@ function ServicesPage() {
             title="Agency quality. Partner accountability."
             lede="The difference between patching freelancers together and working with a dedicated studio."
           />
-          <div>
-            <EnterpriseMatrix />
-          </div>
+          <EnterpriseMatrix />
         </SectionShell>
 
         <SectionShell id="process" className="scroll-mt-28" tone="muted">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Eyebrow>How we build</Eyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl text-[color:var(--ink)] tracking-[-0.02em]">
+              <h2 className="font-serif text-3xl md:text-4xl text-(--ink) tracking-[-0.02em]">
                 Modern stack. Production standards.
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
@@ -81,14 +85,16 @@ function ServicesPage() {
               </p>
               <Link
                 to="/contact"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold shadow-[var(--shadow-soft)] hover:opacity-90 transition"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold shadow-(--shadow-soft) hover:opacity-90 transition"
               >
                 Discuss your project <Icon icon="solar:arrow-right-linear" />
               </Link>
             </div>
-            <div>
-              <CodePreview />
-            </div>
+            <SectionImage
+              src={siteImages.servicesProcess}
+              alt="Verdian engineering and delivery process"
+              aspect="video"
+            />
           </div>
         </SectionShell>
 

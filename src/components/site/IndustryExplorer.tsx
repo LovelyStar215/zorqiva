@@ -78,7 +78,7 @@ export function IndustryExplorer() {
   const ind = industries[active];
 
   return (
-    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-[var(--shadow-lift)]">
+    <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-(--shadow-lift)">
       <div className="flex flex-wrap gap-2 p-4 border-b border-border bg-muted/20">
         {industries.map((item, i) => (
           <button
@@ -87,7 +87,7 @@ export function IndustryExplorer() {
             onClick={() => setActive(i)}
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all ${
               active === i
-                ? "bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
+                ? "bg-primary text-primary-foreground shadow-(--shadow-soft)"
                 : "border border-border bg-background text-foreground/65 hover:border-primary/30"
             }`}
           >
@@ -142,8 +142,8 @@ export const pricingFeatures = [
 
 export function PricingMatrix() {
   return (
-    <div className="rounded-2xl border border-border overflow-hidden shadow-[var(--shadow-soft)] overflow-x-auto">
-      <table className="w-full min-w-[640px] text-sm">
+    <div className="rounded-2xl border border-border overflow-hidden shadow-(--shadow-soft) overflow-x-auto">
+      <table className="w-full min-w-160 text-sm">
         <thead>
           <tr className="bg-muted/40 border-b border-border text-[10px] uppercase tracking-wider text-muted-foreground">
             <th className="text-left px-5 py-4 font-semibold">Deliverable</th>
@@ -158,7 +158,7 @@ export function PricingMatrix() {
               key={row.name}
               className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-card" : "bg-background"}`}
             >
-              <td className="px-5 py-3.5 font-medium text-[color:var(--ink)]">{row.name}</td>
+              <td className="px-5 py-3.5 font-medium text-(--ink)">{row.name}</td>
               {(["starter", "growth", "enterprise"] as const).map((plan) => {
                 const val = row[plan];
                 return (
