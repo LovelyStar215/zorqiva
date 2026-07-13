@@ -25,14 +25,7 @@ export const Route = createFileRoute("/careers")({
   component: CareersPage,
 });
 
-const departments: Array<JobDepartment | "All"> = [
-  "All",
-  "Engineering",
-  "Design",
-  "Delivery",
-  "Sales",
-  "Operations",
-];
+const departments: Array<JobDepartment | "All"> = ["All", "Engineering", "Design"];
 
 function CareersPage() {
   const [dept, setDept] = useState<JobDepartment | "All">("All");
@@ -46,8 +39,8 @@ function CareersPage() {
       <div>
         <PageHero
           eyebrow="Careers"
-          title="Build remarkable things for remarkable clients."
-          lede="We're engineers, designers, and delivery leads shipping software that matters for companies around the world."
+          title="Start your career building real client software."
+          lede="We're looking for junior engineers and designers ready to learn from experienced mentors while shipping real work for companies around the world."
         />
 
         <SectionShell className="pt-0!">
@@ -55,15 +48,15 @@ function CareersPage() {
             <div>
               <SectionHeader
                 eyebrow="Life at Tek4Real"
-                title="Small studio. Big impact."
-                lede="You'll work on diverse client projects across healthcare, fintech, and SaaS – with the craft of a product company and the variety of agency life. We ship weekly, debate openly, and measure success by client outcomes."
+                title="Small team. Real mentorship."
+                lede="You'll work on real client projects across healthcare, fintech, and SaaS, alongside senior engineers and designers who review your work and help you grow. We ship weekly, debate openly, and measure success by client outcomes."
               />
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
                   "Weekly demos",
-                  "No-meeting Wednesdays",
-                  "Customer-first roadmap",
-                  "Top-tier compensation",
+                  "Mentorship from senior engineers",
+                  "Real client projects",
+                  "Room to grow",
                 ].map((t) => (
                   <span
                     key={t}

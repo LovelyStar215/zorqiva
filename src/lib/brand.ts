@@ -5,7 +5,8 @@ export const brand = {
   siteUrl: "https://tek4real.com",
   emailDomain: "tek4real.com",
   contactEmail: "hello@tek4real.com",
-  tagline: "Premium IT agency – custom software, cloud, design, and AI.",
+  tagline:
+    "Technology consulting and software engineering – custom software, cloud, design, and AI.",
 } as const;
 
 export type HqOffice = {

@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/site/Layout";
 import { brand } from "@/lib/brand";
 import {
@@ -51,9 +50,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <Layout>
@@ -93,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: pageTitle("Tek4Real", "Premium IT Agency") },
+      { title: pageTitle("Tek4Real", "Technology Consulting & Software Engineering") },
       { name: "description", content: defaultDescription },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: brand.legalName },

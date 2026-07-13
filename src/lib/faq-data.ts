@@ -75,7 +75,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "What does a typical team look like?",
-        a: "A senior engineer, designer, and delivery lead at minimum – scaled up with DevOps, QA, or specialists as the project requires. No junior-only staffing.",
+        a: "A senior engineer, designer, and delivery lead anchor every client squad – scaled up with DevOps, QA, or specialists as the project requires. Junior engineers and designers contribute alongside them, never staffed solo.",
       },
       {
         q: "How do you communicate during a project?",
@@ -87,7 +87,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "Do you handle security and compliance?",
-        a: "Yes. We follow secure SDLC practices, maintain SOC 2 Type II and ISO 27001 certifications, and have experience with HIPAA-aligned and regulated industry work.",
+        a: "Yes. We follow secure SDLC practices, align our controls with SOC 2 and HIPAA requirements, and have experience delivering for regulated industries.",
       },
     ],
   },

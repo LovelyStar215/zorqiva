@@ -14,7 +14,7 @@ export const Route = createFileRoute("/about")({
     pageSeo({
       title: pageTitle("About", "Tek4Real"),
       description:
-        "Tek4Real is a premium IT agency. We build custom software for ambitious companies worldwide.",
+        "Tek4Real is a technology consulting and software engineering company. We build custom software for ambitious companies worldwide.",
       path: "/about",
       ogTitle: "About Tek4Real",
       ogDescription: "Global IT agency founded in 2025.",
@@ -70,7 +70,7 @@ function AboutPage() {
         <PageHero
           eyebrow="About"
           title="Built for craft. Trusted worldwide."
-          lede="We're a premium IT agency – engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
+          lede="We're a technology consulting and software engineering company – engineers, designers, and delivery leads who treat every client project with the care of an in-house product team."
         />
 
         <SectionShell className="pt-0!">

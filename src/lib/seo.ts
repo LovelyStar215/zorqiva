@@ -4,13 +4,13 @@ import { faqSections } from "./faq-data";
 import { openRoles, socialLinks, type Job } from "./site-data";
 
 export const defaultDescription =
-  "Tek4Real is a premium IT agency – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
+  "Tek4Real is a technology consulting and software engineering company – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
 
 export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
 
 export const defaultOgImage = `${brand.siteUrl}${brandAssets.ogDefault}`;
-export const defaultOgImageAlt = `${brand.name} – Premium IT Agency`;
+export const defaultOgImageAlt = `${brand.name} – Technology Consulting & Software Engineering`;
 
 /** Browser tab titles: en dash (–), not hyphen (-) or em dash (–). */
 export function pageTitle(...segments: string[]) {

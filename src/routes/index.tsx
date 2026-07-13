@@ -15,11 +15,11 @@ import { pageSeo, pageTitle, professionalServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     pageSeo({
-      title: pageTitle("Tek4Real", "Premium IT Agency"),
+      title: pageTitle("Tek4Real", "Technology Consulting & Software Engineering"),
       description:
-        "Tek4Real is a premium IT agency – custom software, cloud, design, and AI for ambitious companies.",
+        "Tek4Real is a technology consulting and software engineering company – custom software, cloud, design, and AI for ambitious companies.",
       path: "/",
-      ogTitle: pageTitle("Tek4Real", "IT Agency"),
+      ogTitle: pageTitle("Tek4Real", "Technology Consulting"),
       ogDescription: "Build. Ship. Scale. With a partner you can trust.",
       jsonLd: professionalServiceJsonLd(),
     }),
@@ -47,7 +47,7 @@ function Home() {
           <div className="hero-viewport__content relative">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/50 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-primary mb-10 shadow-(--shadow-soft)">
               <span className="rounded-full bg-primary text-primary-foreground px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold">
-                IT Agency
+                Technology Consulting
               </span>
               Colorado · Hong Kong
             </div>

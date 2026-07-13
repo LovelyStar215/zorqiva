@@ -22,8 +22,8 @@ export function Footer() {
                 <Logo link />
               </div>
               <p className="max-w-sm text-background/50 leading-relaxed text-[15px]">
-                A premium IT agency building software, cloud infrastructure, and digital products
-                for ambitious companies worldwide.
+                A technology consulting and software engineering company building software, cloud
+                infrastructure, and digital products for ambitious companies worldwide.
               </p>
               <div className="flex items-center gap-2.5 mt-8">
                 {socialIcons.map(({ key, icon, label }) => (
