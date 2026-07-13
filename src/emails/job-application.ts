@@ -8,6 +8,7 @@ import {
 } from "@/lib/email/load-mjml-template";
 import { detailRow, linkRow, optionalRow } from "@/lib/email/mjml-rows";
 import type { BuiltEmail } from "@/emails/contact";
+import type Mail from "nodemailer/lib/mailer";
 
 export type JobApplicationEmailContent = {
   name: string;
@@ -16,11 +17,12 @@ export type JobApplicationEmailContent = {
   phone?: string;
   linkedin?: string;
   portfolio?: string;
-  resumeLink: string;
+  resumeFilename: string;
   locationLabel: string;
   experienceLabel: string;
   availabilityLabel: string;
   coverLetter: string;
+  resumeAttachment: Mail.Attachment;
 };
 
 export async function buildJobApplicationEmail(
@@ -36,7 +38,7 @@ export async function buildJobApplicationEmail(
     optionalRow("Phone", data.phone),
     data.linkedin ? linkRow("LinkedIn", data.linkedin, data.linkedin) : "",
     data.portfolio ? linkRow("Portfolio", data.portfolio, data.portfolio) : "",
-    linkRow("Resume", data.resumeLink, "View resume"),
+    detailRow("Resume", `Attached: ${data.resumeFilename}`),
     detailRow("Location", data.locationLabel),
     detailRow("Experience", data.experienceLabel),
     detailRow("Availability", data.availabilityLabel),
@@ -57,7 +59,7 @@ export async function buildJobApplicationEmail(
     data.phone ? `Phone: ${data.phone}` : null,
     data.linkedin ? `LinkedIn: ${data.linkedin}` : null,
     data.portfolio ? `Portfolio: ${data.portfolio}` : null,
-    `Resume: ${data.resumeLink}`,
+    `Resume: attached as ${data.resumeFilename}`,
     `Location: ${data.locationLabel}`,
     `Experience: ${data.experienceLabel}`,
     `Availability: ${data.availabilityLabel}`,
@@ -81,5 +83,9 @@ export async function buildJobApplicationEmail(
     }),
   );
 
-  return { text, html, attachments: [await getEmailLogoAttachment()] };
+  return {
+    text,
+    html,
+    attachments: [await getEmailLogoAttachment(), data.resumeAttachment],
+  };
 }

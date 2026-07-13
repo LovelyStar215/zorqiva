@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { isAllowedResumeFile, MAX_RESUME_BYTES, RESUME_ACCEPT } from "@/lib/careers-form-options";
 import { openRoles } from "@/lib/site-data";
 
 const roleOptions = [
@@ -24,7 +25,16 @@ const schema = z.object({
   location: z.enum(locationOptions, { message: "Select a location preference" }),
   experience: z.string().min(1, "Select your experience level"),
   availability: z.string().min(1, "Select your availability"),
-  resumeLink: z.string().url("Enter a valid resume or portfolio link"),
+  resume: z
+    .custom<File>((val) => typeof File !== "undefined" && val instanceof File, {
+      message: "Upload your resume (PDF or Word)",
+    })
+    .refine((file) => file.size > 0, "Upload your resume (PDF or Word)")
+    .refine((file) => file.size <= MAX_RESUME_BYTES, "Resume must be 5MB or smaller")
+    .refine(
+      (file) => isAllowedResumeFile(file),
+      "Upload a PDF or Word document (.pdf, .doc, .docx)",
+    ),
   coverLetter: z.string().min(50, "Tell us more about your background (at least 50 characters)"),
 });
 
@@ -48,6 +58,7 @@ export function JobApplicationForm({
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -56,6 +67,8 @@ export function JobApplicationForm({
       location: "Flexible",
     },
   });
+
+  const resumeFile = watch("resume");
 
   useEffect(() => {
     if (selectedRoleId) {
@@ -77,7 +90,7 @@ export function JobApplicationForm({
     payload.set("location", data.location);
     payload.set("experience", data.experience);
     payload.set("availability", data.availability);
-    payload.set("resumeLink", data.resumeLink);
+    payload.set("resume", data.resume);
     payload.set("coverLetter", data.coverLetter);
     payload.set("_hp", "");
 
@@ -246,15 +259,22 @@ export function JobApplicationForm({
         </div>
 
         <label className="block">
-          <span className="text-xs font-medium text-foreground/70">Resume or CV link</span>
+          <span className="text-xs font-medium text-foreground/70">Resume / CV</span>
           <input
-            type="url"
-            placeholder="Link to your resume (Google Drive, Dropbox, etc.)"
-            {...register("resumeLink")}
-            className={inputClass}
+            type="file"
+            accept={RESUME_ACCEPT}
+            className={`${inputClass} file:mr-3 file:rounded-lg file:border-0 file:bg-primary/10 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-primary`}
+            onChange={(event) => {
+              const file = event.target.files?.[0];
+              setValue("resume", file as File, { shouldValidate: true, shouldDirty: true });
+            }}
           />
-          {errors.resumeLink && (
-            <p className="mt-1 text-xs text-destructive">{errors.resumeLink.message}</p>
+          <p className="mt-1.5 text-[11px] text-muted-foreground">
+            PDF or Word · max 5MB
+            {resumeFile?.name ? ` · Selected: ${resumeFile.name}` : ""}
+          </p>
+          {errors.resume && (
+            <p className="mt-1 text-xs text-destructive">{errors.resume.message}</p>
           )}
         </label>
 
