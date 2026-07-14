@@ -201,6 +201,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Iconify web component – size inherits from text-* utilities */
+  iconify-icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
   h1,
   h2,
   h3,

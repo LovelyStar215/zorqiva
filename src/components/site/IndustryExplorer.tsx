@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { useState } from "react";
 import { pricingFeatures, type EngagementPlan } from "@/lib/pricing-data";
 

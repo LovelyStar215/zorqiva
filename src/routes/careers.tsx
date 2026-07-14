@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { useMemo, useState } from "react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";

@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import type { FaqItem } from "@/lib/faq-data";
 
 export function FaqList({ items, className = "" }: { items: FaqItem[]; className?: string }) {

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`eyebrow mb-7 ${className}`}>{children}</div>;

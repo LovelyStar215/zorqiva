@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/site/Logo";
 

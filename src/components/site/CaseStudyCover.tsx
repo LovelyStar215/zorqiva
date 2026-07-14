@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 
 type Aspect = "card" | "hero";
 
@@ -48,23 +48,23 @@ export function CaseStudyCover({
       ) : (
         <div
           className="flex h-full w-full flex-col items-center justify-center gap-3 bg-linear-to-br from-primary/8 via-muted/40 to-accent/10 px-6 text-center"
-          aria-hidden={failed}
+          aria-hidden={!failed}
         >
           <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
             <Icon icon="solar:gallery-bold" className="text-2xl" />
           </div>
           <div>
             <p className="font-serif text-lg text-(--ink)">{label}</p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {failed ? (
-                <>
-                  Add image at{" "}
-                  <span className="font-mono text-[10px] text-foreground/70">{src}</span>
-                </>
-              ) : (
-                "Loading preview…"
-              )}
-            </p>
+            {failed ? (
+              <p className="mt-1 text-xs text-muted-foreground">
+                Add image at <span className="font-mono text-[10px] text-foreground/70">{src}</span>
+              </p>
+            ) : (
+              <div
+                className="mx-auto mt-2 h-2 w-24 rounded-full bg-muted-foreground/20 animate-pulse"
+                aria-label="Loading preview"
+              />
+            )}
           </div>
         </div>
       )}

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useRouterState } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { ContactForm } from "@/components/site/ContactForm";
 import { ChannelCard } from "@/components/site/ChannelCard";

@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";

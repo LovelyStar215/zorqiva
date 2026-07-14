@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { LegalPage } from "@/components/site/LegalPage";
 import { brand } from "@/lib/brand";
 import { trustBadges } from "@/lib/site-data";

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { socialLinks } from "@/lib/site-data";
 import { Logo } from "@/components/site/Logo";
 import { brand, brandEmail, hqOffices } from "@/lib/brand";
@@ -95,7 +95,7 @@ export function Footer() {
             ))}
           </div>
           <div className="mt-16 pt-8 border-t border-background/8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-background/35">
-            <div>
+            <div suppressHydrationWarning>
               © {new Date().getFullYear()} {brand.legalName} · {hqOffices.americas.addressInline}
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-background/45">

@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { CaseStudyCover } from "@/components/site/CaseStudyCover";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";

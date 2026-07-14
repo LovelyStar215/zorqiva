@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { Link } from "@tanstack/react-router";
 import { CaseStudyCover } from "@/components/site/CaseStudyCover";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies-data";
@@ -14,12 +14,21 @@ function CaseStudyCard({
   detailed?: boolean;
   linkable?: boolean;
 }) {
-  const card = (
+  return (
     <article
-      className={`card-premium p-0! overflow-hidden h-full flex flex-col ${
+      className={`relative card-premium p-0! overflow-hidden h-full flex flex-col ${
         featured ? "border-primary/25! ring-1! ring-primary/10!" : ""
       } ${linkable ? "hover:border-primary/40! transition" : ""}`}
     >
+      {linkable && (
+        <Link
+          to="/case-studies/$caseId"
+          params={{ caseId: study.id }}
+          className="absolute inset-0 z-10"
+          aria-label={`Read ${study.company} case study`}
+        />
+      )}
+
       <CaseStudyCover
         src={study.image}
         alt={`${study.company} case study cover`}
@@ -97,14 +106,6 @@ function CaseStudyCard({
         )}
       </div>
     </article>
-  );
-
-  if (!linkable) return card;
-
-  return (
-    <Link to="/case-studies/$caseId" params={{ caseId: study.id }} className="block h-full">
-      {card}
-    </Link>
   );
 }
 

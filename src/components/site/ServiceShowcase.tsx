@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { agencyComparisonMatrix, serviceAreas } from "@/lib/services-data";
 import { IconBadge, PremiumCard } from "@/components/site/primitives";
 

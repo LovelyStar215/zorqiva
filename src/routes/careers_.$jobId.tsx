@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/site/Icon";
 import { Link, createFileRoute, notFound, useRouterState } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
