@@ -1,6 +1,6 @@
 export const companyValues = [
   {
-    icon: "solar:diamond-bold",
+    icon: "solar:stars-bold",
     title: "Craft over shortcuts",
     desc: "We ship polished software – thoughtful architecture, clean code, and interfaces people enjoy using.",
   },

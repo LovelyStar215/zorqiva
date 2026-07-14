@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
 import { CTABanner } from "@/components/site/CTABanner";
 import { SectionHeader } from "@/components/site/SectionHeader";
@@ -24,32 +25,67 @@ export const Route = createFileRoute("/about")({
 
 const leadership = [
   {
-    name: "Devon Lewis",
+    name: "Edmond Piloyan",
     role: "CEO & Founder",
     bio: "Founded Tek4Real in 2025 to bring product-company craft to client work – pairing senior talent with accountable delivery from day one.",
+    image: "/images/team/edmond-piloyan.jpg",
   },
   {
     name: "Lin Jubao",
     role: "CTO & Co-founder",
     bio: "Leads architecture, engineering standards, and technical direction across every client engagement – from greenfield builds to cloud-native modernization.",
+    image: "/images/team/lin-jubao.jpg",
+  },
+  {
+    name: "Iurie Rotari",
+    role: "Co-founder",
+    bio: "Partners with clients and the founding team to shape strategy, delivery, and growth – keeping Tek4Real focused on craft, clarity, and outcomes that scale.",
+    image: "/images/team/iurie-rotari.jpg",
   },
   {
     name: "Rui Qin",
     role: "Senior Software Engineer",
     bio: "Full-stack engineer shipping production TypeScript, React, and Node systems – focused on clean code, reliable releases, and mentoring on client squads.",
+    image: "/images/team/rui-qin.jpg",
   },
   {
     name: "Daniel Wong",
     role: "Senior Software Engineer",
     bio: "Builds scalable backends, APIs, and cloud deployments – with a track record of turning complex requirements into maintainable software.",
+    image: "/images/team/daniel-wong.jpg",
   },
 ];
+
+function TeamAvatar({ name, image }: { name: string; image?: string }) {
+  const [failed, setFailed] = useState(false);
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
+
+  if (image && !failed) {
+    return (
+      <img
+        src={image}
+        alt={name}
+        className="w-20 h-20 rounded-full object-cover mb-4 ring-2 ring-primary/10"
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+
+  return (
+    <div className="w-14 h-14 rounded-full bg-primary/15 text-primary grid place-items-center font-serif text-xl mb-4">
+      {initials}
+    </div>
+  );
+}
 
 const timeline = [
   {
     year: "2025",
     title: "Tek4Real founded",
-    desc: "Devon Lewis launches Tek4Real as a boutique dev shop – senior engineers united around one mission: build software that lasts.",
+    desc: "Edmond Piloyan launches Tek4Real as a boutique dev shop – senior engineers united around one mission: build software that lasts.",
   },
   {
     year: "2025",
@@ -140,15 +176,10 @@ function AboutPage() {
 
         <SectionShell tone="muted">
           <SectionHeader eyebrow="Team" title="The people behind the work." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 card-grid">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 card-grid">
             {leadership.map((l) => (
               <PremiumCard key={l.name} className="p-6!">
-                <div className="w-14 h-14 rounded-full bg-primary/15 text-primary grid place-items-center font-serif text-xl mb-4">
-                  {l.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
+                <TeamAvatar name={l.name} image={l.image} />
                 <div className="font-serif text-lg text-(--ink)">{l.name}</div>
                 <div className="text-xs text-accent font-semibold mt-1">{l.role}</div>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{l.bio}</p>
