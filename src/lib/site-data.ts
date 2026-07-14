@@ -62,7 +62,7 @@ export type Job = {
   title: string;
   department: JobDepartment;
   location: JobLocation;
-  type: "Full-time" | "Contract";
+  type: "Full-time" | "Part-time" | "Contract";
   level: "Junior" | "Mid" | "Senior" | "Lead" | "Director";
   description: string;
   overview: string;
@@ -184,6 +184,93 @@ export const openRoles: Job[] = [
       "Basic front-end knowledge (HTML/CSS)",
       "Familiarity with accessibility and responsive design principles",
       "Exposure to user research or usability testing",
+    ],
+  },
+  {
+    id: "junior-cms-developer",
+    title: "Junior CMS Developer(WordPress/Drupal/Strapi)",
+    department: "Engineering",
+    location: "Remote (US)",
+    type: "Full-time",
+    level: "Junior",
+    description:
+      "Build, customize, and maintain WordPress, Drupal, and modern CMS platforms for client websites. Open only to candidates based in the United States.",
+    overview:
+      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We help startups, growing businesses, and enterprises build and improve digital products, websites, and technology solutions, with distributed teams collaborating across time zones. We're looking for a motivated Junior CMS Developer to join our technology team – focused on building, customizing, and maintaining content management systems for client websites and digital platforms. You'll work with WordPress, Drupal, and other modern content platforms to create reliable, easy-to-manage digital experiences, collaborating directly with U.S.-based clients and our engineering team in Hong Kong. Professional experience is valuable, but we care strongly about curiosity, attention to detail, problem-solving, and willingness to grow. This role is open only to candidates currently residing in the United States.",
+    responsibilities: [
+      "Develop and maintain websites using CMS platforms such as WordPress, Drupal, and similar systems",
+      "Customize CMS themes, templates, modules, and plugins based on project requirements",
+      "Create and manage content types, pages, categories, and reusable content structures",
+      "Configure CMS features and extensions",
+      "Troubleshoot CMS-related issues and provide technical solutions",
+      "Perform CMS updates, maintenance, and improvements",
+      "Support website migrations and content transfers",
+      "Work with designers and project teams to implement website requirements",
+      "Ensure websites are functional, organized, and easy for clients to manage",
+      "Integrate third-party services and improve website performance and usability",
+    ],
+    requirements: [
+      "Currently residing in the United States",
+      "Basic experience working with CMS platforms such as WordPress, Drupal, or similar systems",
+      "Understanding of website structure and content management workflows",
+      "Basic knowledge of HTML and CSS",
+      "Familiarity with website customization and configuration",
+      "Understanding of web hosting concepts and website deployment basics",
+      "Strong attention to detail and problem-solving mindset",
+      "Good English communication skills",
+      "Ability to learn new platforms and tools quickly",
+    ],
+    niceToHave: [
+      "Experience with headless CMS platforms (Strapi, Contentful, Sanity, Storyblok, Prismic, or similar)",
+      "Experience creating custom WordPress themes or developing WordPress plugins",
+      "Experience working with Drupal modules",
+      "Experience with CMS migrations and integrating CMS platforms with external services",
+      "Understanding of REST APIs or GraphQL",
+      "Familiarity with SEO optimization, website accessibility, and performance improvements",
+      "Basic knowledge of databases",
+    ],
+  },
+  {
+    id: "part-time-virtual-assistant",
+    title: "Part-Time Virtual Assistant (Client Communication & Team Support)",
+    department: "Operations",
+    location: "Remote (US)",
+    type: "Part-time",
+    level: "Junior",
+    description:
+      "Support client communication, scheduling, documentation, and day-to-day coordination between our U.S. clients and Hong Kong technical team. Open only to candidates based in the United States.",
+    overview:
+      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We work with startups, businesses, and organizations to deliver software development, digital solutions, and technology services across time zones. We're looking for a reliable and proactive Part-Time Virtual Assistant to support our international technology team – acting as a bridge between clients and our Hong Kong-based technical team through communication, scheduling, documentation, and administrative support. This role is ideal for someone who is organized, detail-oriented, comfortable communicating with people, and interested in working with a global technology company. This position is open only to candidates currently residing in the United States.",
+    responsibilities: [
+      "Assist with communication between clients and the technical team",
+      "Organize client requests, updates, and project information",
+      "Follow up on project discussions and action items",
+      "Help ensure important messages and requirements are clearly communicated",
+      "Support scheduling of meetings and coordination across time zones",
+      "Organize project documents, notes, and communication records",
+      "Prepare summaries of client discussions and meetings",
+      "Help maintain project tracking information",
+      "Assist with basic research and information gathering",
+      "Support daily operational tasks and a smooth, professional client experience",
+    ],
+    requirements: [
+      "Currently residing in the United States",
+      "Excellent English communication skills (written and verbal)",
+      "Strong organization and time management skills",
+      "Ability to communicate professionally with clients",
+      "Attention to detail and strong follow-through",
+      "Ability to manage multiple tasks and priorities",
+      "Comfortable working independently in a remote environment",
+      "Reliable internet connection and availability during agreed working hours",
+      "Positive attitude and willingness to learn",
+    ],
+    niceToHave: [
+      "Previous virtual assistant, administrative assistant, or customer support experience",
+      "Experience supporting software development or technology teams",
+      "Familiarity with project management tools such as Jira, Trello, Asana, Notion, or similar",
+      "Experience communicating with international clients",
+      "Basic understanding of software development processes",
+      "Experience preparing meeting notes, reports, or documentation",
     ],
   },
 ];

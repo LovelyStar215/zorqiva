@@ -42,7 +42,7 @@ export function Nav() {
         <span className="hidden sm:inline">
           <span className="text-accent font-semibold">Now hiring</span>
           <span className="mx-2 text-background/30">·</span>
-          Junior Frontend, Backend & UX/UI roles – join our global team.
+          Junior CMS, engineering & support roles – join our global team.
           <Link to="/careers" className="ml-2 text-accent hover:underline font-medium">
             View roles →
           </Link>

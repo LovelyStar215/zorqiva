@@ -25,7 +25,7 @@ export const Route = createFileRoute("/careers")({
   component: CareersPage,
 });
 
-const departments: Array<JobDepartment | "All"> = ["All", "Engineering", "Design"];
+const departments: Array<JobDepartment | "All"> = ["All", "Engineering", "Design", "Operations"];
 
 function CareersPage() {
   const [dept, setDept] = useState<JobDepartment | "All">("All");
@@ -40,7 +40,7 @@ function CareersPage() {
         <PageHero
           eyebrow="Careers"
           title="Start your career building real client software."
-          lede="We're looking for junior engineers and designers ready to learn from experienced mentors while shipping real work for companies around the world."
+          lede="We're looking for junior builders, CMS talent, designers, and team-support roles ready to learn while shipping real work for companies around the world."
         />
 
         <SectionShell className="pt-0!">
