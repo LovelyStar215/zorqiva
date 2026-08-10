@@ -47,8 +47,7 @@
           href="{{siteUrl}}"
           src="{{logoUrl}}"
           alt="{{brandName}}"
-          width="48px"
-          height="48px"
+          width="200px"
           align="left"
           padding="0"
         />

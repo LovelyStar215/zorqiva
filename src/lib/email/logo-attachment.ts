@@ -14,12 +14,12 @@ export function emailLogoSrc() {
 function logoFromDisk(): Mail.Attachment | undefined {
   if (process.env.VERCEL) return undefined;
 
-  const fileName = brandAssets.logoSquare.replace(/^\//, "");
+  const fileName = brandAssets.logo.replace(/^\//, "");
   const path = resolve(process.cwd(), "public", fileName);
   if (!existsSync(path)) return undefined;
 
   return {
-    filename: "logo-square.png",
+    filename: "logo.png",
     content: readFileSync(path),
     cid: EMAIL_LOGO_CID,
     contentType: "image/png",
@@ -30,14 +30,14 @@ export async function getEmailLogoAttachment(): Promise<Mail.Attachment> {
   const fromDisk = logoFromDisk();
   if (fromDisk) return fromDisk;
 
-  const url = absoluteUrl(brandAssets.logoSquare);
+  const url = absoluteUrl(brandAssets.logo);
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Email logo not found. Expected ${brandAssets.logoSquare} at ${url}.`);
+    throw new Error(`Email logo not found. Expected ${brandAssets.logo} at ${url}.`);
   }
 
   return {
-    filename: "logo-square.png",
+    filename: "logo.png",
     content: Buffer.from(await response.arrayBuffer()),
     cid: EMAIL_LOGO_CID,
     contentType: "image/png",
