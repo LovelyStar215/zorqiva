@@ -31,10 +31,10 @@ const leadership = [
     image: "/images/team/edmond-piloyan.jpg",
   },
   {
-    name: "Lin Jubao",
+    name: "Lin Pei",
     role: "CTO & Co-founder",
     bio: "Leads architecture, engineering standards, and technical direction across every client engagement – from greenfield builds to cloud-native modernization.",
-    image: "/images/team/lin-jubao.jpg",
+    image: "/images/team/lin-pei.jpg",
   },
   {
     name: "Iurie Rotari",
