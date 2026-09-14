@@ -4,7 +4,7 @@ export const brand = {
   legalName: "zorqiva",
   siteUrl: "https://zorqiva.org/",
   emailDomain: "zorqiva.org",
-  contactEmail: "hello@zorqiva.org",
+  contactEmail: "contact@zorqiva.org",
   tagline:
     "Technology consulting and software engineering – custom software, cloud, design, and AI.",
 } as const;
