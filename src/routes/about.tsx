@@ -13,11 +13,11 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () =>
     pageSeo({
-      title: pageTitle("About", "Tek4Real"),
+      title: pageTitle("About", "Zorqiva"),
       description:
-        "Tek4Real is a technology consulting and software engineering company. We build custom software for ambitious companies worldwide.",
+        "Zorqiva is a technology consulting and software engineering company. We build custom software for ambitious companies worldwide.",
       path: "/about",
-      ogTitle: "About Tek4Real",
+      ogTitle: "About Zorqiva",
       ogDescription: "Global IT agency founded in 2025.",
     }),
   component: AboutPage,
@@ -27,7 +27,7 @@ const leadership = [
   {
     name: "Edmond Piloyan",
     role: "CEO & Founder",
-    bio: "Founded Tek4Real in 2025 to bring product-company craft to client work – pairing senior talent with accountable delivery from day one.",
+    bio: "Founded Zorqiva in 2025 to bring product-company craft to client work – pairing senior talent with accountable delivery from day one.",
     image: "/images/team/edmond-piloyan.jpg",
   },
   {
@@ -39,7 +39,7 @@ const leadership = [
   {
     name: "Iurie Rotari",
     role: "Co-founder",
-    bio: "Partners with clients and the founding team to shape strategy, delivery, and growth – keeping Tek4Real focused on craft, clarity, and outcomes that scale.",
+    bio: "Partners with clients and the founding team to shape strategy, delivery, and growth – keeping Zorqiva focused on craft, clarity, and outcomes that scale.",
     image: "/images/team/iurie-rotari.jpg",
   },
   {
@@ -84,13 +84,13 @@ function TeamAvatar({ name, image }: { name: string; image?: string }) {
 const timeline = [
   {
     year: "2025",
-    title: "Tek4Real founded",
-    desc: "Edmond Piloyan launches Tek4Real as a boutique dev shop – senior engineers united around one mission: build software that lasts.",
+    title: "Zorqiva founded",
+    desc: "Edmond Piloyan launches Zorqiva as a boutique dev shop – senior engineers united around one mission: build software that lasts.",
   },
   {
     year: "2025",
-    title: "Colorado & Hong Kong headquarters",
-    desc: "Dual headquarters open in Colorado and Hong Kong – one global studio serving clients across the Americas and APAC from day one.",
+    title: "Alaska & Hong Kong headquarters",
+    desc: "Dual headquarters open in Alaska and Hong Kong – one global studio serving clients across the Americas and APAC from day one.",
   },
   {
     year: "2025",
@@ -113,14 +113,14 @@ function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <SectionImage
               src={siteImages.aboutStudio}
-              alt="Tek4Real studio workspace"
+              alt="Zorqiva studio workspace"
               aspect="video"
             />
             <div>
               <SectionHeader
                 eyebrow="Our studio"
                 title="A global team, one standard."
-                lede="We operate from two headquarters – Colorado and Hong Kong – with the same engineering standards, design systems, and client rituals in every office."
+                lede="We operate from two headquarters – Alaska and Hong Kong – with the same engineering standards, design systems, and client rituals in every office."
               />
               <div className="mt-8 grid grid-cols-3 gap-6">
                 {[
@@ -205,7 +205,7 @@ function AboutPage() {
             </div>
             <SectionImage
               src={siteImages.aboutTeam}
-              alt="The Tek4Real team at work"
+              alt="The Zorqiva team at work"
               aspect="wide"
             />
           </div>

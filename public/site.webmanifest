@@ -1,10 +1,10 @@
 {
-  "name": "Tek4Real",
-  "short_name": "Tek4Real",
+  "name": "zorqiva",
+  "short_name": "zorqiva",
   "description": "Premium IT agency – custom software, cloud, design, and AI.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8faf9",
+  "background_color": "#050b14",
   "theme_color": "#1a3d32",
   "icons": [
     {

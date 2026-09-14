@@ -16,18 +16,18 @@ export const Route = createFileRoute("/careers_/$jobId")({
     const job = loaderData?.job;
     if (!job) {
       return pageSeo({
-        title: pageTitle("Careers", "Tek4Real"),
-        description: "Join Tek4Real – build software, cloud systems, and digital products.",
+        title: pageTitle("Careers", "Zorqiva"),
+        description: "Join Zorqiva – build software, cloud systems, and digital products.",
         path: "/careers",
       });
     }
 
     const path = `/careers/${job.id}`;
     return pageSeo({
-      title: pageTitle(job.title, "Careers", "Tek4Real"),
+      title: pageTitle(job.title, "Careers", "Zorqiva"),
       description: job.description,
       path,
-      ogTitle: pageTitle(job.title, "Tek4Real Careers"),
+      ogTitle: pageTitle(job.title, "Zorqiva Careers"),
       ogDescription: job.description,
       ogType: "article",
       jsonLd: [

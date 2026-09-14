@@ -5,7 +5,7 @@ import { brand, brandAssets } from "@/lib/brand";
 import { absoluteUrl } from "@/lib/seo";
 
 /** Inline CID referenced in MJML templates — avoids broken remote logo URLs in inboxes. */
-export const EMAIL_LOGO_CID = "logo@tek4real.com";
+export const EMAIL_LOGO_CID = "logo@Zorqiva.com";
 
 export function emailLogoSrc() {
   return `cid:${EMAIL_LOGO_CID}`;

@@ -35,7 +35,7 @@ export const benefits = [
   {
     icon: "solar:home-2-bold",
     title: "Flexible work",
-    desc: "Hybrid flexibility across our Colorado and Hong Kong offices. Core collaboration hours, async-friendly culture.",
+    desc: "Hybrid flexibility across our Alaska and Hong Kong offices. Core collaboration hours, async-friendly culture.",
   },
   {
     icon: "solar:book-2-bold",
@@ -55,7 +55,7 @@ export const benefits = [
 ] as const;
 
 export type JobDepartment = "Engineering" | "Design" | "Delivery" | "Sales" | "Operations";
-export type JobLocation = "Colorado" | "Hong Kong" | "Hybrid (US)" | "Remote (US)";
+export type JobLocation = "Alaska" | "Hong Kong" | "Hybrid (US)" | "Remote (US)";
 
 export type Job = {
   id: string;
@@ -86,7 +86,7 @@ export const openRoles: Job[] = [
     description:
       "Build responsive, modern web interfaces in React while learning directly from senior engineers on real client projects. Open only to candidates based in the United States.",
     overview:
-      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior Frontend Developer to join our growing engineering team – a great fit for someone early in their software engineering career who wants to learn from experienced developers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our engineering team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
+      "Zorqiva is a technology consulting and software engineering company with headquarters in Hong Kong and Anchorage, Alaska. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior Frontend Developer to join our growing engineering team – a great fit for someone early in their software engineering career who wants to learn from experienced developers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our engineering team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
     responsibilities: [
       "Develop responsive and modern web applications using React",
       "Collaborate with senior engineers on feature implementation and bug fixes",
@@ -124,7 +124,7 @@ export const openRoles: Job[] = [
     description:
       "Build and maintain server-side services and APIs in Node.js while learning directly from senior engineers on real client projects. Open only to candidates based in the United States.",
     overview:
-      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior Backend Developer to join our growing engineering team – a great fit for someone early in their software engineering career who wants to learn from experienced developers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our engineering team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
+      "Zorqiva is a technology consulting and software engineering company with headquarters in Hong Kong and Anchorage, Alaska. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior Backend Developer to join our growing engineering team – a great fit for someone early in their software engineering career who wants to learn from experienced developers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our engineering team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
     responsibilities: [
       "Build and maintain RESTful APIs and backend services using Node.js",
       "Collaborate with senior engineers on database design, integrations, and bug fixes",
@@ -162,7 +162,7 @@ export const openRoles: Job[] = [
     description:
       "Support research, wireframes, and UI design for client products while learning directly from senior designers on real client work. Open only to candidates based in the United States.",
     overview:
-      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior UX/UI Designer to join our growing design team – a great fit for someone early in their design career who wants to learn from experienced designers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
+      "Zorqiva is a technology consulting and software engineering company with headquarters in Hong Kong and Anchorage, Alaska. We partner with startups, scale-ups, and enterprise clients to build modern web applications, cloud solutions, AI-powered products, and custom software, with distributed teams collaborating across time zones to deliver for clients worldwide. We're looking for a motivated Junior UX/UI Designer to join our growing design team – a great fit for someone early in their design career who wants to learn from experienced designers while working on real client projects. You'll collaborate directly with our U.S.-based clients and work closely with our team in Hong Kong in a flexible, remote environment. We value curiosity, creativity, and a strong desire to learn more than years of professional experience. This role is open only to candidates currently residing in the United States, since it requires direct collaboration with U.S.-based clients.",
     responsibilities: [
       "Support user research, user flows, and wireframes for client products",
       "Create clean, accessible UI designs in Figma under senior designer guidance",
@@ -196,7 +196,7 @@ export const openRoles: Job[] = [
     description:
       "Build, customize, and maintain WordPress, Drupal, and modern CMS platforms for client websites. Open only to candidates based in the United States.",
     overview:
-      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We help startups, growing businesses, and enterprises build and improve digital products, websites, and technology solutions, with distributed teams collaborating across time zones. We're looking for a motivated Junior CMS Developer to join our technology team – focused on building, customizing, and maintaining content management systems for client websites and digital platforms. You'll work with WordPress, Drupal, and other modern content platforms to create reliable, easy-to-manage digital experiences, collaborating directly with U.S.-based clients and our engineering team in Hong Kong. Professional experience is valuable, but we care strongly about curiosity, attention to detail, problem-solving, and willingness to grow. This role is open only to candidates currently residing in the United States.",
+      "Zorqiva is a technology consulting and software engineering company with headquarters in Hong Kong and Anchorage, Alaska. We help startups, growing businesses, and enterprises build and improve digital products, websites, and technology solutions, with distributed teams collaborating across time zones. We're looking for a motivated Junior CMS Developer to join our technology team – focused on building, customizing, and maintaining content management systems for client websites and digital platforms. You'll work with WordPress, Drupal, and other modern content platforms to create reliable, easy-to-manage digital experiences, collaborating directly with U.S.-based clients and our engineering team in Hong Kong. Professional experience is valuable, but we care strongly about curiosity, attention to detail, problem-solving, and willingness to grow. This role is open only to candidates currently residing in the United States.",
     responsibilities: [
       "Develop and maintain websites using CMS platforms such as WordPress, Drupal, and similar systems",
       "Customize CMS themes, templates, modules, and plugins based on project requirements",
@@ -240,7 +240,7 @@ export const openRoles: Job[] = [
     description:
       "Support client communication, scheduling, documentation, and day-to-day coordination between our U.S. clients and Hong Kong technical team. Open only to candidates based in the United States.",
     overview:
-      "Tek4Real is a technology consulting and software engineering company with headquarters in Hong Kong and Denver, Colorado. We work with startups, businesses, and organizations to deliver software development, digital solutions, and technology services across time zones. We're looking for a reliable and proactive Part-Time Virtual Assistant to support our international technology team – acting as a bridge between clients and our Hong Kong-based technical team through communication, scheduling, documentation, and administrative support. This role is ideal for someone who is organized, detail-oriented, comfortable communicating with people, and interested in working with a global technology company. This position is open only to candidates currently residing in the United States.",
+      "Zorqiva is a technology consulting and software engineering company with headquarters in Hong Kong and Anchorage, Alaska. We work with startups, businesses, and organizations to deliver software development, digital solutions, and technology services across time zones. We're looking for a reliable and proactive Part-Time Virtual Assistant to support our international technology team – acting as a bridge between clients and our Hong Kong-based technical team through communication, scheduling, documentation, and administrative support. This role is ideal for someone who is organized, detail-oriented, comfortable communicating with people, and interested in working with a global technology company. This position is open only to candidates currently residing in the United States.",
     responsibilities: [
       "Assist with communication between clients and the technical team",
       "Organize client requests, updates, and project information",
@@ -315,8 +315,8 @@ export const agencyComparison = {
 } as const;
 
 export const socialLinks = {
-  twitter: "https://twitter.com/tek4real",
-  linkedin: "https://linkedin.com/company/tek4real",
-  github: "https://github.com/tek4real",
-  youtube: "https://youtube.com/@tek4real",
+  twitter: "https://twitter.com/Zorqiva",
+  linkedin: "https://linkedin.com/company/Zorqiva",
+  github: "https://github.com/Zorqiva",
+  youtube: "https://youtube.com/@Zorqiva",
 } as const;

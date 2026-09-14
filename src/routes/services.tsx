@@ -13,11 +13,11 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/services")({
   head: () =>
     pageSeo({
-      title: pageTitle("Services", "Tek4Real"),
+      title: pageTitle("Services", "Zorqiva"),
       description:
         "Custom software, mobile apps, cloud & DevOps, UI/UX design, AI, data engineering, QA, consulting, maintenance, and managed IT services.",
       path: "/services",
-      ogTitle: pageTitle("Services", "Tek4Real"),
+      ogTitle: pageTitle("Services", "Zorqiva"),
       ogDescription: "Full-stack IT agency services for modern companies.",
     }),
   component: ServicesPage,
@@ -38,7 +38,7 @@ function ServicesPage() {
           <div className="mt-8">
             <SectionImage
               src={siteImages.servicesOverview}
-              alt="Overview of Tek4Real agency services"
+              alt="Overview of Zorqiva agency services"
               aspect="video"
             />
           </div>
@@ -61,7 +61,7 @@ function ServicesPage() {
 
         <SectionShell>
           <SectionHeader
-            eyebrow="Why Tek4Real"
+            eyebrow="Why Zorqiva"
             title="Agency quality. Partner accountability."
             lede="The difference between patching freelancers together and working with a dedicated studio."
           />
@@ -89,7 +89,7 @@ function ServicesPage() {
             </div>
             <SectionImage
               src={siteImages.servicesProcess}
-              alt="Tek4Real engineering and delivery process"
+              alt="Zorqiva engineering and delivery process"
               aspect="video"
             />
           </div>

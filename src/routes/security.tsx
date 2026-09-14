@@ -8,9 +8,9 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/security")({
   head: () =>
     pageSeo({
-      title: pageTitle("Security", "Tek4Real"),
+      title: pageTitle("Security", "Zorqiva"),
       description:
-        "Tek4Real security practices and how we protect client projects with secure SDLC and compliance-aligned delivery.",
+        "Zorqiva security practices and how we protect client projects with secure SDLC and compliance-aligned delivery.",
       path: "/security",
     }),
   component: SecurityPage,

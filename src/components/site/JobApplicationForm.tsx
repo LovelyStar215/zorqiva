@@ -44,7 +44,7 @@ const inputClass =
   "mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition";
 
 export function JobApplicationForm({
-  title = "Apply to Tek4Real",
+  title = "Apply to zorqiva",
   subtitle = "Our talent team reviews every application and responds within five business days.",
   selectedRoleId,
 }: {
@@ -122,7 +122,7 @@ export function JobApplicationForm({
         </div>
         <h3 className="font-serif text-3xl text-(--ink) mt-6">Application received.</h3>
         <p className="mt-3 text-muted-foreground max-w-sm mx-auto leading-relaxed">
-          Thank you for your interest in Tek4Real. Our talent team will review your application and
+          Thank you for your interest in Zorqiva. Our talent team will review your application and
           get back to you within five business days.
         </p>
       </div>
@@ -280,7 +280,7 @@ export function JobApplicationForm({
 
         <label className="block">
           <span className="text-xs font-medium text-foreground/70">
-            Why Tek4Real? Tell us about your experience.
+            Why Zorqiva? Tell us about your experience.
           </span>
           <textarea
             rows={5}

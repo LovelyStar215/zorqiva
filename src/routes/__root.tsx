@@ -89,13 +89,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: pageTitle("Tek4Real", "Technology Consulting & Software Engineering") },
+      { title: pageTitle("Zorqiva", "Technology Consulting & Software Engineering") },
       { name: "description", content: defaultDescription },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: brand.legalName },
       { name: "theme-color", content: "#1a3d32" },
       { property: "og:site_name", content: brand.name },
-      { property: "og:title", content: pageTitle("Tek4Real", "IT Agency") },
+      { property: "og:title", content: pageTitle("Zorqiva", "IT Agency") },
       {
         property: "og:description",
         content: "Build. Ship. Scale. With a partner you can trust.",

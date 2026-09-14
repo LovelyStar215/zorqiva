@@ -15,11 +15,11 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/careers")({
   head: () =>
     pageSeo({
-      title: pageTitle("Careers", "Tek4Real"),
+      title: pageTitle("Careers", "Zorqiva"),
       description:
-        "Join Tek4Real – build software, cloud systems, and digital products for ambitious clients worldwide.",
+        "Join Zorqiva – build software, cloud systems, and digital products for ambitious clients worldwide.",
       path: "/careers",
-      ogTitle: "Careers at Tek4Real",
+      ogTitle: "Careers at Zorqiva",
       ogDescription: "Join our global IT agency.",
     }),
   component: CareersPage,
@@ -47,7 +47,7 @@ function CareersPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                eyebrow="Life at Tek4Real"
+                eyebrow="Life at Zorqiva"
                 title="Small team. Real mentorship."
                 lede="You'll work on real client projects across healthcare, fintech, and SaaS, alongside senior engineers and designers who review your work and help you grow. We ship weekly, debate openly, and measure success by client outcomes."
               />
@@ -69,7 +69,7 @@ function CareersPage() {
             </div>
             <SectionImage
               src={siteImages.careersCulture}
-              alt="Culture and life at Tek4Real"
+              alt="Culture and life at Zorqiva"
               aspect="wide"
             />
           </div>
@@ -207,7 +207,7 @@ function CareersPage() {
           primaryLabel="Browse open roles"
           primaryTo="/careers"
           primaryHash="open-roles"
-          secondaryLabel="About Tek4Real"
+          secondaryLabel="About Zorqiva"
           secondaryTo="/about"
         />
       </div>

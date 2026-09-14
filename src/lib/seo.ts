@@ -4,7 +4,7 @@ import { faqSections } from "./faq-data";
 import { openRoles, socialLinks, type Job } from "./site-data";
 
 export const defaultDescription =
-  "Tek4Real is a technology consulting and software engineering company – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
+  "Zorqiva is a technology consulting and software engineering company – custom software, cloud infrastructure, UI/UX design, and AI for ambitious companies.";
 
 export const defaultOgImageWidth = 1200;
 export const defaultOgImageHeight = 630;
@@ -212,7 +212,7 @@ function jobLocationJsonLd(job: Job) {
   const office =
     job.location === "Hong Kong"
       ? hqOffices.apac
-      : job.location === "Colorado"
+      : job.location === "Alaska"
         ? hqOffices.americas
         : null;
 

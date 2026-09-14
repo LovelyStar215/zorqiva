@@ -14,11 +14,11 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/pricing")({
   head: () =>
     pageSeo({
-      title: pageTitle("Engagement Models", "Tek4Real"),
+      title: pageTitle("Engagement Models", "Zorqiva"),
       description:
         "Flexible engagement models – project-based, monthly retainer, or dedicated squad.",
       path: "/pricing",
-      ogTitle: pageTitle("Engagement", "Tek4Real"),
+      ogTitle: pageTitle("Engagement", "Zorqiva"),
       ogDescription: "Three ways to work with our agency.",
     }),
   component: PricingPage,
@@ -155,7 +155,7 @@ function PricingPage() {
             </div>
             <SectionImage
               src={siteImages.pricingPartnership}
-              alt="Tek4Real client partnership and engagement"
+              alt="Zorqiva client partnership and engagement"
               aspect="video"
             />
           </div>

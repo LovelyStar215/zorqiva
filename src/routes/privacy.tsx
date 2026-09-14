@@ -6,14 +6,14 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/privacy")({
   head: () =>
     pageSeo({
-      title: pageTitle("Privacy Policy", "Tek4Real"),
-      description: "How Tek4Real collects, uses, and protects your data.",
+      title: pageTitle("Privacy Policy", "Zorqiva"),
+      description: "How Zorqiva collects, uses, and protects your data.",
       path: "/privacy",
     }),
   component: () => (
     <LegalPage title="Privacy Policy" updated="July 1, 2026">
       <p>
-        {brand.legalName} (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your
+        {brand.legalName} (&ldquo;Zorqiva&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your
         privacy. This policy describes how we collect, use, and safeguard information when you use
         our website and engage our services.
       </p>

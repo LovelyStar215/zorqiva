@@ -9,13 +9,13 @@ import { faqPageJsonLd, pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/faq")({
   head: () =>
     pageSeo({
-      title: pageTitle("FAQ", "Tek4Real"),
+      title: pageTitle("FAQ", "Zorqiva"),
       description:
-        "Frequently asked questions about working with Tek4Real – projects, pricing, teams, and policies.",
+        "Frequently asked questions about working with Zorqiva – projects, pricing, teams, and policies.",
       path: "/faq",
-      ogTitle: pageTitle("FAQ", "Tek4Real"),
+      ogTitle: pageTitle("FAQ", "Zorqiva"),
       ogDescription:
-        "Answers about our agency services, engagement models, and Colorado & Hong Kong offices.",
+        "Answers about our agency services, engagement models, and Alaska & Hong Kong offices.",
       jsonLd: faqPageJsonLd(),
     }),
   component: FaqPage,
@@ -33,7 +33,7 @@ function FaqPage() {
         <PageHero
           eyebrow="FAQ"
           title="Answers before you reach out."
-          lede="Projects, pricing, how we work across Colorado and Hong Kong – and what to expect when you partner with Tek4Real."
+          lede="Projects, pricing, how we work across Alaska and Hong Kong – and what to expect when you partner with Zorqiva."
         />
 
         <SectionShell className="pt-0!">

@@ -31,7 +31,7 @@ export const faqSections: FaqSection[] = [
       },
       {
         q: "Can I visit your offices?",
-        a: `Yes. Email ${brand.contactEmail} to schedule an in-person session at our Colorado or Hong Kong headquarters.`,
+        a: `Yes. Email ${brand.contactEmail} to schedule an in-person session at our Alaska or Hong Kong headquarters.`,
       },
     ],
   },
@@ -67,11 +67,11 @@ export const faqSections: FaqSection[] = [
   },
   {
     title: "Working with us",
-    lede: "How our teams collaborate across Colorado, Hong Kong, and remote.",
+    lede: "How our teams collaborate across Alaska, Hong Kong, and remote.",
     items: [
       {
         q: "Where are you based?",
-        a: "We operate from two headquarters – Colorado (Americas) and Hong Kong (APAC). Our teams work across US and APAC time zones with remote-friendly collaboration.",
+        a: "We operate from two headquarters – Alaska (Americas) and Hong Kong (APAC). Our teams work across US and APAC time zones with remote-friendly collaboration.",
       },
       {
         q: "What does a typical team look like?",

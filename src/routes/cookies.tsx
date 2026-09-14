@@ -6,15 +6,15 @@ import { pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/cookies")({
   head: () =>
     pageSeo({
-      title: pageTitle("Cookie Policy", "Tek4Real"),
-      description: "How Tek4Real uses cookies and similar technologies on our website.",
+      title: pageTitle("Cookie Policy", "Zorqiva"),
+      description: "How Zorqiva uses cookies and similar technologies on our website.",
       path: "/cookies",
     }),
   component: () => (
     <LegalPage title="Cookie Policy" updated="July 1, 2026">
       <p>
-        This Cookie Policy explains how {brand.legalName} (&ldquo;Tek4Real&rdquo;, &ldquo;we&rdquo;,
-        &ldquo;us&rdquo;) uses cookies and similar technologies when you visit tek4real.com and
+        This Cookie Policy explains how {brand.legalName} (&ldquo;Zorqiva&rdquo;, &ldquo;we&rdquo;,
+        &ldquo;us&rdquo;) uses cookies and similar technologies when you visit Zorqiva.com and
         related pages.
       </p>
       <h2>What are cookies?</h2>

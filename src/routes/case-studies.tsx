@@ -9,11 +9,11 @@ import { breadcrumbJsonLd, pageSeo, pageTitle } from "@/lib/seo";
 export const Route = createFileRoute("/case-studies")({
   head: () =>
     pageSeo({
-      title: pageTitle("Case Studies", "Tek4Real"),
+      title: pageTitle("Case Studies", "Zorqiva"),
       description:
-        "Client success stories across healthcare, fintech, commerce, SaaS, and enterprise – measurable outcomes from Tek4Real engagements.",
+        "Client success stories across healthcare, fintech, commerce, SaaS, and enterprise – measurable outcomes from Zorqiva engagements.",
       path: "/case-studies",
-      ogTitle: pageTitle("Case Studies", "Tek4Real"),
+      ogTitle: pageTitle("Case Studies", "Zorqiva"),
       ogDescription: "Real outcomes from recent client work.",
       jsonLd: breadcrumbJsonLd([
         { name: "Home", path: "/" },
@@ -30,7 +30,7 @@ function CaseStudiesPage() {
         <PageHero
           eyebrow="Case studies"
           title="Outcomes our clients can measure."
-          lede="From patient portals to fleet apps and data pipelines – see how Tek4Real delivers across industries."
+          lede="From patient portals to fleet apps and data pipelines – see how Zorqiva delivers across industries."
         />
 
         <SectionShell className="pt-0!">

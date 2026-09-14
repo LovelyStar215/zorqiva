@@ -18,11 +18,11 @@ const contactMailto = `mailto:${brand.contactEmail}`;
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageSeo({
-      title: pageTitle("Contact", "Tek4Real"),
+      title: pageTitle("Contact", "Zorqiva"),
       description:
-        "Contact Tek4Real. Start a project, partnerships, careers, or general inquiries.",
+        "Contact Zorqiva. Start a project, partnerships, careers, or general inquiries.",
       path: "/contact",
-      ogTitle: "Contact Tek4Real",
+      ogTitle: "Contact Zorqiva",
       ogDescription: "Start a project with our global studio.",
     }),
   component: ContactPage,
@@ -46,7 +46,7 @@ const channels = [
   {
     icon: "solar:case-round-bold",
     title: "Careers",
-    desc: "Join our team in Colorado, Hong Kong, or remotely.",
+    desc: "Join our team in Alaska, Hong Kong, or remotely.",
     action: "View open roles",
     href: "/careers#open-roles",
   },
@@ -77,7 +77,7 @@ function ContactPage() {
               business day
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-              <Icon icon="solar:map-point-bold" className="text-primary" /> Colorado · Hong Kong
+              <Icon icon="solar:map-point-bold" className="text-primary" /> Alaska · Hong Kong
             </span>
           </div>
         </PageHero>
@@ -108,13 +108,13 @@ function ContactPage() {
                 Global headquarters
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                We operate from two headquarters – Colorado and Hong Kong – with field engineers
+                We operate from two headquarters – Alaska and Hong Kong – with field engineers
                 available worldwide.
               </p>
 
               <SectionImage
                 src={siteImages.contactHeadquarters}
-                alt="Tek4Real global headquarters"
+                alt="Zorqiva global headquarters"
                 aspect="video"
               />
 

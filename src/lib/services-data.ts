@@ -101,32 +101,32 @@ export const agencyComparisonMatrix = [
   {
     capability: "Team composition",
     legacy: "Freelancer patchwork",
-    withTek4Real: "Senior cross-functional squad",
+    withZorqiva: "Senior cross-functional squad",
   },
-  { capability: "Time to start", legacy: "2–3 months hiring", withTek4Real: "2 weeks to kickoff" },
+  { capability: "Time to start", legacy: "2–3 months hiring", withZorqiva: "2 weeks to kickoff" },
   {
     capability: "Code quality",
     legacy: "Inconsistent standards",
-    withTek4Real: "Reviewed, tested, documented",
+    withZorqiva: "Reviewed, tested, documented",
   },
   {
     capability: "Design & dev alignment",
     legacy: "Separate handoffs",
-    withTek4Real: "Unified workflow",
+    withZorqiva: "Unified workflow",
   },
   {
     capability: "Post-launch support",
     legacy: "None or ad-hoc",
-    withTek4Real: "Retainer & SLA options",
+    withZorqiva: "Retainer & SLA options",
   },
   {
     capability: "Security practices",
     legacy: "Varies by contractor",
-    withTek4Real: "Secure, documented SDLC",
+    withZorqiva: "Secure, documented SDLC",
   },
   {
     capability: "Scalability",
     legacy: "Short-term fixes",
-    withTek4Real: "Architecture for growth",
+    withZorqiva: "Architecture for growth",
   },
 ] as const;

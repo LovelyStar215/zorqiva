@@ -1,10 +1,10 @@
 export const brand = {
-  name: "Tek4Real",
-  displayName: "Tek4Real",
-  legalName: "Tek4Real, LLC",
-  siteUrl: "https://tek4real.com",
-  emailDomain: "tek4real.com",
-  contactEmail: "hello@tek4real.com",
+  name: "Zorqiva",
+  displayName: "Zorqiva",
+  legalName: "zorqiva",
+  siteUrl: "https://zorqiva.org/",
+  emailDomain: "zorqiva.org",
+  contactEmail: "hello@zorqiva.org",
   tagline:
     "Technology consulting and software engineering – custom software, cloud, design, and AI.",
 } as const;
@@ -25,24 +25,24 @@ export type HqOffice = {
 
 export const hqOffices = {
   americas: {
-    city: "Denver",
+    city: "Anchorage",
     role: "Americas HQ",
     country: "USA",
     countryCode: "US",
-    region: "CO",
-    postalCode: "80202",
-    streetAddress: "1675 Broadway, Suite 700",
-    address: "1675 Broadway, Suite 700, Denver, CO 80202",
-    addressInline: "1675 Broadway, Suite 700, Denver, CO 80202, USA",
+    region: "AK",
+    postalCode: "99504",
+    streetAddress: "5535 E 43rd Ave",
+    address: "5535 E 43rd Ave, Anchorage, AK 99504",
+    addressInline: "5535 E 43rd Ave, Anchorage, AK, USA, USA",
   } satisfies HqOffice,
   apac: {
     city: "Hong Kong",
     role: "APAC HQ",
     country: "HK",
     countryCode: "HK",
-    streetAddress: "Suite 2808, Two Exchange Square, 8 Connaught Place",
-    address: "Suite 2808, Two Exchange Square, 8 Connaught Place, Central",
-    addressInline: "Suite 2808, Two Exchange Square, 8 Connaught Place, Central, Hong Kong",
+    streetAddress: "Room 1417, 15/F, Kowloon Commerce Centre 51 Kwai Cheong Road Kwai Chung",
+    address: "Room 1417, 15/F, Kowloon Commerce Centre 51 Kwai Cheong Road Kwai Chung",
+    addressInline: "Room 1417, 15/F, Kowloon Commerce Centre 51 Kwai Cheong Road Kwai Chung, New Territories HONG KONG",
   } satisfies HqOffice,
 } as const;
 

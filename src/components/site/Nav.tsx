@@ -36,7 +36,7 @@ export function Nav() {
   return (
     <>
       <div
-        className="fixed top-0 inset-x-0 z-60 bg-(--ink) text-background/80 text-center text-xs py-2 tracking-wide"
+        className="fixed top-0 inset-x-0 z-60 bg-[#07131d]/90 text-[#edf5f9]/80 text-center text-xs py-2 tracking-wide"
         style={{ height: ANNOUNCEMENT_H }}
       >
         <span className="hidden sm:inline">

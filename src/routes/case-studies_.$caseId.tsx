@@ -16,18 +16,18 @@ export const Route = createFileRoute("/case-studies_/$caseId")({
     const study = loaderData?.study;
     if (!study) {
       return pageSeo({
-        title: pageTitle("Case Studies", "Tek4Real"),
-        description: "Client success stories from Tek4Real engagements.",
+        title: pageTitle("Case Studies", "Zorqiva"),
+        description: "Client success stories from Zorqiva engagements.",
         path: "/case-studies",
       });
     }
 
     const path = `/case-studies/${study.id}`;
     return pageSeo({
-      title: pageTitle(study.company, "Case Study", "Tek4Real"),
+      title: pageTitle(study.company, "Case Study", "Zorqiva"),
       description: study.summary,
       path,
-      ogTitle: pageTitle(study.company, "Case Study", "Tek4Real"),
+      ogTitle: pageTitle(study.company, "Case Study", "Zorqiva"),
       ogDescription: study.summary,
       ogType: "article",
       jsonLd: [

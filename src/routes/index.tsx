@@ -15,11 +15,11 @@ import { pageSeo, pageTitle, professionalServiceJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     pageSeo({
-      title: pageTitle("Tek4Real", "Technology Consulting & Software Engineering"),
+      title: pageTitle("Zorqiva", "Technology Consulting & Software Engineering"),
       description:
-        "Tek4Real is a technology consulting and software engineering company – custom software, cloud, design, and AI for ambitious companies.",
+        "Zorqiva is a technology consulting and software engineering company – custom software, cloud, design, and AI for ambitious companies.",
       path: "/",
-      ogTitle: pageTitle("Tek4Real", "Technology Consulting"),
+      ogTitle: pageTitle("Zorqiva", "Technology Consulting"),
       ogDescription: "Build. Ship. Scale. With a partner you can trust.",
       jsonLd: professionalServiceJsonLd(),
     }),
@@ -45,11 +45,11 @@ function Home() {
             style={{ background: "var(--gradient-mesh)" }}
           />
           <div className="hero-viewport__content relative">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/50 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-primary mb-10 shadow-(--shadow-soft)">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0d1a26]/80 backdrop-blur-sm pl-1 pr-4 py-1 text-xs font-medium text-foreground mb-10 shadow-(--shadow-soft)">
               <span className="rounded-full bg-primary text-primary-foreground px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold">
                 Technology Consulting
               </span>
-              Colorado · Hong Kong
+              Alaska · Hong Kong
             </div>
             <h1 className="font-hero text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] text-(--ink) max-w-4xl mx-auto">
               <span className="block">We build digital products</span>
@@ -97,7 +97,7 @@ function Home() {
           <div className="mt-8">
             <SectionImage
               src={siteImages.homeServices}
-              alt="Tek4Real service offerings on the homepage"
+              alt="Zorqiva service offerings on the homepage"
               aspect="video"
             />
           </div>
@@ -123,7 +123,7 @@ function Home() {
 
         <SectionShell>
           <SectionHeader
-            eyebrow="Why Tek4Real"
+            eyebrow="Why Zorqiva"
             title="Stop stitching freelancers together."
             lede="Side-by-side comparison of in-house hiring and DIY vs. working with a dedicated agency squad."
           />
@@ -160,7 +160,7 @@ function Home() {
             </div>
             <SectionImage
               src={siteImages.homeDevelopment}
-              alt="Tek4Real development process on the homepage"
+              alt="Zorqiva development process on the homepage"
               aspect="video"
             />
           </div>

@@ -11,25 +11,39 @@ export class MailConfigError extends Error {
   }
 }
 
+function hasPlaceholderValue(value: string | undefined) {
+  const normalized = value?.trim().toLowerCase() ?? "";
+  return (
+    !normalized ||
+    normalized === "your-email-password" ||
+    normalized === "your-smtp-password" ||
+    normalized === "changeme" ||
+    normalized.includes("example") ||
+    normalized.includes("placeholder")
+  );
+}
+
 function getSmtpConfig(): SMTPTransport.Options {
   loadEnvFile();
 
   const host = process.env.SMTP_HOST?.trim() || "smtp.hostinger.com";
   const port = Number(process.env.SMTP_PORT?.trim() || "465");
   const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASS;
+  const pass = process.env.SMTP_PASS?.trim();
 
-  if (!user || !pass) {
+  if (!user || !pass || hasPlaceholderValue(user) || hasPlaceholderValue(pass)) {
     throw new MailConfigError(
-      "Email is not configured. Set SMTP_USER and SMTP_PASS in your server environment.",
+      "Email is not configured. Replace the placeholder values in .env with your real Hostinger SMTP credentials and restart the app.",
     );
   }
+
+  const auth = { user, pass } as SMTPTransport.Options["auth"];
 
   return {
     host,
     port,
     secure: port === 465,
-    auth: { user, pass },
+    auth,
     connectionTimeout: 15_000,
     greetingTimeout: 15_000,
     socketTimeout: 15_000,
@@ -50,7 +64,9 @@ let transporterKey = "";
 
 function getTransporter() {
   const config = getSmtpConfig();
-  const key = `${config.host}:${config.port}:${config.auth?.user}:${config.auth?.pass}`;
+  const authUser = (config.auth as { user?: string } | undefined)?.user ?? "";
+  const authPass = (config.auth as { pass?: string } | undefined)?.pass ?? "";
+  const key = `${config.host}:${config.port}:${authUser}:${authPass}`;
 
   // Serverless: fresh transport per invocation avoids stale SMTP sockets.
   if (process.env.VERCEL) {

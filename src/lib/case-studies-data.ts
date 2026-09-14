@@ -36,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "HomeDesigns AI needed a consumer-grade product that could turn a single photo into photorealistic redesigns across dozens of room types and styles — without distorting walls, windows, or layout. The experience had to feel instant, support virtual staging and video walkthroughs, and scale to millions of users with credit-based monetization.",
     solution:
-      "Tek4Real built the full product stack: upload-and-generate flows, style preference engines, structure-lock rendering pipelines, and outputs for staging, 3D floor plans, and shoppable furniture links. We hardened the AI workflow for speed and reliability, integrated subscription billing, and designed a conversion funnel that turns first redesigns into paid plans.",
+      "Zorqiva built the full product stack: upload-and-generate flows, style preference engines, structure-lock rendering pipelines, and outputs for staging, 3D floor plans, and shoppable furniture links. We hardened the AI workflow for speed and reliability, integrated subscription billing, and designed a conversion funnel that turns first redesigns into paid plans.",
     highlights: [
       "Structure-lock AI keeps real room geometry intact",
       "160+ styles across interiors, exteriors, and gardens",
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Sofi set out to prove plant-based remedies with data, not marketing claims. They needed hardware-to-app sync on every spray, longitudinal journaling for mood and sleep, and analytics that surface personalized plant recommendations — all while meeting consumer health product expectations on iOS and Android.",
     solution:
-      "Tek4Real delivered the mobile app and backend intelligence layer: Bluetooth pod pairing, usage journaling, pioneer program onboarding, and Atlas™ analytics that correlate capsule use with reported outcomes. The platform tracks millions of data points to identify what works for each user and powers Sofi's evidence-backed plant roadmap.",
+      "Zorqiva delivered the mobile app and backend intelligence layer: Bluetooth pod pairing, usage journaling, pioneer program onboarding, and Atlas™ analytics that correlate capsule use with reported outcomes. The platform tracks millions of data points to identify what works for each user and powers Sofi's evidence-backed plant roadmap.",
     highlights: [
       "Bluetooth-connected sofi pod + iOS/Android apps",
       "Personal plant playlists from individual response data",
@@ -82,7 +82,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Manufacturing innovators spend up to 70% of their time on documentation instead of building products. Narratize needed a system of intelligence that centralizes product knowledge, automates NPD documentation with AI, aligns cross-functional teams, and gives executives portfolio-wide visibility — trusted by leaders at Boeing, Kao, and similar enterprises.",
     solution:
-      "Tek4Real helped architect and build Narratize's three-layer platform: Individual Hubs for ideation, Team Knowledge Hubs for searchable product documentation, and Portfolio Management for strategic alignment. AI understands product development context to auto-draft requirements, route approvals, and preserve institutional memory when team members change.",
+      "Zorqiva helped architect and build Narratize's three-layer platform: Individual Hubs for ideation, Team Knowledge Hubs for searchable product documentation, and Portfolio Management for strategic alignment. AI understands product development context to auto-draft requirements, route approvals, and preserve institutional memory when team members change.",
     highlights: [
       "Individual, team, and portfolio intelligence layers",
       "AI documentation tied to product development workflows",
@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Creators and influencers waste hours hunting for the right brand contacts and drafting cold outreach. Pitch'em needed a product that turns any product scan into a warm path to partnership — with verified emails, one-click AI pitches, conversation tracking, and follow-up reminders — on web and iOS for creators at every level.",
     solution:
-      "Tek4Real built Pitch'em end to end: product and brand scan/search, verified contact unlocking across categories from health and wellness to fashion, AI pitch generation tuned for brand partnerships, unified inbox for brand conversations, Gmail integration for Pro users, and subscription tiers from free starter access to unlimited scans and contacts.",
+      "Zorqiva built Pitch'em end to end: product and brand scan/search, verified contact unlocking across categories from health and wellness to fashion, AI pitch generation tuned for brand partnerships, unified inbox for brand conversations, Gmail integration for Pro users, and subscription tiers from free starter access to unlimited scans and contacts.",
     highlights: [
       "Scan or search products to surface brand decision makers",
       "Verified contact info across major consumer brands",
@@ -128,7 +128,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Boondockers Welcome needed a trusted two-sided marketplace where RV guests discover hosts along their route, arrange stays, and leave reviews — while hosts manage availability and hospitality at scale. The product also had to integrate with the broader Harvest Hosts mobile ecosystem for members using both programs.",
     solution:
-      "Tek4Real extended the platform with host discovery, membership billing, guest-host messaging, stay coordination, and review flows — optimized for road travelers on mobile. Search, request, and communication features ship inside the Harvest Hosts app so dual members browse Boondockers Welcome and Harvest Hosts locations in one place.",
+      "Zorqiva extended the platform with host discovery, membership billing, guest-host messaging, stay coordination, and review flows — optimized for road travelers on mobile. Search, request, and communication features ship inside the Harvest Hosts app so dual members browse Boondockers Welcome and Harvest Hosts locations in one place.",
     highlights: [
       "3,675+ host locations across the US and Canada",
       "70% of hosts offer hookups for added comfort",
@@ -151,7 +151,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Mompou Tapas Bar needed a website that captures the energy of Spain's tapas culture while driving reservations and private events in Newark's Ironbound district. The site had to showcase extensive menus, flamenco performances, gift cards, and multi-room event packages — all mobile-friendly for pre-game crowds near Prudential Center and Penn Station.",
     solution:
-      "Tek4Real designed and built a hospitality-focused site with OpenTable/Yelp reservation integration, structured menus for tapas and entrees, event inquiry forms for private parties, flamenco show promotion, eGift card sales, and gallery content — reflecting Mompou's modern take on traditional Spanish cuisine since 2005.",
+      "Zorqiva designed and built a hospitality-focused site with OpenTable/Yelp reservation integration, structured menus for tapas and entrees, event inquiry forms for private parties, flamenco show promotion, eGift card sales, and gallery content — reflecting Mompou's modern take on traditional Spanish cuisine since 2005.",
     highlights: [
       "Online reservations and private event booking flows",
       "Full lunch, tapas, entree, dessert, and drinks menus",
@@ -174,7 +174,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Food buyers and restaurateurs struggled with middleman markups, unpredictable supply, and manual sourcing across Ontario farms. FreshBridge needed a buyer portal with real-time farm inventory, AI menu and sourcing assistance (FreshSelect™), order management, and logistics visibility — plus a farmer-facing path to list harvest at full price.",
     solution:
-      "Tek4Real built the FreshBridge portal experience: buyer signup and sourcing workflows, FreshSelect™ AI assistant for demand-aligned purchasing, farm-direct catalog with live availability, order tracking through managed logistics, and reporting that helps kitchens forecast demand and cut waste — supporting FreshBridge's no-markup farm partnership model.",
+      "Zorqiva built the FreshBridge portal experience: buyer signup and sourcing workflows, FreshSelect™ AI assistant for demand-aligned purchasing, farm-direct catalog with live availability, order tracking through managed logistics, and reporting that helps kitchens forecast demand and cut waste — supporting FreshBridge's no-markup farm partnership model.",
     highlights: [
       "FreshSelect™ AI sourcing and menu planning assistant",
       "Real-time farm inventory and farm-direct pricing",
@@ -197,7 +197,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Silo needed a regulated-feeling consumer fintech product that lets investors hold portfolios with IBKR while earning up to 250,000 points per year redeemable for cash and travel. The platform required membership tiers, ACATS transfer flows, multi-account types (individual, IRA), and a polished marketing site that communicates SIPC/FDIC protections clearly.",
     solution:
-      "Tek4Real delivered Silo's customer-facing platform and onboarding: account type selection, membership plan presentation (Gold and Platinum), portfolio transfer and cash deposit flows, points-earning logic surfaced in the product, travel portal integration with airline and hotel partners, and compliance-forward disclosures tied to IBKR custody.",
+      "Zorqiva delivered Silo's customer-facing platform and onboarding: account type selection, membership plan presentation (Gold and Platinum), portfolio transfer and cash deposit flows, points-earning logic surfaced in the product, travel portal integration with airline and hotel partners, and compliance-forward disclosures tied to IBKR custody.",
     highlights: [
       "Points on stocks, ETFs, and uninvested cash",
       "Interactive Brokers custody with SIPC + FDIC coverage",
