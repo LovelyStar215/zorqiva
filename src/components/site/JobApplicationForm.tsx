@@ -7,22 +7,20 @@ import { z } from "zod";
 import { isAllowedResumeFile, MAX_RESUME_BYTES, RESUME_ACCEPT } from "@/lib/careers-form-options";
 import { openRoles } from "@/lib/site-data";
 
-const roleOptions = [
-  { value: "general", label: "General application" },
-  ...openRoles.map((j) => ({ value: j.id, label: j.title })),
-] as const;
-
-const locationOptions = ["Colorado", "Hong Kong", "Remote (US)", "Flexible"] as const;
+const locationOptions = ["Alaska", "Hong Kong", "Remote (US)", "Flexible"] as const;
+const remoteRoleOptions = ["Yes", "No"] as const;
 
 const schema = z.object({
-  role: z.string().min(1, "Select a role"),
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Enter a valid email"),
   phone: z.string().optional(),
-  linkedin: z.string().url("Enter a valid URL").optional().or(z.literal("")),
+  linkedin: z.string().url("Enter a valid LinkedIn URL"),
   portfolio: z.string().url("Enter a valid URL").optional().or(z.literal("")),
   location: z.enum(locationOptions, { message: "Select a location preference" }),
+  remoteRole: z.enum(remoteRoleOptions, { message: "Select whether this is a remote role" }),
+  workAuthorization: z.string().min(1, "Tell us your work authorization status"),
+  loomVideoLink: z.string().url("Enter a valid Loom video URL"),
   experience: z.string().min(1, "Select your experience level"),
   availability: z.string().min(1, "Select your availability"),
   resume: z
@@ -63,7 +61,6 @@ export function JobApplicationForm({
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      role: selectedRoleId ?? "general",
       location: "Flexible",
     },
   });
@@ -72,7 +69,7 @@ export function JobApplicationForm({
 
   useEffect(() => {
     if (selectedRoleId) {
-      setValue("role", selectedRoleId, { shouldValidate: true });
+ //     setValue("role", selectedRoleId, { shouldValidate: true });
     }
   }, [selectedRoleId, setValue]);
 
@@ -80,14 +77,17 @@ export function JobApplicationForm({
     setSubmitError(null);
 
     const payload = new FormData();
-    payload.set("role", data.role);
+    payload.set("role", selectedRoleId ?? "general");
     payload.set("firstName", data.firstName);
     payload.set("lastName", data.lastName);
     payload.set("email", data.email);
     if (data.phone) payload.set("phone", data.phone);
-    if (data.linkedin) payload.set("linkedin", data.linkedin);
+    payload.set("linkedin", data.linkedin);
     if (data.portfolio) payload.set("portfolio", data.portfolio);
     payload.set("location", data.location);
+    payload.set("remoteRole", data.remoteRole);
+    payload.set("workAuthorization", data.workAuthorization);
+    payload.set("loomVideoLink", data.loomVideoLink);
     payload.set("experience", data.experience);
     payload.set("availability", data.availability);
     payload.set("resume", data.resume);
@@ -144,18 +144,6 @@ export function JobApplicationForm({
           className="absolute -left-2499.75 h-0 w-0 opacity-0"
         />
 
-        <label className="block">
-          <span className="text-xs font-medium text-foreground/70">Role</span>
-          <select {...register("role")} className={inputClass}>
-            {roleOptions.map((r) => (
-              <option key={r.value} value={r.value}>
-                {r.label}
-              </option>
-            ))}
-          </select>
-          {errors.role && <p className="mt-1 text-xs text-destructive">{errors.role.message}</p>}
-        </label>
-
         <div className="grid sm:grid-cols-2 gap-4">
           {(
             [
@@ -187,9 +175,7 @@ export function JobApplicationForm({
 
         <div className="grid sm:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-xs font-medium text-foreground/70">
-              LinkedIn <span className="text-muted-foreground font-normal">(optional)</span>
-            </span>
+            <span className="text-xs font-medium text-foreground/70">LinkedIn</span>
             <input
               type="url"
               placeholder="https://linkedin.com/in/you"
@@ -231,16 +217,17 @@ export function JobApplicationForm({
             )}
           </label>
           <label className="block">
-            <span className="text-xs font-medium text-foreground/70">Experience</span>
-            <select {...register("experience")} className={inputClass}>
-              <option value="">Select range</option>
-              <option value="0-2">0–2 years</option>
-              <option value="3-5">3–5 years</option>
-              <option value="6-10">6–10 years</option>
-              <option value="10+">10+ years</option>
+            <span className="text-xs font-medium text-foreground/70">Remote role</span>
+            <select {...register("remoteRole")} className={inputClass}>
+              <option value="">Select</option>
+              {remoteRoleOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
-            {errors.experience && (
-              <p className="mt-1 text-xs text-destructive">{errors.experience.message}</p>
+            {errors.remoteRole && (
+              <p className="mt-1 text-xs text-destructive">{errors.remoteRole.message}</p>
             )}
           </label>
           <label className="block">
@@ -257,6 +244,47 @@ export function JobApplicationForm({
             )}
           </label>
         </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="text-xs font-medium text-foreground/70">Work authorization</span>
+            <input
+              type="text"
+              placeholder="U.S. citizen / work visa / sponsorship"
+              {...register("workAuthorization")}
+              className={inputClass}
+            />
+            {errors.workAuthorization && (
+              <p className="mt-1 text-xs text-destructive">{errors.workAuthorization.message}</p>
+            )}
+          </label>
+          <label className="block">
+            <span className="text-xs font-medium text-foreground/70">Experience</span>
+            <select {...register("experience")} className={inputClass}>
+              <option value="">Select range</option>
+              <option value="0-2">0–2 years</option>
+              <option value="3-5">3–5 years</option>
+              <option value="6-10">6–10 years</option>
+              <option value="10+">10+ years</option>
+            </select>
+            {errors.experience && (
+              <p className="mt-1 text-xs text-destructive">{errors.experience.message}</p>
+            )}
+          </label>
+        </div>
+
+        <label className="block">
+          <span className="text-xs font-medium text-foreground/70">Loom video link</span>
+          <input
+            type="url"
+            placeholder="https://loom.com/share/..."
+            {...register("loomVideoLink")}
+            className={inputClass}
+          />
+          {errors.loomVideoLink && (
+            <p className="mt-1 text-xs text-destructive">{errors.loomVideoLink.message}</p>
+          )}
+        </label>
 
         <label className="block">
           <span className="text-xs font-medium text-foreground/70">Resume / CV</span>

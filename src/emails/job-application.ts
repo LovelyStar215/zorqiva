@@ -15,8 +15,11 @@ export type JobApplicationEmailContent = {
   email: string;
   jobTitle: string;
   phone?: string;
-  linkedin?: string;
+  linkedin: string;
   portfolio?: string;
+  remoteRole: string;
+  workAuthorization: string;
+  loomVideoLink: string;
   resumeFilename: string;
   locationLabel: string;
   experienceLabel: string;
@@ -36,8 +39,11 @@ export async function buildJobApplicationEmail(
     detailRow("Applicant", data.name),
     linkRow("Email", `mailto:${data.email}`, data.email),
     optionalRow("Phone", data.phone),
-    data.linkedin ? linkRow("LinkedIn", data.linkedin, data.linkedin) : "",
+    linkRow("LinkedIn", data.linkedin, data.linkedin),
     data.portfolio ? linkRow("Portfolio", data.portfolio, data.portfolio) : "",
+    detailRow("Remote role", data.remoteRole),
+    detailRow("Work authorization", data.workAuthorization),
+    linkRow("Loom video", data.loomVideoLink, data.loomVideoLink),
     detailRow("Resume", `Attached: ${data.resumeFilename}`),
     detailRow("Location", data.locationLabel),
     detailRow("Experience", data.experienceLabel),
@@ -57,8 +63,11 @@ export async function buildJobApplicationEmail(
     `Name: ${data.name}`,
     `Email: ${data.email}`,
     data.phone ? `Phone: ${data.phone}` : null,
-    data.linkedin ? `LinkedIn: ${data.linkedin}` : null,
+    `LinkedIn: ${data.linkedin}`,
     data.portfolio ? `Portfolio: ${data.portfolio}` : null,
+    `Remote role: ${data.remoteRole}`,
+    `Work authorization: ${data.workAuthorization}`,
+    `Loom video: ${data.loomVideoLink}`,
     `Resume: attached as ${data.resumeFilename}`,
     `Location: ${data.locationLabel}`,
     `Experience: ${data.experienceLabel}`,

@@ -48,6 +48,9 @@ export const Route = createFileRoute("/api/job-application")({
           const linkedin = String(form.get("linkedin") ?? "").trim();
           const portfolio = String(form.get("portfolio") ?? "").trim();
           const location = String(form.get("location") ?? "").trim();
+          const remoteRole = String(form.get("remoteRole") ?? "").trim();
+          const workAuthorization = String(form.get("workAuthorization") ?? "").trim();
+          const loomVideoLink = String(form.get("loomVideoLink") ?? "").trim();
           const experience = String(form.get("experience") ?? "").trim();
           const availability = String(form.get("availability") ?? "").trim();
           const coverLetter = String(form.get("coverLetter") ?? "").trim();
@@ -74,7 +77,7 @@ export const Route = createFileRoute("/api/job-application")({
               { status: 400 },
             );
           }
-          if (linkedin && !URL_RE.test(linkedin)) {
+          if (!linkedin || !URL_RE.test(linkedin)) {
             return Response.json(
               { ok: false, error: "Enter a valid LinkedIn URL (https://…)." },
               { status: 400 },
@@ -83,6 +86,24 @@ export const Route = createFileRoute("/api/job-application")({
           if (portfolio && !URL_RE.test(portfolio)) {
             return Response.json(
               { ok: false, error: "Enter a valid portfolio URL (https://…)." },
+              { status: 400 },
+            );
+          }
+          if (!remoteRole) {
+            return Response.json(
+              { ok: false, error: "Select whether this is a remote role." },
+              { status: 400 },
+            );
+          }
+          if (!workAuthorization) {
+            return Response.json(
+              { ok: false, error: "Tell us your work authorization status." },
+              { status: 400 },
+            );
+          }
+          if (!loomVideoLink || !URL_RE.test(loomVideoLink)) {
+            return Response.json(
+              { ok: false, error: "Enter a valid Loom video URL (https://…)." },
               { status: 400 },
             );
           }
@@ -133,8 +154,11 @@ export const Route = createFileRoute("/api/job-application")({
             email,
             jobTitle,
             phone: phone || undefined,
-            linkedin: linkedin || undefined,
+            linkedin,
             portfolio: portfolio || undefined,
+            remoteRole,
+            workAuthorization,
+            loomVideoLink,
             resumeFilename,
             locationLabel: location || "Not specified",
             experienceLabel: EXPERIENCE_LABELS[experience],
