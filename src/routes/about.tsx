@@ -42,18 +42,6 @@ const leadership = [
     bio: "Partners with clients and the founding team to shape strategy, delivery, and growth – keeping Zorqiva focused on craft, clarity, and outcomes that scale.",
     image: "/images/team/Jamie Baker.jpg",
   },
-  {
-    name: "Rui Qin",
-    role: "Senior Software Engineer",
-    bio: "Full-stack engineer shipping production TypeScript, React, and Node systems – focused on clean code, reliable releases, and mentoring on client squads.",
-    image: "/images/team/rui-qin.jpg",
-  },
-  {
-    name: "Daniel Wong",
-    role: "Senior Software Engineer",
-    bio: "Builds scalable backends, APIs, and cloud deployments – with a track record of turning complex requirements into maintainable software.",
-    image: "/images/team/daniel-wong.jpg",
-  },
 ];
 
 function TeamAvatar({ name, image }: { name: string; image?: string }) {
