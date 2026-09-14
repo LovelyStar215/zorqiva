@@ -25,22 +25,22 @@ export const Route = createFileRoute("/about")({
 
 const leadership = [
   {
-    name: "Edmond Piloyan",
+    name: "John Lee",
     role: "CEO & Founder",
     bio: "Founded Zorqiva in 2025 to bring product-company craft to client work – pairing senior talent with accountable delivery from day one.",
-    image: "/images/team/edmond-piloyan.jpg",
+    image: "/images/team/John.jpg",
   },
   {
-    name: "Lin Pei",
+    name: "Daniel Marijn Goossens",
     role: "CTO & Co-founder",
     bio: "Leads architecture, engineering standards, and technical direction across every client engagement – from greenfield builds to cloud-native modernization.",
-    image: "/images/team/lin-pei.jpg",
+    image: "/images/team/daniel.jpg",
   },
   {
-    name: "Iurie Rotari",
+    name: "Jamie Baker",
     role: "Co-founder",
     bio: "Partners with clients and the founding team to shape strategy, delivery, and growth – keeping Zorqiva focused on craft, clarity, and outcomes that scale.",
-    image: "/images/team/iurie-rotari.jpg",
+    image: "/images/team/Jamie Baker.jpg",
   },
   {
     name: "Rui Qin",
