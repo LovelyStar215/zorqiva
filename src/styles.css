@@ -258,29 +258,33 @@
   }
 
   .text-gradient {
-    background: linear-gradient(
-      135deg,
-      oklch(0.34 0.105 152),
-      oklch(0.48 0.11 150),
-      oklch(0.58 0.12 148)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, oklch(0.58 0.12 148), oklch(0.4 0.1 152));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
   }
 
   .text-gradient-accent {
-    background: linear-gradient(135deg, oklch(0.58 0.12 148), oklch(0.4 0.1 152));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .text-primary,
+  .text-accent {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
   }
 
   .card-premium {
