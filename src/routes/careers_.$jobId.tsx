@@ -3,6 +3,7 @@ import { Link, createFileRoute, notFound, useRouterState } from "@tanstack/react
 import { useEffect } from "react";
 import { JobApplicationForm } from "@/components/site/JobApplicationForm";
 import { Layout, PageHero, SectionShell } from "@/components/site/Layout";
+import { brand } from "@/lib/brand";
 import { getJobById, openRoles } from "@/lib/site-data";
 import { breadcrumbJsonLd, jobPostingJsonLd, pageSeo, pageTitle } from "@/lib/seo";
 
@@ -140,6 +141,17 @@ function JobDetailPage() {
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
+                    If you have any questions about the role, application process, or Zorqiva,
+                    please send us a message directly at{" "}
+                    <a
+                      href={`mailto:${brand.contactEmail}`}
+                      className="text-primary underline underline-offset-4 hover:text-primary/80"
+                    >
+                      {brand.contactEmail}
+                    </a>
+                    .
+                  </p>
                 </section>
               )}
             </div>

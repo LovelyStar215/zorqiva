@@ -54,7 +54,7 @@ function Home() {
             <h1 className="font-hero text-[clamp(2.5rem,7vw,4.75rem)] leading-[0.98] text-(--ink) max-w-4xl mx-auto">
               <span className="block">We build digital products</span>
               <span className="block">
-                that <span className="text-gradient">move businesses forward.</span>
+                that <span className="text-white">move businesses forward.</span>
               </span>
             </h1>
             <p className="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
