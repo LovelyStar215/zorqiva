@@ -77,7 +77,7 @@ export function getJobById(id: string): Job | undefined {
 
 export const openRoles: Job[] = [
   {
-    id: "junior-frontend-react",
+    id: "junior-frontend",
     title: "Junior Frontend Developer",
     department: "Engineering",
     location: "Remote (US)",
@@ -118,7 +118,7 @@ export const openRoles: Job[] = [
     ],
   },
   {
-    id: "junior-backend-node",
+    id: "junior-backend",
     title: "Junior Backend Developer",
     department: "Engineering",
     location: "Remote (US)",
